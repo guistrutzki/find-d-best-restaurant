@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		5B94D67226C5F68C00346B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D67126C5F68C00346B9B /* AppDelegate.swift */; };
 		5B94D67426C5F68C00346B9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D67326C5F68C00346B9B /* SceneDelegate.swift */; };
-		5B94D67626C5F68C00346B9B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D67526C5F68C00346B9B /* MainViewController.swift */; };
+		5B94D67626C5F68C00346B9B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D67526C5F68C00346B9B /* HomeViewController.swift */; };
 		5B94D67C26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D67A26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld */; };
 		5B94D67E26C5F68F00346B9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B94D67D26C5F68F00346B9B /* Assets.xcassets */; };
 		5B94D68126C5F68F00346B9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B94D67F26C5F68F00346B9B /* LaunchScreen.storyboard */; };
+		66A27AB126D0D8B500D59F72 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A27AB026D0D8B500D59F72 /* LoginViewController.swift */; };
+		66A27AB326D0D8D200D59F72 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A27AB226D0D8D200D59F72 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5B94D66E26C5F68C00346B9B /* FindDBestRestaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindDBestRestaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B94D67126C5F68C00346B9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B94D67326C5F68C00346B9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5B94D67526C5F68C00346B9B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5B94D67526C5F68C00346B9B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5B94D67B26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FindDBestRestaurant.xcdatamodel; sourceTree = "<group>"; };
 		5B94D67D26C5F68F00346B9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B94D68026C5F68F00346B9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B94D68226C5F68F00346B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66A27AB026D0D8B500D59F72 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		66A27AB226D0D8D200D59F72 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 			children = (
 				5B94D67126C5F68C00346B9B /* AppDelegate.swift */,
 				5B94D67326C5F68C00346B9B /* SceneDelegate.swift */,
-				5B94D67526C5F68C00346B9B /* MainViewController.swift */,
+				5B94D67526C5F68C00346B9B /* HomeViewController.swift */,
+				66A27AB026D0D8B500D59F72 /* LoginViewController.swift */,
+				66A27AB226D0D8D200D59F72 /* MainViewController.swift */,
 				5B94D67D26C5F68F00346B9B /* Assets.xcassets */,
 				5B94D67F26C5F68F00346B9B /* LaunchScreen.storyboard */,
 				5B94D68226C5F68F00346B9B /* Info.plist */,
@@ -137,8 +143,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B94D67C26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld in Sources */,
-				5B94D67626C5F68C00346B9B /* MainViewController.swift in Sources */,
+				5B94D67626C5F68C00346B9B /* HomeViewController.swift in Sources */,
 				5B94D67226C5F68C00346B9B /* AppDelegate.swift in Sources */,
+				66A27AB326D0D8D200D59F72 /* MainViewController.swift in Sources */,
+				66A27AB126D0D8B500D59F72 /* LoginViewController.swift in Sources */,
 				5B94D67426C5F68C00346B9B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

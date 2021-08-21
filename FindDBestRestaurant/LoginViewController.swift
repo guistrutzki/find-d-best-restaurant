@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  LoginViewController.swift
 //  FindDBestRestaurant
 //
 //  Created by Pedro Neto on 21/08/21.
@@ -7,14 +7,13 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.isNavigationBarHidden = false
-        title = "Main"
-        view.backgroundColor = .white
+        title = "Login"
+        view.backgroundColor = .orange
     }
-    
 }

@@ -1,20 +1,19 @@
 //
-//  MainViewController.swift
+//  ViewController.swift
 //  FindDBestRestaurant
 //
-//  Created by Pedro Neto on 21/08/21.
+//  Created by Guilherme Strutzki on 12/08/21.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
-
+class HomeViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.isNavigationBarHidden = false
-        title = "Main"
-        view.backgroundColor = .white
+        title = "Home"
+        view.backgroundColor = .blue
     }
-    
 }
