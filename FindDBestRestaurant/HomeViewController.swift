@@ -31,6 +31,41 @@ class HomeViewController: UIViewController {
         return label
     }()
     
+    lazy var loginButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Entrar", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.layer.backgroundColor = UIColor(red: 0.904, green: 0.188, blue: 0.188, alpha: 1).cgColor
+
+        button.layer.cornerRadius = 8
+        return button
+    }()
+    
+    lazy var registerButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Cadastrar", for: .normal)
+        button.setTitleColor(UIColor(red: 0.906, green: 0.188, blue: 0.188, alpha: 1), for: .normal)
+        button.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.layer.cornerRadius = 8
+        button.backgroundColor = .white
+
+        return button
+    }()
+    
+    lazy var continueWithoutLoginButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Continuar sem login  >", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        
+        return button
+    }()
+    
     override func loadView() {
         let view = UIView(frame: UIScreen.main.bounds)
         view.backgroundColor = .black
@@ -38,6 +73,7 @@ class HomeViewController: UIViewController {
         
         addSubViewsToView()
         addSubviewConstraints()
+        
     }
     
     override func viewDidLoad() {
@@ -51,6 +87,9 @@ class HomeViewController: UIViewController {
         
         view.addSubview(titleLabel)
         view.addSubview(subTitleLabel)
+        view.addSubview(loginButton)
+        view.addSubview(registerButton)
+        view.addSubview(continueWithoutLoginButton)
     }
     
     func addSubviewConstraints() {
@@ -61,6 +100,19 @@ class HomeViewController: UIViewController {
             
             subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             subTitleLabel.centerXAnchor.constraint(equalTo: titleLabel.centerXAnchor),
+            
+            loginButton.heightAnchor.constraint(equalToConstant: 50),
+            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            loginButton.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -20),
+            
+            registerButton.heightAnchor.constraint(equalToConstant: 50),
+            registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            registerButton.bottomAnchor.constraint(equalTo: continueWithoutLoginButton.topAnchor, constant: -40),
+            
+            continueWithoutLoginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            continueWithoutLoginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
             
         ])
     }
