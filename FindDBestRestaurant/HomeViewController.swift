@@ -69,6 +69,15 @@ class HomeViewController: UIViewController {
          return button
      }()
     
+    lazy var backgroundImage: UIImageView = {
+        let imageView = UIImageView()
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "ImageDeFundoDaTelaInicial")
+        
+        return imageView
+    }()
+    
     override func loadView() {
         let view = UIView(frame: UIScreen.main.bounds)
         view.backgroundColor = .black
@@ -87,7 +96,8 @@ class HomeViewController: UIViewController {
     }
     
     func addSubViewsToView() {
-        
+        view.addSubview(backgroundImage)
+
         view.addSubview(titleLabel)
         view.addSubview(subTitleLabel)
         view.addSubview(loginButton)
@@ -130,8 +140,13 @@ class HomeViewController: UIViewController {
             registerButton.bottomAnchor.constraint(equalTo: continueWithoutLoginButton.topAnchor, constant: -40),
             
             continueWithoutLoginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            continueWithoutLoginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            continueWithoutLoginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             
+            backgroundImage.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8),
+            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundImage.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            backgroundImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }
 }
