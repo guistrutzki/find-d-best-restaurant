@@ -13,6 +13,7 @@ final class CustomButtonView: UIView {
 	var customButton: UIButton = {
 		let button = UIButton(frame: .zero)
 		button.layer.cornerRadius = 8
+		button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .regular)
 		return button
 	}()
 	
