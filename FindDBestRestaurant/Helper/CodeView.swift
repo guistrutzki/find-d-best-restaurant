@@ -6,19 +6,19 @@
 //
 
 import Foundation
- import SnapKit
+import SnapKit
 
- protocol CodeView {
+protocol CodeView {
 	func buildViewHierarchy()
 	func setupConstraints()
 	func setupAdditionalConfiguration()
 	func setupView()
- }
+}
 
- extension CodeView {
+extension CodeView {
 	func setupView() {
 		buildViewHierarchy()
 		setupConstraints()
 		setupAdditionalConfiguration()
 	}
- }
+}
