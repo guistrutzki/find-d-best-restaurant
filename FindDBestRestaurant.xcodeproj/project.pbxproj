@@ -19,6 +19,7 @@
 		70311A3926D1984C005B0C0E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A3826D1984C005B0C0E /* FavoritesViewController.swift */; };
 		70311A5326D1A294005B0C0E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A5226D1A294005B0C0E /* Constants.swift */; };
 		BCE50B6B26D2A362009388AA /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE50B6A26D2A362009388AA /* CodeView.swift */; };
+		BCE50B7726D2AFA0009388AA /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE50B7626D2AFA0009388AA /* CustomTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		70311A5226D1A294005B0C0E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A1CB12D0950B0BA3055A0234 /* Pods_FindDBestRestaurant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindDBestRestaurant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE50B6A26D2A362009388AA /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		BCE50B7626D2AFA0009388AA /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		70311A3026D196EE005B0C0E /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				BCE50B7426D2AF6B009388AA /* Components */,
 				70311A4A26D1A1FD005B0C0E /* TopRestaurants */,
 				70311A4326D1A13D005B0C0E /* Favorites */,
 				70311A4226D1A12F005B0C0E /* Home */,
@@ -257,6 +260,22 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		BCE50B7426D2AF6B009388AA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BCE50B7526D2AF75009388AA /* CustomTextFieldView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BCE50B7526D2AF75009388AA /* CustomTextFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				BCE50B7626D2AFA0009388AA /* CustomTextFieldView.swift */,
+			);
+			path = CustomTextFieldView;
+			sourceTree = "<group>";
+		};
 		BDACD95E021B099035F8926D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +409,7 @@
 				BCE50B6B26D2A362009388AA /* CodeView.swift in Sources */,
 				5B94D67C26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld in Sources */,
 				70311A3526D1982D005B0C0E /* RestaurantsViewController.swift in Sources */,
+				BCE50B7726D2AFA0009388AA /* CustomTextFieldView.swift in Sources */,
 				70311A3926D1984C005B0C0E /* FavoritesViewController.swift in Sources */,
 				70311A3726D1983E005B0C0E /* TopRestaurantsViewController.swift in Sources */,
 				70311A3326D19753005B0C0E /* MainTabBarController.swift in Sources */,
