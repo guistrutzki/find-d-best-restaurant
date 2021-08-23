@@ -22,6 +22,11 @@ final class CustomTextFieldView: UIView {
 		textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
 		textField.leftViewMode = .always
 		textField.textColor = .white
+        textField.attributedPlaceholder =
+            NSAttributedString(
+                string: "placeholderColor",
+                attributes: [NSAttributedString.Key.foregroundColor: Colors.gray200]
+            )
 		return textField
 	}()
 	
