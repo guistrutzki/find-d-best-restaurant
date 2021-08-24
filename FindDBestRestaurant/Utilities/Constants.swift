@@ -11,6 +11,8 @@ enum K {
     static let restaurants              = "Restaurants"
     static let favorites                = "Favorites"
     static let top                      = "Top"
+    static let enter                    = "Entrar"
+    static let forgetMyPassword         = "Esqueci minha senha"
 }
 
 enum SFSymbols {

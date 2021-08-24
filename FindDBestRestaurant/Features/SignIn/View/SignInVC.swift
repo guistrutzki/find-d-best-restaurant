@@ -9,11 +9,12 @@ import UIKit
 
 class SignInVC: UIViewController {
     
-    var signInScreen: SignInScreen?
+    private lazy var signInScreen: SignInScreen = {
+        return SignInScreen(self)
+    }()
     
     override func loadView() {
-        self.signInScreen = SignInScreen()
-        self.view = self.signInScreen
+        self.view = signInScreen
     }
 
     override func viewDidLoad() {
@@ -30,4 +31,14 @@ class SignInVC: UIViewController {
         .lightContent
     }
 
+}
+
+extension SignInVC: SignInViewDelegate {
+    func didTappedSignInSubmit(email: String?, password: String?) {
+        print("\(email ?? "") - \(password ?? "")")
+    }
+    
+    func didTappedForgetPassword() {
+        print("forget password")
+    }
 }

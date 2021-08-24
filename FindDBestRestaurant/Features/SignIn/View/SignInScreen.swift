@@ -9,13 +9,22 @@ import UIKit
 
 class SignInScreen: UIView {
     
-    // MARK: - UI Components
-    
-    lazy var emailTextField = CustomTextFieldView()
-    lazy var passwordTextField = CustomTextFieldView()
-    lazy var submitButton = CustomButtonView()
-    
     // MARK: - UI Elements
+    
+    private lazy var emailTextField: CustomTextFieldView = {
+        let textField = CustomTextFieldView()
+        return textField
+    }()
+    
+    private lazy var passwordTextField: CustomTextFieldView = {
+        let textField = CustomTextFieldView()
+        return textField
+    }()
+    
+    private lazy var submitButton: CustomButton = {
+        let button = CustomButton(backgroundColor: Colors.red500, title: K.enter)
+        return button
+    }()
     
     lazy var backButton: UIButton = {
         let button = UIButton()
@@ -30,104 +39,103 @@ class SignInScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        label.text = "Entrar"
+        label.text = K.enter
         return label
     }()
     
     lazy var forgetPasswordButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Esqueci minha senha", for: .normal)
+        button.setTitle(K.forgetMyPassword, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         return button
     }()
-
-    // MARK: - Initialize
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.configBackground()
-        self.configSuperView()
-        self.setupContraints()
+    
+    private weak var delegate: SignInViewDelegate!
+    
+    init(_ delegate: SignInViewDelegate) {
+        self.delegate = delegate
+        super.init(frame: .zero)
         
-        self.emailTextField.configureTextFieldType(.email)
-        self.passwordTextField.configureTextFieldType(.password)
-        self.submitButton.configureTitle(with: "Entrar")
-        self.submitButton.configureColor(with: Colors.red500)
+        setupView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Setup functions
-    private func configBackground() {
-        self.backgroundColor = Colors.gray500
+    @objc private func didTappedForgetPassword(_ button: UIButton) {
+        delegate.didTappedForgetPassword()
     }
     
-    private func configSuperView() {
-        self.addSubview(self.backButton)
-        self.addSubview(self.titleLabel)
-        self.addSubview(self.emailTextField)
-        self.addSubview(self.passwordTextField)
-        self.addSubview(self.forgetPasswordButton)
-        self.addSubview(self.submitButton)
+    @objc private func didTappedSubmit(_ button: UIButton) {
+        let emailText = emailTextField.customTextField.text
+        let passwordText = passwordTextField.customTextField.text
+        
+        delegate.didTappedSignInSubmit(email: emailText, password: passwordText)
+    }
+}
+
+// MARK: - Extensions
+
+extension SignInScreen: CodeView {
+    func buildViewHierarchy() {
+        addSubview(backButton)
+        addSubview(titleLabel)
+        addSubview(emailTextField)
+        addSubview(passwordTextField)
+        addSubview(forgetPasswordButton)
+        addSubview(submitButton)
     }
     
-    private func setupContraints() {
-        self.configBackButtonConstraint()
-        self.configTitleLabelConstraint()
-        self.configEmailTextFieldConstraint()
-        self.configPasswordTextFieldConstraint()
-        self.configForgetPasswordButtonConstraint()
-        self.configSubmitButtonConstraint()
-    }
-    
-    // MARK: - Contraints
-    
-    private func configBackButtonConstraint() {
-        self.backButton.snp.makeConstraints { make in
-            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(20)
+    func setupConstraints() {
+        backButton.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
             make.leading.equalToSuperview().offset(26)
             make.height.equalTo(24)
         }
-    }
-    
-    private func configTitleLabelConstraint() {
-        self.titleLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(self.backButton.snp.centerY)
+        
+        titleLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(backButton.snp.centerY)
             make.centerX.equalToSuperview()
             make.height.equalTo(24)
         }
-    }
-    
-    private func configEmailTextFieldConstraint() {
-        self.emailTextField.snp.makeConstraints { make in
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(40)
+        
+        emailTextField.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(40)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().inset(20)
         }
-    }
-    
-    private func configPasswordTextFieldConstraint() {
-        self.passwordTextField.snp.makeConstraints { make in
-            make.top.equalTo(self.emailTextField.snp.bottom).offset(15)
+        
+        passwordTextField.snp.makeConstraints { make in
+            make.top.equalTo(emailTextField.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().inset(20)
         }
-    }
-    
-    private func configForgetPasswordButtonConstraint() {
-        self.forgetPasswordButton.snp.makeConstraints { make in
-            make.top.equalTo(self.passwordTextField.snp.bottom).offset(15)
+        
+        forgetPasswordButton.snp.makeConstraints { make in
+            make.top.equalTo(passwordTextField.snp.bottom).offset(15)
             make.trailing.equalToSuperview().inset(20)
         }
-    }
-    
-    private func configSubmitButtonConstraint() {
-        self.submitButton.snp.makeConstraints { make in
-            make.top.equalTo(self.forgetPasswordButton.snp.bottom).offset(40)
+        
+        submitButton.snp.makeConstraints { make in
+            make.top.equalTo(forgetPasswordButton.snp.bottom).offset(40)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(50)
         }
+    }
+    
+    func setupAdditionalConfiguration() {
+        self.backgroundColor = Colors.gray500
+        
+        let submitButtonACtion = #selector(didTappedSubmit(_:))
+        let forgetPasswordAction = #selector(didTappedForgetPassword(_:))
+        
+        forgetPasswordButton.addTarget(self, action:forgetPasswordAction , for: .touchUpInside)
+        submitButton.addTarget(self, action: submitButtonACtion, for: .touchUpInside)
+        
+        emailTextField.configureTextFieldType(.email)
+        passwordTextField.configureTextFieldType(.password)
     }
 }
