@@ -17,6 +17,7 @@ enum K {
     static let ok                       = "Ok"
     static let accountCreated           = "Sua conta foi criada"
     static let accountSuccessMessage    = "Agora você já pode fazer login"
+    static let SignUpVCTitle            = "Cadastro"
 }
 
 enum SFSymbols {

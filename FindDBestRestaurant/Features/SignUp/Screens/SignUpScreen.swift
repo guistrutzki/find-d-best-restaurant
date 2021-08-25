@@ -20,23 +20,48 @@ final class SignUpScreen: UIView {
         return stack
     }()
     
-    private lazy var nameTextField: CustomTextFieldView = {
-        let textField = CustomTextFieldView(frame: .zero)
-        textField.configureTextFieldType(.name)
+//    private lazy var nameTextField: CustomTextFieldView = {
+//        let textField = CustomTextFieldView(frame: .zero)
+//        textField.configureTextFieldType(.name)
+//        return textField
+//    }()
+    
+    private lazy var nameTextField: FBRTextField = {
+        let textField = FBRTextField(placeholder: "Digite seu nome completo")
+        textField.autocapitalizationType = .words
+        textField.keyboardType = .default
+        textField.delegate = self
         return textField
     }()
     
-    private lazy var emailTextField: CustomTextFieldView = {
-        let textField = CustomTextFieldView(frame: .zero)
-        textField.configureTextFieldType(.email)
+    private lazy var emailTextField: FBRTextField = {
+        let textField = FBRTextField(placeholder: "Digite seu email")
+        textField.autocapitalizationType = .none
+        textField.keyboardType = .emailAddress
+        textField.delegate = self
         return textField
     }()
     
-    private lazy var passwordTextField: CustomTextFieldView = {
-        let textField = CustomTextFieldView(frame: .zero)
-        textField.configureTextFieldType(.password)
+//    private lazy var emailTextField: CustomTextFieldView = {
+//        let textField = CustomTextFieldView(frame: .zero)
+//        textField.configureTextFieldType(.email)
+//        return textField
+//    }()
+    
+    private lazy var passwordTextField: FBRTextField = {
+        let textField = FBRTextField(placeholder: "Digite sua senha")
+        textField.autocapitalizationType = .none
+        textField.keyboardType = .default
+        textField.isSecureTextEntry = true
+        textField.delegate = self
         return textField
     }()
+    
+//    private lazy var passwordTextField: CustomTextFieldView = {
+//        let textField = CustomTextFieldView(frame: .zero)
+//        textField.configureTextFieldType(.password)
+//        return textField
+//    }()
     
     private lazy var signUpButton: CustomButton = {
         let button = CustomButton(backgroundColor: .systemRed, title: K.signUp)
@@ -59,11 +84,35 @@ final class SignUpScreen: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public Functions
+    
+    func getUserName() -> String {
+        return nameTextField.text ?? ""
+    }
+    
+    func getUserEmail() -> String {
+        return emailTextField.text ?? ""
+    }
+    
+    func getUserPassword() -> String {
+        return passwordTextField.text ?? ""
+    }
+    
     // MARK: - Private Functions
     
     @objc
     private func didTappedSignUpButton(_ sender: Any) {
         delegate.didTappedSignUpButton()
+    }
+}
+
+// MARK: - Extension UITextFieldDelegate
+
+extension SignUpScreen: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
@@ -84,6 +133,18 @@ extension SignUpScreen: CodeView {
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().inset(20)
+        }
+        
+        nameTextField.snp.makeConstraints { make in
+            make.height.equalTo(50)
+        }
+        
+        emailTextField.snp.makeConstraints { make in
+            make.height.equalTo(50)
+        }
+        
+        passwordTextField.snp.makeConstraints { make in
+            make.height.equalTo(50)
         }
         
         signUpButton.snp.makeConstraints { make in

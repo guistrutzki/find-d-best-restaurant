@@ -16,24 +16,22 @@ class SignUpVC: UIViewController {
 		return view
 	}()
 	
-	
 	// MARK: - Life cycle
+    
 	override func loadView() {
 		self.view = signUpScreen
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
 		configureView()
 //		configureDelegates()
 	}
 	
-	
-	// MARK: - Function
+	// MARK: - Private Functions
+    
 	private func configureView() {
-		title = "Cadastro"
-		view.backgroundColor = .darkGray
+        title = K.SignUpVCTitle
 	}
 	
 //	private func configureDelegates() {
