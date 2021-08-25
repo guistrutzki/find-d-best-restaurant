@@ -19,6 +19,8 @@
 		70311A3926D1984C005B0C0E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A3826D1984C005B0C0E /* FavoritesViewController.swift */; };
 		70311A5326D1A294005B0C0E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A5226D1A294005B0C0E /* Constants.swift */; };
 		BC1C9AA926D2FC6D00893506 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9AA826D2FC6D00893506 /* CustomTextFieldView.swift */; };
+		BC84A60B26D59AAB001B63C7 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84A60A26D59AAB001B63C7 /* SignUpScreen.swift */; };
+		BC84A61026D59FFD001B63C7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84A60F26D59FFD001B63C7 /* SignUpVC.swift */; };
 		BCE50B6326D28F6B009388AA /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE50B6226D28F6B009388AA /* CustomButtonView.swift */; };
 		BCE50B6826D29D83009388AA /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE50B6726D29D83009388AA /* CodeView.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +42,8 @@
 		70311A5226D1A294005B0C0E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A1CB12D0950B0BA3055A0234 /* Pods_FindDBestRestaurant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindDBestRestaurant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1C9AA826D2FC6D00893506 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
+		BC84A60A26D59AAB001B63C7 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
+		BC84A60F26D59FFD001B63C7 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		BCE50B6226D28F6B009388AA /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		BCE50B6726D29D83009388AA /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +105,7 @@
 		70311A3026D196EE005B0C0E /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				BC84A60826D59A6F001B63C7 /* SignUp */,
 				BCE50B6026D28EC8009388AA /* Components */,
 				70311A4A26D1A1FD005B0C0E /* TopRestaurants */,
 				70311A4326D1A13D005B0C0E /* Favorites */,
@@ -260,6 +265,31 @@
 				BC1C9AA826D2FC6D00893506 /* CustomTextFieldView.swift */,
 			);
 			path = CustomTextFieldView;
+			sourceTree = "<group>";
+		};
+		BC84A60826D59A6F001B63C7 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				BC84A60926D59A7D001B63C7 /* View */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		BC84A60926D59A7D001B63C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC84A60C26D59EC6001B63C7 /* Screens */,
+				BC84A60F26D59FFD001B63C7 /* SignUpVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC84A60C26D59EC6001B63C7 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BC84A60A26D59AAB001B63C7 /* SignUpScreen.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		BCE50B6026D28EC8009388AA /* Components */ = {
@@ -427,7 +457,9 @@
 				70311A3326D19753005B0C0E /* MainTabBarController.swift in Sources */,
 				5B94D67226C5F68C00346B9B /* AppDelegate.swift in Sources */,
 				5B94D67426C5F68C00346B9B /* SceneDelegate.swift in Sources */,
+				BC84A61026D59FFD001B63C7 /* SignUpVC.swift in Sources */,
 				70311A5326D1A294005B0C0E /* Constants.swift in Sources */,
+				BC84A60B26D59AAB001B63C7 /* SignUpScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
