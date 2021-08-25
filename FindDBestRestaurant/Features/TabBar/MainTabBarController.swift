@@ -15,7 +15,8 @@ class MainTabBarController: UITabBarController {
         setNavigationTitleStyle()
         
         viewControllers = [
-            createNavigationController(for: RestaurantsViewController(), title: K.restaurants, image: SFSymbols.home ?? UIImage()),
+//            createNavigationController(for: RestaurantsViewController(), title: K.restaurants, image: SFSymbols.home ?? UIImage())
+            createNavigationController(for: SignUpVC(), title: "", image: SFSymbols.home ?? UIImage()),
             createNavigationController(for: FavoritesViewController(), title: K.favorites, image: SFSymbols.favorite ?? UIImage()),
             createNavigationController(for: TopRestaurantsViewController(), title: K.top, image: SFSymbols.location ?? UIImage())
         ]

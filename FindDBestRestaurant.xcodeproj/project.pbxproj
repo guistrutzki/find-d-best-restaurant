@@ -23,11 +23,12 @@
 		70311A3726D1983E005B0C0E /* TopRestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A3626D1983E005B0C0E /* TopRestaurantsViewController.swift */; };
 		70311A3926D1984C005B0C0E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A3826D1984C005B0C0E /* FavoritesViewController.swift */; };
 		70311A5326D1A294005B0C0E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A5226D1A294005B0C0E /* Constants.swift */; };
+		70AB790B26D6F39300BE67BE /* SignUpScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB790A26D6F39300BE67BE /* SignUpScreenDelegate.swift */; };
 		BC1C9AA926D2FC6D00893506 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9AA826D2FC6D00893506 /* CustomTextFieldView.swift */; };
-		BC84A60B26D59AAB001B63C7 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84A60A26D59AAB001B63C7 /* SignUpScreen.swift */; };
-		BC84A61026D59FFD001B63C7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84A60F26D59FFD001B63C7 /* SignUpVC.swift */; };
 		BC61D75F26D48D0E00019CC0 /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC61D75E26D48D0E00019CC0 /* LaunchScreenVC.swift */; };
 		BC61D76126D4901F00019CC0 /* restaurant.json in Resources */ = {isa = PBXBuildFile; fileRef = BC61D76026D4901F00019CC0 /* restaurant.json */; };
+		BC84A60B26D59AAB001B63C7 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84A60A26D59AAB001B63C7 /* SignUpScreen.swift */; };
+		BC84A61026D59FFD001B63C7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84A60F26D59FFD001B63C7 /* SignUpVC.swift */; };
 		BCE50B6326D28F6B009388AA /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE50B6226D28F6B009388AA /* CustomButtonView.swift */; };
 		BCE50B6826D29D83009388AA /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE50B6726D29D83009388AA /* CodeView.swift */; };
 /* End PBXBuildFile section */
@@ -52,12 +53,13 @@
 		70311A3626D1983E005B0C0E /* TopRestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRestaurantsViewController.swift; sourceTree = "<group>"; };
 		70311A3826D1984C005B0C0E /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		70311A5226D1A294005B0C0E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		70AB790A26D6F39300BE67BE /* SignUpScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenDelegate.swift; sourceTree = "<group>"; };
 		A1CB12D0950B0BA3055A0234 /* Pods_FindDBestRestaurant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindDBestRestaurant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1C9AA826D2FC6D00893506 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
-		BC84A60A26D59AAB001B63C7 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
-		BC84A60F26D59FFD001B63C7 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		BC61D75E26D48D0E00019CC0 /* LaunchScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
 		BC61D76026D4901F00019CC0 /* restaurant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = restaurant.json; sourceTree = "<group>"; };
+		BC84A60A26D59AAB001B63C7 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
+		BC84A60F26D59FFD001B63C7 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		BCE50B6226D28F6B009388AA /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		BCE50B6726D29D83009388AA /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -321,24 +323,17 @@
 		BC84A60826D59A6F001B63C7 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				BC84A60926D59A7D001B63C7 /* View */,
+				BC84A60926D59A7D001B63C7 /* Screens */,
+				BC84A60F26D59FFD001B63C7 /* SignUpVC.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
 		};
-		BC84A60926D59A7D001B63C7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BC84A60C26D59EC6001B63C7 /* Screens */,
-				BC84A60F26D59FFD001B63C7 /* SignUpVC.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		BC84A60C26D59EC6001B63C7 /* Screens */ = {
+		BC84A60926D59A7D001B63C7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				BC84A60A26D59AAB001B63C7 /* SignUpScreen.swift */,
+				70AB790A26D6F39300BE67BE /* SignUpScreenDelegate.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -511,14 +506,15 @@
 				70311A3926D1984C005B0C0E /* FavoritesViewController.swift in Sources */,
 				70311A3726D1983E005B0C0E /* TopRestaurantsViewController.swift in Sources */,
 				70311A3326D19753005B0C0E /* MainTabBarController.swift in Sources */,
+				70AB790B26D6F39300BE67BE /* SignUpScreenDelegate.swift in Sources */,
 				5B94D67226C5F68C00346B9B /* AppDelegate.swift in Sources */,
 				5BC25F7D26D359460053BDF5 /* SignInScreen.swift in Sources */,
 				5B94D67426C5F68C00346B9B /* SceneDelegate.swift in Sources */,
 				BC84A61026D59FFD001B63C7 /* SignUpVC.swift in Sources */,
 				70311A5326D1A294005B0C0E /* Constants.swift in Sources */,
 				BC84A60B26D59AAB001B63C7 /* SignUpScreen.swift in Sources */,
-        BC61D75F26D48D0E00019CC0 /* LaunchScreenVC.swift in Sources */,
-        5BC25F7F26D35ACB0053BDF5 /* Extensions.swift in Sources */,
+				BC61D75F26D48D0E00019CC0 /* LaunchScreenVC.swift in Sources */,
+				5BC25F7F26D35ACB0053BDF5 /* Extensions.swift in Sources */,
 				5BC25F8126D456D20053BDF5 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

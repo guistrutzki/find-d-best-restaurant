@@ -25,8 +25,7 @@ class SignUpVC: UIViewController {
 		super.viewDidLoad()
 		
 		configureView()
-		configureDelegates()
-		configureActionButton()
+//		configureDelegates()
 	}
 	
 	
@@ -36,22 +35,18 @@ class SignUpVC: UIViewController {
 		view.backgroundColor = .darkGray
 	}
 	
-	private func configureDelegates() {
-		self.signUpScreen.nameTextField.customTextField.delegate = self
-		self.signUpScreen.emailTextField.customTextField.delegate = self
-		self.signUpScreen.passwordTextField.customTextField.delegate = self
-	}
+//	private func configureDelegates() {
+//		self.signUpScreen.nameTextField.customTextField.delegate = self
+//		self.signUpScreen.emailTextField.customTextField.delegate = self
+//		self.signUpScreen.passwordTextField.customTextField.delegate = self
+//	}
 	
-	private func configureActionButton() {
-		self.signUpScreen.signUpButton.customButton.addTarget(self, action: #selector(didTapButton(_:)),
-																				for: .touchUpInside)
-	}
 	
-	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-		self.signUpScreen.nameTextField.customTextField.resignFirstResponder()
-		self.signUpScreen.emailTextField.customTextField.resignFirstResponder()
-		self.signUpScreen.passwordTextField.customTextField.resignFirstResponder()
-	}
+//	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//		self.signUpScreen.nameTextField.customTextField.resignFirstResponder()
+//		self.signUpScreen.emailTextField.customTextField.resignFirstResponder()
+//		self.signUpScreen.passwordTextField.customTextField.resignFirstResponder()
+//	}
 	
 	@objc func didTapButton(_ sender: UIButton) {
 		print(#function)
@@ -72,13 +67,21 @@ class SignUpVC: UIViewController {
 	
 }
 
-
 // MARK: - Extension UITextField
+
 extension SignUpVC: UITextFieldDelegate {
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		textField.resignFirstResponder()
 		return true
 	}
-	
+}
+
+// MARK: - Extension UITextField
+
+extension SignUpVC: SignUpScreenDelegate {
+    
+    func didTappedSignUpButton() {
+        #warning("Chamar a Controller aqui pra fazer a ação")
+    }
 }

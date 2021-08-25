@@ -13,6 +13,7 @@ enum K {
     static let top                      = "Top"
     static let enter                    = "Entrar"
     static let forgetMyPassword         = "Esqueci minha senha"
+    static let signUp                   = "Cadastrar"
 }
 
 enum SFSymbols {
