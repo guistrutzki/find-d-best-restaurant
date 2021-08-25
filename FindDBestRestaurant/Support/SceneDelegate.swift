@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = MainTabBarController()
+//        window?.rootViewController = MainTabBarController()
+        window?.rootViewController = SignInVC()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

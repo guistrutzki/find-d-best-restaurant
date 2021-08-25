@@ -11,6 +11,8 @@ enum K {
     static let restaurants              = "Restaurants"
     static let favorites                = "Favorites"
     static let top                      = "Top"
+    static let enter                    = "Entrar"
+    static let forgetMyPassword         = "Esqueci minha senha"
 }
 
 enum SFSymbols {
@@ -21,4 +23,14 @@ enum SFSymbols {
 
 enum Images {
     static let placeholder              = UIImage(named: "restaurant")
+}
+
+enum Colors {
+    static let white                    = UIColor("#ffffff")
+    static let gray200                  = UIColor("#CCCCCC")
+    static let gray300                  = UIColor("#999999")
+    static let gray500                  = UIColor("#2C2C2E")
+    static let gray800                  = UIColor("#1C1C1E")
+    static let black                    = UIColor("#000000")
+    static let red500                   = UIColor("#E73030")
 }

@@ -13,6 +13,11 @@
 		5B94D67C26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D67A26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld */; };
 		5B94D67E26C5F68F00346B9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B94D67D26C5F68F00346B9B /* Assets.xcassets */; };
 		5B94D68126C5F68F00346B9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B94D67F26C5F68F00346B9B /* LaunchScreen.storyboard */; };
+		5BC25F7B26D357940053BDF5 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F7A26D357940053BDF5 /* SignInVC.swift */; };
+		5BC25F7D26D359460053BDF5 /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F7C26D359460053BDF5 /* SignInScreen.swift */; };
+		5BC25F7F26D35ACB0053BDF5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F7E26D35ACB0053BDF5 /* Extensions.swift */; };
+		5BC25F8126D456D20053BDF5 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F8026D456D20053BDF5 /* CustomButton.swift */; };
+		5BC25F8326D459EF0053BDF5 /* SignInViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F8226D459EF0053BDF5 /* SignInViewDelegate.swift */; };
 		70311A3326D19753005B0C0E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A3226D19753005B0C0E /* MainTabBarController.swift */; };
 		70311A3526D1982D005B0C0E /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A3426D1982C005B0C0E /* RestaurantsViewController.swift */; };
 		70311A3726D1983E005B0C0E /* TopRestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A3626D1983E005B0C0E /* TopRestaurantsViewController.swift */; };
@@ -33,6 +38,11 @@
 		5B94D67D26C5F68F00346B9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B94D68026C5F68F00346B9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B94D68226C5F68F00346B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BC25F7A26D357940053BDF5 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		5BC25F7C26D359460053BDF5 /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
+		5BC25F7E26D35ACB0053BDF5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5BC25F8026D456D20053BDF5 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		5BC25F8226D459EF0053BDF5 /* SignInViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewDelegate.swift; sourceTree = "<group>"; };
 		70311A3226D19753005B0C0E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		70311A3426D1982C005B0C0E /* RestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
 		70311A3626D1983E005B0C0E /* TopRestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRestaurantsViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +97,40 @@
 			path = FindDBestRestaurant;
 			sourceTree = "<group>";
 		};
+		5BC25F7626D357410053BDF5 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				5BC25F7926D3576A0053BDF5 /* Controller */,
+				5BC25F7826D3575B0053BDF5 /* View */,
+				5BC25F7726D357520053BDF5 /* Model */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		5BC25F7726D357520053BDF5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5BC25F7826D3575B0053BDF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5BC25F7A26D357940053BDF5 /* SignInVC.swift */,
+				5BC25F7C26D359460053BDF5 /* SignInScreen.swift */,
+				5BC25F8226D459EF0053BDF5 /* SignInViewDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5BC25F7926D3576A0053BDF5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		70311A2F26D195EB005B0C0E /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +145,7 @@
 		70311A3026D196EE005B0C0E /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				5BC25F7626D357410053BDF5 /* SignIn */,
 				BCE50B6026D28EC8009388AA /* Components */,
 				70311A4A26D1A1FD005B0C0E /* TopRestaurants */,
 				70311A4326D1A13D005B0C0E /* Favorites */,
@@ -274,6 +319,7 @@
 		BCE50B6126D28ED3009388AA /* CustomButtonView */ = {
 			isa = PBXGroup;
 			children = (
+				5BC25F8026D456D20053BDF5 /* CustomButton.swift */,
 				BCE50B6226D28F6B009388AA /* CustomButtonView.swift */,
 			);
 			path = CustomButtonView;
@@ -283,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				BCE50B6726D29D83009388AA /* CodeView.swift */,
+				5BC25F7E26D35ACB0053BDF5 /* Extensions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -418,7 +465,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCE50B6326D28F6B009388AA /* CustomButtonView.swift in Sources */,
+				5BC25F8326D459EF0053BDF5 /* SignInViewDelegate.swift in Sources */,
 				5B94D67C26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld in Sources */,
+				5BC25F7B26D357940053BDF5 /* SignInVC.swift in Sources */,
 				BC1C9AA926D2FC6D00893506 /* CustomTextFieldView.swift in Sources */,
 				70311A3526D1982D005B0C0E /* RestaurantsViewController.swift in Sources */,
 				BCE50B6826D29D83009388AA /* CodeView.swift in Sources */,
@@ -426,8 +475,11 @@
 				70311A3726D1983E005B0C0E /* TopRestaurantsViewController.swift in Sources */,
 				70311A3326D19753005B0C0E /* MainTabBarController.swift in Sources */,
 				5B94D67226C5F68C00346B9B /* AppDelegate.swift in Sources */,
+				5BC25F7D26D359460053BDF5 /* SignInScreen.swift in Sources */,
 				5B94D67426C5F68C00346B9B /* SceneDelegate.swift in Sources */,
 				70311A5326D1A294005B0C0E /* Constants.swift in Sources */,
+				5BC25F7F26D35ACB0053BDF5 /* Extensions.swift in Sources */,
+				5BC25F8126D456D20053BDF5 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
