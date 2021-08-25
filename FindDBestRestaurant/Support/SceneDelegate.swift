@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //     window?.rootViewController = MainTabBarController()
 //     window?.rootViewController = SignInVC()
 
-		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(4)) {
+		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
 			self.window?.rootViewController = MainTabBarController()
 		}
 		

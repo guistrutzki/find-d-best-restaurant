@@ -43,6 +43,7 @@ final class LaunchScreenVC: UIViewController {
 		lottieView.contentMode = .scaleAspectFit
 		lottieView.backgroundColor = UIColor(named: "backgroundColorFind")
 		lottieView.play(fromFrame: 0, toFrame: 200, loopMode: .loop)
+        lottieView.animationSpeed = 1.5
 		return lottieView
 	}()
 
