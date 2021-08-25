@@ -16,7 +16,7 @@
 		5BC25F7B26D357940053BDF5 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F7A26D357940053BDF5 /* SignInVC.swift */; };
 		5BC25F7D26D359460053BDF5 /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F7C26D359460053BDF5 /* SignInScreen.swift */; };
 		5BC25F7F26D35ACB0053BDF5 /* UIColor+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F7E26D35ACB0053BDF5 /* UIColor+ext.swift */; };
-		5BC25F8126D456D20053BDF5 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F8026D456D20053BDF5 /* CustomButton.swift */; };
+		5BC25F8126D456D20053BDF5 /* FBRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F8026D456D20053BDF5 /* FBRButton.swift */; };
 		5BC25F8326D459EF0053BDF5 /* SignInViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F8226D459EF0053BDF5 /* SignInViewDelegate.swift */; };
 		70311A3326D19753005B0C0E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A3226D19753005B0C0E /* MainTabBarController.swift */; };
 		70311A3526D1982D005B0C0E /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A3426D1982C005B0C0E /* RestaurantsViewController.swift */; };
@@ -48,7 +48,7 @@
 		5BC25F7A26D357940053BDF5 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		5BC25F7C26D359460053BDF5 /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
 		5BC25F7E26D35ACB0053BDF5 /* UIColor+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ext.swift"; sourceTree = "<group>"; };
-		5BC25F8026D456D20053BDF5 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		5BC25F8026D456D20053BDF5 /* FBRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRButton.swift; sourceTree = "<group>"; };
 		5BC25F8226D459EF0053BDF5 /* SignInViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewDelegate.swift; sourceTree = "<group>"; };
 		70311A3226D19753005B0C0E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		70311A3426D1982C005B0C0E /* RestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
@@ -373,7 +373,7 @@
 		BCE50B6126D28ED3009388AA /* CustomButtonView */ = {
 			isa = PBXGroup;
 			children = (
-				5BC25F8026D456D20053BDF5 /* CustomButton.swift */,
+				5BC25F8026D456D20053BDF5 /* FBRButton.swift */,
 				BCE50B6226D28F6B009388AA /* CustomButtonView.swift */,
 			);
 			path = CustomButtonView;
@@ -539,7 +539,7 @@
 				BC84A60B26D59AAB001B63C7 /* SignUpScreen.swift in Sources */,
 				BC61D75F26D48D0E00019CC0 /* LaunchScreenVC.swift in Sources */,
 				5BC25F7F26D35ACB0053BDF5 /* UIColor+ext.swift in Sources */,
-				5BC25F8126D456D20053BDF5 /* CustomButton.swift in Sources */,
+				5BC25F8126D456D20053BDF5 /* FBRButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

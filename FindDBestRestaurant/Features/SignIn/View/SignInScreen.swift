@@ -21,8 +21,8 @@ class SignInScreen: UIView {
         return textField
     }()
     
-    private lazy var submitButton: CustomButton = {
-        let button = CustomButton(backgroundColor: Colors.red500, title: K.enter)
+    private lazy var submitButton: FBRButton = {
+        let button = FBRButton(backgroundColor: Colors.red500, title: K.enter)
         return button
     }()
     

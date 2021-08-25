@@ -8,61 +8,37 @@
 import UIKit
 
 class SignUpVC: UIViewController {
-	
-	// MARK: - UI Element
     
-	lazy var signUpScreen: SignUpScreen = {
+    // MARK: - UI Element
+    
+    lazy var signUpScreen: SignUpScreen = {
         let view = SignUpScreen(self)
-		return view
-	}()
-	
-	// MARK: - Life cycle
+        return view
+    }()
     
-	override func loadView() {
-		self.view = signUpScreen
-	}
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		configureView()
-//		configureDelegates()
-	}
-	
-	// MARK: - Private Functions
+    // MARK: - Life cycle
     
-	private func configureView() {
+    override func loadView() {
+        self.view = signUpScreen
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureView()
+    }
+    
+    // MARK: - Private Functions
+    
+    private func configureView() {
         title = K.SignUpVCTitle
-	}
-	
-//	private func configureDelegates() {
-//		self.signUpScreen.nameTextField.customTextField.delegate = self
-//		self.signUpScreen.emailTextField.customTextField.delegate = self
-//		self.signUpScreen.passwordTextField.customTextField.delegate = self
-//	}
-	
-	
-//	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//		self.signUpScreen.nameTextField.customTextField.resignFirstResponder()
-//		self.signUpScreen.emailTextField.customTextField.resignFirstResponder()
-//		self.signUpScreen.passwordTextField.customTextField.resignFirstResponder()
-//	}
-	
+    }
+    
     private func didCreateAccountWithSuccess() {
         showMessage(
             title: K.accountCreated,
             message: K.accountSuccessMessage)
     }
 }
-
-//// MARK: - Extension UITextField
-//
-//extension SignUpVC: UITextFieldDelegate {
-//	
-//	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//		textField.resignFirstResponder()
-//		return true
-//	}
-//}
 
 // MARK: - Extension SignUpScreenDelegate
 
