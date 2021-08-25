@@ -20,17 +20,18 @@ final class SignUpScreen: UIView {
         return stack
     }()
     
-//    private lazy var nameTextField: CustomTextFieldView = {
-//        let textField = CustomTextFieldView(frame: .zero)
-//        textField.configureTextFieldType(.name)
-//        return textField
-//    }()
+    //    private lazy var nameTextField: CustomTextFieldView = {
+    //        let textField = CustomTextFieldView(frame: .zero)
+    //        textField.configureTextFieldType(.name)
+    //        return textField
+    //    }()
     
     private lazy var nameTextField: FBRTextField = {
         let textField = FBRTextField(placeholder: "Digite seu nome completo")
         textField.autocapitalizationType = .words
         textField.keyboardType = .default
         textField.delegate = self
+        textField.tag = 1
         return textField
     }()
     
@@ -39,14 +40,15 @@ final class SignUpScreen: UIView {
         textField.autocapitalizationType = .none
         textField.keyboardType = .emailAddress
         textField.delegate = self
+        textField.tag = 2
         return textField
     }()
     
-//    private lazy var emailTextField: CustomTextFieldView = {
-//        let textField = CustomTextFieldView(frame: .zero)
-//        textField.configureTextFieldType(.email)
-//        return textField
-//    }()
+    //    private lazy var emailTextField: CustomTextFieldView = {
+    //        let textField = CustomTextFieldView(frame: .zero)
+    //        textField.configureTextFieldType(.email)
+    //        return textField
+    //    }()
     
     private lazy var passwordTextField: FBRTextField = {
         let textField = FBRTextField(placeholder: "Digite sua senha")
@@ -54,14 +56,15 @@ final class SignUpScreen: UIView {
         textField.keyboardType = .default
         textField.isSecureTextEntry = true
         textField.delegate = self
+        textField.tag = 3
         return textField
     }()
     
-//    private lazy var passwordTextField: CustomTextFieldView = {
-//        let textField = CustomTextFieldView(frame: .zero)
-//        textField.configureTextFieldType(.password)
-//        return textField
-//    }()
+    //    private lazy var passwordTextField: CustomTextFieldView = {
+    //        let textField = CustomTextFieldView(frame: .zero)
+    //        textField.configureTextFieldType(.password)
+    //        return textField
+    //    }()
     
     private lazy var signUpButton: CustomButton = {
         let button = CustomButton(backgroundColor: .systemRed, title: K.signUp)
@@ -111,8 +114,12 @@ final class SignUpScreen: UIView {
 extension SignUpScreen: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
     }
 }
 

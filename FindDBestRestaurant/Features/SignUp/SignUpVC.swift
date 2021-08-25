@@ -54,15 +54,15 @@ class SignUpVC: UIViewController {
     }
 }
 
-// MARK: - Extension UITextField
-
-extension SignUpVC: UITextFieldDelegate {
-	
-	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		textField.resignFirstResponder()
-		return true
-	}
-}
+//// MARK: - Extension UITextField
+//
+//extension SignUpVC: UITextFieldDelegate {
+//	
+//	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//		textField.resignFirstResponder()
+//		return true
+//	}
+//}
 
 // MARK: - Extension SignUpScreenDelegate
 
