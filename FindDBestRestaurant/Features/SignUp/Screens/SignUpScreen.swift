@@ -95,6 +95,9 @@ extension SignUpScreen: CodeView {
     }
     
     func setupAdditionalConfiguration() {
-        backgroundColor = .white
+        backgroundColor = .darkGray
+        
+        let signUpButtonAction = #selector( didTappedSignUpButton(_:))
+        signUpButton.addTarget(self, action: signUpButtonAction, for: .touchUpInside)
     }
 }

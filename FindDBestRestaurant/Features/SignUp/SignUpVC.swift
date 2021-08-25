@@ -10,8 +10,9 @@ import UIKit
 class SignUpVC: UIViewController {
 	
 	// MARK: - UI Element
+    
 	lazy var signUpScreen: SignUpScreen = {
-		let view = SignUpScreen(frame: .zero)
+        let view = SignUpScreen(self)
 		return view
 	}()
 	
@@ -48,23 +49,11 @@ class SignUpVC: UIViewController {
 //		self.signUpScreen.passwordTextField.customTextField.resignFirstResponder()
 //	}
 	
-	@objc func didTapButton(_ sender: UIButton) {
-		print(#function)
-		accountCreatedSuccess()
-	}
-	
-	private func accountCreatedSuccess() {
-		let alertController = UIAlertController(title: "Conta criada",
-															 message: "Agora você já pode fazer login",
-															 preferredStyle: .alert)
-		let actionOK = UIAlertAction(title: "OK", style: .default) { _ in
-			print("Botão Alerta acionado!")
-		}
-		
-		alertController.addAction(actionOK)
-		showDetailViewController(alertController, sender: nil)
-	}
-	
+    private func didCreateAccountWithSuccess() {
+        showMessage(
+            title: K.accountCreated,
+            message: K.accountSuccessMessage)
+    }
 }
 
 // MARK: - Extension UITextField
@@ -77,11 +66,12 @@ extension SignUpVC: UITextFieldDelegate {
 	}
 }
 
-// MARK: - Extension UITextField
+// MARK: - Extension SignUpScreenDelegate
 
 extension SignUpVC: SignUpScreenDelegate {
     
     func didTappedSignUpButton() {
+        didCreateAccountWithSuccess()
         #warning("Chamar a Controller aqui pra fazer a ação")
     }
 }

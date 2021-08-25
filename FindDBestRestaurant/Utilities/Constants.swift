@@ -14,6 +14,9 @@ enum K {
     static let enter                    = "Entrar"
     static let forgetMyPassword         = "Esqueci minha senha"
     static let signUp                   = "Cadastrar"
+    static let ok                       = "Ok"
+    static let accountCreated           = "Sua conta foi criada"
+    static let accountSuccessMessage    = "Agora você já pode fazer login"
 }
 
 enum SFSymbols {
