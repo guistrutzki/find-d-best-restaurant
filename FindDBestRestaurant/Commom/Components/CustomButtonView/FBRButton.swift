@@ -1,5 +1,5 @@
 //
-//  CustomButton.swift
+//  FBRButton.swift
 //  FindDBestRestaurant
 //
 //  Created by Guilherme Strutzki on 23/08/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomButton: UIButton {
+class FBRButton: UIButton {
   // MARK: - Inits
   override init(frame: CGRect) {
     super.init(frame: frame)
