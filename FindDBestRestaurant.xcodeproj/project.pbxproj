@@ -120,35 +120,18 @@
 		5BC25F7626D357410053BDF5 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				5BC25F7926D3576A0053BDF5 /* Controller */,
 				5BC25F7826D3575B0053BDF5 /* View */,
-				5BC25F7726D357520053BDF5 /* Model */,
 			);
 			path = SignIn;
-			sourceTree = "<group>";
-		};
-		5BC25F7726D357520053BDF5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		5BC25F7826D3575B0053BDF5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				70E1D68C26DC3F3E00E1A31D /* Screens */,
 				5BC25F7A26D357940053BDF5 /* SignInVC.swift */,
-				5BC25F7C26D359460053BDF5 /* SignInScreen.swift */,
-				5BC25F8226D459EF0053BDF5 /* SignInViewDelegate.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		5BC25F7926D3576A0053BDF5 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		70311A2F26D195EB005B0C0E /* Support */ = {
@@ -238,7 +221,7 @@
 		70311A4826D1A189005B0C0E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				70311A5026D1A249005B0C0E /* Views */,
+				70E1D68B26DC3F1A00E1A31D /* Screens */,
 				70311A3426D1982C005B0C0E /* RestaurantsViewController.swift */,
 			);
 			path = View;
@@ -298,13 +281,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		70311A5026D1A249005B0C0E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		70311A5126D1A272005B0C0E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +315,22 @@
 				BCE50B6626D29D5A009388AA /* Helper */,
 			);
 			path = Commom;
+			sourceTree = "<group>";
+		};
+		70E1D68B26DC3F1A00E1A31D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		70E1D68C26DC3F3E00E1A31D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				5BC25F7C26D359460053BDF5 /* SignInScreen.swift */,
+				5BC25F8226D459EF0053BDF5 /* SignInViewDelegate.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		BC1C9AA726D2FC6D00893506 /* CustomTextFieldView */ = {
