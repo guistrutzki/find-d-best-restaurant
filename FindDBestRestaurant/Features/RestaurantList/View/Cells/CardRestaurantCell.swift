@@ -49,26 +49,12 @@ class CardRestaurantCell: UITableViewCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	// MARK: - Function
+	// MARK: - Public Function
     
-	func configureCell(name: String, imageString: String) {
-		nameLabel.text = name
-		setImage(imageString: imageString)
-	}
-	
-	private func setImage(imageString: String) {
-		guard let url = URL(string: imageString) else { return }
-		
-		DispatchQueue.global().async {
-			do {
-				let imageData = try Data(contentsOf: url)
-				DispatchQueue.main.async {
-					self.restaurantImageView.image = UIImage(data: imageData)
-				}
-			} catch {}
-		}
-	}
-	
+    func configureCell(restaurant: Restaurant) {
+        nameLabel.text = restaurant.name
+        restaurantImageView.load(url: restaurant.coverImage)
+    }
 }
 
 // MARK: - Extension Code View
