@@ -27,6 +27,7 @@
 		70AB790F26D6F6E200BE67BE /* UIViewController+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB790E26D6F6E200BE67BE /* UIViewController+ext.swift */; };
 		70AB791126D6FB6900BE67BE /* FBRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB791026D6FB6900BE67BE /* FBRTextField.swift */; };
 		BC1C9AA926D2FC6D00893506 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9AA826D2FC6D00893506 /* CustomTextFieldView.swift */; };
+		BC5C501026DC199F00CDF9C4 /* CardRestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5C500F26DC199F00CDF9C4 /* CardRestaurantTableViewCell.swift */; };
 		BC61D75F26D48D0E00019CC0 /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC61D75E26D48D0E00019CC0 /* LaunchScreenVC.swift */; };
 		BC61D76126D4901F00019CC0 /* restaurant.json in Resources */ = {isa = PBXBuildFile; fileRef = BC61D76026D4901F00019CC0 /* restaurant.json */; };
 		BC84A60B26D59AAB001B63C7 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84A60A26D59AAB001B63C7 /* SignUpScreen.swift */; };
@@ -60,6 +61,7 @@
 		70AB791026D6FB6900BE67BE /* FBRTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRTextField.swift; sourceTree = "<group>"; };
 		A1CB12D0950B0BA3055A0234 /* Pods_FindDBestRestaurant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindDBestRestaurant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1C9AA826D2FC6D00893506 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
+		BC5C500F26DC199F00CDF9C4 /* CardRestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		BC61D75E26D48D0E00019CC0 /* LaunchScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
 		BC61D76026D4901F00019CC0 /* restaurant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = restaurant.json; sourceTree = "<group>"; };
 		BC84A60A26D59AAB001B63C7 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		70311A3026D196EE005B0C0E /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				BC5C500E26DC190D00CDF9C4 /* Cells */,
 				BC84A60826D59A6F001B63C7 /* SignUp */,
 				5BC25F7626D357410053BDF5 /* SignIn */,
 				70311A4A26D1A1FD005B0C0E /* TopRestaurants */,
@@ -343,6 +346,14 @@
 			path = CustomTextFieldView;
 			sourceTree = "<group>";
 		};
+		BC5C500E26DC190D00CDF9C4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BC5C500F26DC199F00CDF9C4 /* CardRestaurantTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		BC84A60826D59A6F001B63C7 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -523,6 +534,7 @@
 				5B94D67C26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld in Sources */,
 				5BC25F7B26D357940053BDF5 /* SignInVC.swift in Sources */,
 				BC1C9AA926D2FC6D00893506 /* CustomTextFieldView.swift in Sources */,
+				BC5C501026DC199F00CDF9C4 /* CardRestaurantTableViewCell.swift in Sources */,
 				70311A3526D1982D005B0C0E /* RestaurantsViewController.swift in Sources */,
 				BCE50B6826D29D83009388AA /* CodeView.swift in Sources */,
 				70311A3926D1984C005B0C0E /* FavoritesViewController.swift in Sources */,
