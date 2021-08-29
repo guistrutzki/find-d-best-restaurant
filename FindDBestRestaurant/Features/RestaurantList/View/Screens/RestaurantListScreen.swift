@@ -10,11 +10,9 @@ import UIKit
 class RestaurantListScreen: UIView {
     
     // MARK: - UI Elements
-
-    private lazy var restaurantTableView: UITableView = {
+    
+    private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.delegate = self
-        tableView.dataSource = self
         return tableView
     }()
     
@@ -27,7 +25,18 @@ class RestaurantListScreen: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-       
+        
+    }
+    
+    // MARK: - Private Functions
+    
+    private func getCardRestaurantCell(index: IndexPath) -> UITableViewCell {
+        let identifier = CardRestaurantCell.identifier
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for:index) as? CardRestaurantCell
+        else { return UITableViewCell()}
+        
+        return cell
     }
 }
 
@@ -40,7 +49,7 @@ extension RestaurantListScreen: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        return getCardRestaurantCell(index: indexPath)
     }
 }
 
@@ -49,16 +58,18 @@ extension RestaurantListScreen: UITableViewDelegate, UITableViewDataSource {
 extension RestaurantListScreen: CodeView {
     
     func buildViewHierarchy() {
-        
+        addSubview(tableView)
     }
     
     func setupConstraints() {
-        
+        tableView.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalToSuperview()
+        }
     }
     
     func setupAdditionalConfiguration() {
-        
-        restaurantTableView.register(<#T##nib: UINib?##UINib?#>, forCellReuseIdentifier: <#T##String#>)
-
+        tableView.delegate = self
+        tableView.dataSource = self
+        CardRestaurantCell.registerOn(tableView)
     }
 }
