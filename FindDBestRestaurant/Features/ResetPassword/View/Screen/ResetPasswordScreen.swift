@@ -24,6 +24,7 @@ final class ResetPasswordScreen: UIView {
 	private var messageLabel: UILabel = {
 		let label = UILabel(frame: .zero)
 		label.text = K.resetMessage
+		label.font = UIFont.systemFont(ofSize: 20)
 		label.textAlignment = .center
 		label.numberOfLines = 0
 		label.textColor = .white
