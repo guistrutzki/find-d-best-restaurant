@@ -8,5 +8,6 @@ target 'FindDBestRestaurant' do
   # Pods for FindDBestRestaurant
    pod 'SnapKit', '~> 5.0.0'
    pod 'lottie-ios'
+   pod 'Kingfisher', '~> 6.0'
 
 end
