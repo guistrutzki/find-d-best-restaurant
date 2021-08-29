@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ResetPasswordDelegate: AnyObject {
+protocol ResetPasswordScreenDelegate: AnyObject {
 	func didTappedSendButton()
 }

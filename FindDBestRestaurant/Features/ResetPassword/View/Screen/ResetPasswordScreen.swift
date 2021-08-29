@@ -47,11 +47,11 @@ final class ResetPasswordScreen: UIView {
 	
 	// MARK: - Variable
 	
-	private weak var delegate: ResetPasswordDelegate?
+	private weak var delegate: ResetPasswordScreenDelegate?
 	
 	
 	// MARK: - Initialize
-	init(_ delegate: ResetPasswordDelegate) {
+	init(_ delegate: ResetPasswordScreenDelegate) {
 		self.delegate = delegate
 		super.init(frame: .zero)
 		setupView()

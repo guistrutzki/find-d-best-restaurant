@@ -45,7 +45,7 @@ class ResetPasswordVC: UIViewController {
 
 // MARK: - Extension ResetPassword
 
-extension ResetPasswordVC: ResetPasswordDelegate {
+extension ResetPasswordVC: ResetPasswordScreenDelegate {
 	
 	func didTappedSendButton() {
 		self.didSendResetPassword()
