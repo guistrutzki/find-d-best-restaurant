@@ -17,10 +17,15 @@ enum K {
     static let ok                       = "Ok"
     static let accountCreated           = "Sua conta foi criada"
     static let accountSuccessMessage    = "Agora você já pode fazer login"
-    static let SignUpVCTitle            = "Cadastro"
+    static let signUpVCTitle            = "Cadastro"
     static let typeYourFullName         = "Digite seu nome completo"
     static let typeYourEmail            = "Digite seu email"
     static let typeYourPassword         = "Digite sua senha"
+	 static let resetPasswordVCTitle     = "Esqueci minha senha"
+	 static let send                     = "Enviar"
+	 static let resetMessage             = "Para recuperar a sua senha, precisamos de seu email de cadastro"
+	 static let sendEmail                = "Email enviado"
+	 static let sendEmailSuccessMessage  = "Por favor, cheque sua caixa de entrada para redefinir sua senha."
 }
 
 enum SFSymbols {

@@ -30,7 +30,7 @@ class SignUpVC: UIViewController {
     // MARK: - Private Functions
     
     private func configureView() {
-        title = K.SignUpVCTitle
+        title = K.signUpVCTitle
     }
     
     private func didCreateAccountWithSuccess() {
