@@ -19,13 +19,14 @@
 		5BC25F8126D456D20053BDF5 /* FBRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F8026D456D20053BDF5 /* FBRButton.swift */; };
 		5BC25F8326D459EF0053BDF5 /* SignInViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F8226D459EF0053BDF5 /* SignInViewDelegate.swift */; };
 		70311A3326D19753005B0C0E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A3226D19753005B0C0E /* MainTabBarController.swift */; };
-		70311A3526D1982D005B0C0E /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A3426D1982C005B0C0E /* RestaurantsViewController.swift */; };
+		70311A3526D1982D005B0C0E /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A3426D1982C005B0C0E /* RestaurantListViewController.swift */; };
 		70311A3726D1983E005B0C0E /* TopRestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A3626D1983E005B0C0E /* TopRestaurantsViewController.swift */; };
 		70311A3926D1984C005B0C0E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A3826D1984C005B0C0E /* FavoritesViewController.swift */; };
 		70311A5326D1A294005B0C0E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A5226D1A294005B0C0E /* Constants.swift */; };
 		70AB790B26D6F39300BE67BE /* SignUpScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB790A26D6F39300BE67BE /* SignUpScreenDelegate.swift */; };
 		70AB790F26D6F6E200BE67BE /* UIViewController+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB790E26D6F6E200BE67BE /* UIViewController+ext.swift */; };
 		70AB791126D6FB6900BE67BE /* FBRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB791026D6FB6900BE67BE /* FBRTextField.swift */; };
+		70E1D68E26DC40D200E1A31D /* RestaurantListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1D68D26DC40D200E1A31D /* RestaurantListScreen.swift */; };
 		BC1C9AA926D2FC6D00893506 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9AA826D2FC6D00893506 /* CustomTextFieldView.swift */; };
 		BC5C500926DBF43300CDF9C4 /* ResetPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5C500826DBF43300CDF9C4 /* ResetPasswordScreen.swift */; };
 		BC5C500B26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5C500A26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift */; };
@@ -55,13 +56,14 @@
 		5BC25F8026D456D20053BDF5 /* FBRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRButton.swift; sourceTree = "<group>"; };
 		5BC25F8226D459EF0053BDF5 /* SignInViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewDelegate.swift; sourceTree = "<group>"; };
 		70311A3226D19753005B0C0E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		70311A3426D1982C005B0C0E /* RestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
+		70311A3426D1982C005B0C0E /* RestaurantListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewController.swift; sourceTree = "<group>"; };
 		70311A3626D1983E005B0C0E /* TopRestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRestaurantsViewController.swift; sourceTree = "<group>"; };
 		70311A3826D1984C005B0C0E /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		70311A5226D1A294005B0C0E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		70AB790A26D6F39300BE67BE /* SignUpScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenDelegate.swift; sourceTree = "<group>"; };
 		70AB790E26D6F6E200BE67BE /* UIViewController+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ext.swift"; sourceTree = "<group>"; };
 		70AB791026D6FB6900BE67BE /* FBRTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRTextField.swift; sourceTree = "<group>"; };
+		70E1D68D26DC40D200E1A31D /* RestaurantListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListScreen.swift; sourceTree = "<group>"; };
 		A1CB12D0950B0BA3055A0234 /* Pods_FindDBestRestaurant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindDBestRestaurant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1C9AA826D2FC6D00893506 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		BC5C500826DBF43300CDF9C4 /* ResetPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordScreen.swift; sourceTree = "<group>"; };
@@ -157,7 +159,7 @@
 				5BC25F7626D357410053BDF5 /* SignIn */,
 				70311A4A26D1A1FD005B0C0E /* TopRestaurants */,
 				70311A4326D1A13D005B0C0E /* Favorites */,
-				70311A4226D1A12F005B0C0E /* Home */,
+				70311A4226D1A12F005B0C0E /* RestaurantList */,
 				70311A3126D196F8005B0C0E /* TabBar */,
 			);
 			path = Features;
@@ -171,14 +173,14 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		70311A4226D1A12F005B0C0E /* Home */ = {
+		70311A4226D1A12F005B0C0E /* RestaurantList */ = {
 			isa = PBXGroup;
 			children = (
 				70311A4926D1A18F005B0C0E /* Controller */,
 				70311A4826D1A189005B0C0E /* View */,
 				70311A4726D1A182005B0C0E /* Model */,
 			);
-			path = Home;
+			path = RestaurantList;
 			sourceTree = "<group>";
 		};
 		70311A4326D1A13D005B0C0E /* Favorites */ = {
@@ -225,7 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				70E1D68B26DC3F1A00E1A31D /* Screens */,
-				70311A3426D1982C005B0C0E /* RestaurantsViewController.swift */,
+				70311A3426D1982C005B0C0E /* RestaurantListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,6 +325,7 @@
 		70E1D68B26DC3F1A00E1A31D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				70E1D68D26DC40D200E1A31D /* RestaurantListScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -560,7 +563,7 @@
 				5B94D67C26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld in Sources */,
 				5BC25F7B26D357940053BDF5 /* SignInVC.swift in Sources */,
 				BC1C9AA926D2FC6D00893506 /* CustomTextFieldView.swift in Sources */,
-				70311A3526D1982D005B0C0E /* RestaurantsViewController.swift in Sources */,
+				70311A3526D1982D005B0C0E /* RestaurantListViewController.swift in Sources */,
 				BCE50B6826D29D83009388AA /* CodeView.swift in Sources */,
 				BC5C500B26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift in Sources */,
 				70311A3926D1984C005B0C0E /* FavoritesViewController.swift in Sources */,
@@ -571,6 +574,7 @@
 				5B94D67226C5F68C00346B9B /* AppDelegate.swift in Sources */,
 				5BC25F7D26D359460053BDF5 /* SignInScreen.swift in Sources */,
 				BC5C500926DBF43300CDF9C4 /* ResetPasswordScreen.swift in Sources */,
+				70E1D68E26DC40D200E1A31D /* RestaurantListScreen.swift in Sources */,
 				5B94D67426C5F68C00346B9B /* SceneDelegate.swift in Sources */,
 				BC84A61026D59FFD001B63C7 /* SignUpVC.swift in Sources */,
 				70AB791126D6FB6900BE67BE /* FBRTextField.swift in Sources */,
