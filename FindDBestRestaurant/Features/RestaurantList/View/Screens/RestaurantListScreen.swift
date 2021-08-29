@@ -58,6 +58,7 @@ extension RestaurantListScreen: CodeView {
     
     func setupAdditionalConfiguration() {
         
+        restaurantTableView.register(<#T##nib: UINib?##UINib?#>, forCellReuseIdentifier: <#T##String#>)
 
     }
 }

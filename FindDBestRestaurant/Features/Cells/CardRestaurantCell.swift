@@ -1,5 +1,5 @@
 //
-//  CardRestaurantTableViewCell.swift
+//  CardRestaurantCell.swift
 //  FindDBestRestaurant
 //
 //  Created by Alexandre Cardoso on 29/08/21.
@@ -7,13 +7,14 @@
 
 import UIKit
 
-class CardRestaurantTableViewCell: UITableViewCell {
+class CardRestaurantCell: UITableViewCell {
 	
 	// MARK: - Variable
-	static let identifier: String = String(describing: CardRestaurantTableViewCell.self)
-	
+    
+	static let identifier: String = String(describing: CardRestaurantCell.self)
 	
 	// MARK: - UI Element
+    
 	private var mainView: UIView = {
 		let view = UIView(frame: .zero)
 		view.layer.cornerRadius = 12
@@ -37,11 +38,10 @@ class CardRestaurantTableViewCell: UITableViewCell {
 		return label
 	}()
 	
-	
 	// MARK: - Initialize
+    
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
-		
 		setupView()
 	}
 	
@@ -49,8 +49,8 @@ class CardRestaurantTableViewCell: UITableViewCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	
 	// MARK: - Function
+    
 	func configureCell(name: String, imageString: String) {
 		nameLabel.text = name
 		setImage(imageString: imageString)
@@ -71,9 +71,9 @@ class CardRestaurantTableViewCell: UITableViewCell {
 	
 }
 
-
 // MARK: - Extension Code View
-extension CardRestaurantTableViewCell: CodeView {
+
+extension CardRestaurantCell: CodeView {
 	
 	func buildViewHierarchy() {
 		contentView.addSubview(mainView)
@@ -107,5 +107,4 @@ extension CardRestaurantTableViewCell: CodeView {
 	func setupAdditionalConfiguration() {
 		contentView.backgroundColor = Colors.gray800
 	}
-	
 }
