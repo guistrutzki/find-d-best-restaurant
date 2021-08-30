@@ -9,9 +9,13 @@ import UIKit
 
 class SignInVC: UIViewController {
     
+    // MARK: - Variable
+    
     private lazy var signInScreen: SignInScreen = {
         return SignInScreen(self)
     }()
+    
+    // MARK: - Life cycle
     
     override func loadView() {
         self.view = signInScreen
@@ -33,7 +37,10 @@ class SignInVC: UIViewController {
 
 }
 
+// MARK: - SignInViewDelegate Extension
+
 extension SignInVC: SignInViewDelegate {
+    
     func didTappedSignInSubmit(email: String?, password: String?) {
         print("\(email ?? "") - \(password ?? "")")
     }

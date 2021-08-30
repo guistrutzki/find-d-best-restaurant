@@ -8,7 +8,7 @@
 import UIKit
 
 enum K {
-    static let restaurants              = "Restaurants"
+    static let restaurants              = "Restaurantes"
     static let favorites                = "Favorites"
     static let top                      = "Top"
     static let enter                    = "Entrar"
@@ -35,7 +35,9 @@ enum SFSymbols {
 }
 
 enum Images {
-    static let placeholder              = UIImage(named: "restaurant")
+    static let placeholder                 = UIImage(named: "restaurant")
+    static let restaurantImg               = UIImage(named: "restaurant1")
+    static let restaurantPlaceholder       = UIImage(named: "placeholder")
 }
 
 enum Colors {

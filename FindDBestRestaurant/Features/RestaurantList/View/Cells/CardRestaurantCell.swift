@@ -1,5 +1,5 @@
 //
-//  CardRestaurantTableViewCell.swift
+//  CardRestaurantCell.swift
 //  FindDBestRestaurant
 //
 //  Created by Alexandre Cardoso on 29/08/21.
@@ -7,24 +7,26 @@
 
 import UIKit
 
-class CardRestaurantTableViewCell: UITableViewCell {
+class CardRestaurantCell: UITableViewCell {
 	
 	// MARK: - Variable
-	static let identifier: String = String(describing: CardRestaurantTableViewCell.self)
-	
+    
+	static let identifier: String = String(describing: CardRestaurantCell.self)
 	
 	// MARK: - UI Element
+    
 	private var mainView: UIView = {
 		let view = UIView(frame: .zero)
 		view.layer.cornerRadius = 12
 		view.clipsToBounds = true
-		view.backgroundColor = Colors.gray500
+		view.backgroundColor = .systemPink
 		return view
 	}()
 	
 	private var restaurantImageView: UIImageView = {
 		let imageView = UIImageView(frame: .zero)
-		imageView.contentMode = .scaleAspectFill
+		imageView.contentMode = .scaleAspectFit
+        imageView.image = Images.restaurantImg
 		return imageView
 	}()
 	
@@ -37,11 +39,10 @@ class CardRestaurantTableViewCell: UITableViewCell {
 		return label
 	}()
 	
-	
 	// MARK: - Initialize
+    
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
-		
 		setupView()
 	}
 	
@@ -49,35 +50,20 @@ class CardRestaurantTableViewCell: UITableViewCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	
-	// MARK: - Function
-	func configureCell(name: String, imageString: String) {
-		nameLabel.text = name
-		setImage(imageString: imageString)
-	}
-	
-	private func setImage(imageString: String) {
-		guard let url = URL(string: imageString) else { return }
-		
-		DispatchQueue.global().async {
-			do {
-				let imageData = try Data(contentsOf: url)
-				DispatchQueue.main.async {
-					self.restaurantImageView.image = UIImage(data: imageData)
-				}
-			} catch {}
-		}
-	}
-	
+	// MARK: - Public Function
+    
+    func configureCell(restaurant: Restaurant) {
+        nameLabel.text = restaurant.name
+        restaurantImageView.load(url: restaurant.coverImage)
+    }
 }
 
-
 // MARK: - Extension Code View
-extension CardRestaurantTableViewCell: CodeView {
+
+extension CardRestaurantCell: CodeView {
 	
 	func buildViewHierarchy() {
-		contentView.addSubview(mainView)
-		
+		addSubview(mainView)
 		mainView.addSubview(restaurantImageView)
 		mainView.addSubview(nameLabel)
 	}
@@ -91,10 +77,10 @@ extension CardRestaurantTableViewCell: CodeView {
 		}
 		
 		restaurantImageView.snp.makeConstraints { make in
-			make.top.equalTo(mainView.snp.top)
-			make.left.equalTo(mainView.snp.left)
-			make.right.equalTo(mainView.snp.right)
-			make.bottom.equalTo(mainView.snp.bottom)
+			make.top.equalToSuperview()
+			make.left.equalToSuperview()
+			make.right.equalToSuperview()
+			make.bottom.equalToSuperview()
 		}
 		
 		nameLabel.snp.makeConstraints { make in
@@ -105,7 +91,6 @@ extension CardRestaurantTableViewCell: CodeView {
 	}
 	
 	func setupAdditionalConfiguration() {
-		contentView.backgroundColor = Colors.gray800
+		backgroundColor = Colors.gray800
 	}
-	
 }

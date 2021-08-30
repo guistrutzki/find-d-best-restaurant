@@ -10,13 +10,14 @@ import UIKit
 class ResetPasswordVC: UIViewController {
 	
 	// MARK: - Element
+    
 	lazy var resetPasswordScreen: ResetPasswordScreen = {
 		let screen = ResetPasswordScreen(self)
 		return screen
 	}()
 	
-	
 	// MARK: - Life cycle
+    
 	override func loadView() {
 		view = self.resetPasswordScreen
 	}
@@ -29,6 +30,7 @@ class ResetPasswordVC: UIViewController {
 	
 	
 	// MARK: - Function
+    
 	private func configureView() {
 		view.backgroundColor = Colors.gray800
 		title = K.resetPasswordVCTitle
