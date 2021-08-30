@@ -11,7 +11,7 @@ class RestaurantListController {
     
     // MARK: - Variable
     
-    private var restaurants: [Restaurant] = []
+    private var restaurants: [RestaurantListResponse] = []
     
     var count: Int {
         return restaurants.count
@@ -39,11 +39,17 @@ class RestaurantListController {
         }
     }
     
+    func getRestaurants(indexPath: IndexPath) -> RestaurantListResponse? {
+        return restaurants[indexPath.row]
+    }
+    
     // MARK: - Private Functions
     
     private func didFetchSuccess(_ response: [RestaurantListResponse]) {
-//        let restaurantList = response
-//        self.restaurants.append(restaurantList)
+        for item in response {
+            print(item.name)
+            self.restaurants.append(contentsOf: response)
+        }
     }
     
     private func didFetchFailed(error: Error) {

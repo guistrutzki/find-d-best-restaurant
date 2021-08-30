@@ -23,16 +23,27 @@ class RestaurantListScreen: UIView {
         Restaurant(name: "Japa", description: "japa", coverImage: "")
     ]
     
+    var restaurants:[RestaurantListResponse] = []
+    
+    weak var delegate: RestaurantListScreenDelegate?
+    
     // MARK: - Inits
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(_ delegate: RestaurantListScreenDelegate) {
+        self.delegate = delegate
+        super.init(frame: .zero)
         setupView()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+    }
+    
+    // MARK: - Public Functions
+    
+    func setup(_ restaurantList: [RestaurantListResponse] ) {
+        self.restaurants.append(contentsOf: restaurantList)
+        tableView.reloadData()
     }
     
     // MARK: - Private Functions
