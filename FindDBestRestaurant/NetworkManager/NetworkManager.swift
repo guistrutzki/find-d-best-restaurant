@@ -7,13 +7,13 @@
 
 import Alamofire
 
-typealias NetworkResult = ((Result<RestaurantListResponse, Error>) -> Void)
+typealias NetworkResult = ((Result<[RestaurantListResponse], Error>) -> Void)
 
 class NetworkManager {
     
     private init() {}
     
-    static func request(url: String, completion: @escaping NetworkResult) {
+    static func request(url: URL, completion: @escaping NetworkResult) {
         let request = AF.request(url, method: .get)
         
         request.validate().responseJSON { response in
@@ -21,7 +21,7 @@ class NetworkManager {
             case .success:
                 do {
                     let data = response.data ?? Data()
-                    let result = try JSONDecoder().decode(RestaurantListResponse.self, from: data)
+                    let result = try JSONDecoder().decode([RestaurantListResponse].self, from: data)
                     
                     completion(.success(result))
                 } catch {

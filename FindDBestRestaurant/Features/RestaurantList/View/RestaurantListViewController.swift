@@ -28,5 +28,4 @@ class RestaurantListViewController: UIViewController {
         super.viewDidLoad()
         controller.fetchRestaurantList()
     }
-    
 }
