@@ -35,7 +35,9 @@ enum SFSymbols {
 }
 
 enum Images {
-    static let placeholder              = UIImage(named: "restaurant")
+    static let placeholder                 = UIImage(named: "restaurant")
+    static let restaurantImg               = UIImage(named: "restaurant1")
+    static let restaurantPlaceholder       = UIImage(named: "placeholder")
 }
 
 enum Colors {

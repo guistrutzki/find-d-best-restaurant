@@ -8,11 +8,11 @@
 import UIKit
 
 class RestaurantListViewController: UIViewController {
-    
+
     // MARK: - Variable
     
     lazy var restaurantListScreen: RestaurantListScreen = {
-        let screen = RestaurantListScreen()
+        let screen = RestaurantListScreen(self)
         return screen
     }()
     
@@ -27,5 +27,12 @@ class RestaurantListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         controller.fetchRestaurantList()
+    }
+}
+
+extension RestaurantListViewController: RestaurantListScreenDelegate {
+    
+    func loadData() {
+        
     }
 }

@@ -25,7 +25,8 @@ class CardRestaurantCell: UITableViewCell {
 	
 	private var restaurantImageView: UIImageView = {
 		let imageView = UIImageView(frame: .zero)
-		imageView.contentMode = .scaleAspectFill
+		imageView.contentMode = .scaleAspectFit
+        imageView.image = Images.restaurantImg
 		return imageView
 	}()
 	
