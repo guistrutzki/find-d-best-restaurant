@@ -32,6 +32,7 @@
 		70E1D69626DC494400E1A31D /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1D69526DC494400E1A31D /* Restaurant.swift */; };
 		70E1D69926DC4C2F00E1A31D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1D69826DC4C2F00E1A31D /* NetworkManager.swift */; };
 		70E1D69C26DC4C4500E1A31D /* RestaurantListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1D69B26DC4C4500E1A31D /* RestaurantListResponse.swift */; };
+		70E1D69E26DC520800E1A31D /* RestaurantListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1D69D26DC520800E1A31D /* RestaurantListController.swift */; };
 		BC1C9AA926D2FC6D00893506 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9AA826D2FC6D00893506 /* CustomTextFieldView.swift */; };
 		BC5C500926DBF43300CDF9C4 /* ResetPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5C500826DBF43300CDF9C4 /* ResetPasswordScreen.swift */; };
 		BC5C500B26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5C500A26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift */; };
@@ -74,6 +75,7 @@
 		70E1D69526DC494400E1A31D /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		70E1D69826DC4C2F00E1A31D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		70E1D69B26DC4C4500E1A31D /* RestaurantListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListResponse.swift; sourceTree = "<group>"; };
+		70E1D69D26DC520800E1A31D /* RestaurantListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListController.swift; sourceTree = "<group>"; };
 		A1CB12D0950B0BA3055A0234 /* Pods_FindDBestRestaurant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindDBestRestaurant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1C9AA826D2FC6D00893506 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		BC5C500826DBF43300CDF9C4 /* ResetPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordScreen.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 		70311A4926D1A18F005B0C0E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				70E1D69D26DC520800E1A31D /* RestaurantListController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				BC1C9AA926D2FC6D00893506 /* CustomTextFieldView.swift in Sources */,
 				70311A3526D1982D005B0C0E /* RestaurantListViewController.swift in Sources */,
 				BCE50B6826D29D83009388AA /* CodeView.swift in Sources */,
+				70E1D69E26DC520800E1A31D /* RestaurantListController.swift in Sources */,
 				BC5C500B26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift in Sources */,
 				70311A3926D1984C005B0C0E /* FavoritesViewController.swift in Sources */,
 				70311A3726D1983E005B0C0E /* TopRestaurantsViewController.swift in Sources */,

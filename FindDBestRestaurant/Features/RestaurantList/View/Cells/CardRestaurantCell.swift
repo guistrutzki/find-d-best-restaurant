@@ -19,7 +19,7 @@ class CardRestaurantCell: UITableViewCell {
 		let view = UIView(frame: .zero)
 		view.layer.cornerRadius = 12
 		view.clipsToBounds = true
-		view.backgroundColor = Colors.gray500
+		view.backgroundColor = .systemPink
 		return view
 	}()
 	
@@ -62,8 +62,7 @@ class CardRestaurantCell: UITableViewCell {
 extension CardRestaurantCell: CodeView {
 	
 	func buildViewHierarchy() {
-		contentView.addSubview(mainView)
-		
+		addSubview(mainView)
 		mainView.addSubview(restaurantImageView)
 		mainView.addSubview(nameLabel)
 	}
@@ -77,10 +76,10 @@ extension CardRestaurantCell: CodeView {
 		}
 		
 		restaurantImageView.snp.makeConstraints { make in
-			make.top.equalTo(mainView.snp.top)
-			make.left.equalTo(mainView.snp.left)
-			make.right.equalTo(mainView.snp.right)
-			make.bottom.equalTo(mainView.snp.bottom)
+			make.top.equalToSuperview()
+			make.left.equalToSuperview()
+			make.right.equalToSuperview()
+			make.bottom.equalToSuperview()
 		}
 		
 		nameLabel.snp.makeConstraints { make in
@@ -91,6 +90,6 @@ extension CardRestaurantCell: CodeView {
 	}
 	
 	func setupAdditionalConfiguration() {
-		contentView.backgroundColor = Colors.gray800
+		backgroundColor = Colors.gray800
 	}
 }

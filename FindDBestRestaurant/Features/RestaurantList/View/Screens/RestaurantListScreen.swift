@@ -13,8 +13,15 @@ class RestaurantListScreen: UIView {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.backgroundColor = Colors.gray800
         return tableView
     }()
+    
+    var restaurantList:[Restaurant] = [
+        Restaurant(name: "Mac", description: "fast-food", coverImage: ""),
+        Restaurant(name: "Pizzeria", description: "pizzeria", coverImage: ""),
+        Restaurant(name: "Japa", description: "japa", coverImage: "")
+    ]
     
     // MARK: - Inits
     
@@ -36,7 +43,11 @@ class RestaurantListScreen: UIView {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for:index) as? CardRestaurantCell
         else { return UITableViewCell()}
         
+        let restaurant = restaurantList[index.row]
+        cell.configureCell(restaurant:restaurant)
+        
         return cell
+        
     }
 }
 
@@ -45,11 +56,15 @@ class RestaurantListScreen: UIView {
 extension RestaurantListScreen: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return restaurantList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return getCardRestaurantCell(index: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
 }
 
@@ -63,11 +78,12 @@ extension RestaurantListScreen: CodeView {
     
     func setupConstraints() {
         tableView.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalToSuperview()
+            make.top.left.right.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
     
     func setupAdditionalConfiguration() {
+        backgroundColor = Colors.gray500
         tableView.delegate = self
         tableView.dataSource = self
         CardRestaurantCell.registerOn(tableView)
