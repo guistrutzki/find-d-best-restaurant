@@ -8,25 +8,25 @@
 import UIKit
 
 enum K {
-     static let profile                  = "Perfil"
-     static let restaurants              = "Restaurantes"
-     static let favorites                = "Favorites"
-     static let top                      = "Top"
-     static let enter                    = "Entrar"
-     static let forgetMyPassword         = "Esqueci minha senha"
-     static let signUp                   = "Cadastrar"
-     static let ok                       = "Ok"
-     static let accountCreated           = "Sua conta foi criada"
-     static let accountSuccessMessage    = "Agora você já pode fazer login"
-     static let signUpVCTitle            = "Cadastro"
-     static let typeYourFullName         = "Digite seu nome completo"
-     static let typeYourEmail            = "Digite seu email"
-     static let typeYourPassword         = "Digite sua senha"
-	 static let resetPasswordVCTitle     = "Esqueci minha senha"
-	 static let send                     = "Enviar"
-	 static let resetMessage             = "Para recuperar a sua senha, precisamos de seu email de cadastro"
-	 static let sendEmail                = "Email enviado"
-	 static let sendEmailSuccessMessage  = "Por favor, cheque sua caixa de entrada para redefinir sua senha."
+    static let profile                  = "Perfil"
+    static let restaurants              = "Restaurantes"
+    static let favorites                = "Favorites"
+    static let top                      = "Top"
+    static let enter                    = "Entrar"
+    static let forgetMyPassword         = "Esqueci minha senha"
+    static let signUp                   = "Cadastrar"
+    static let ok                       = "Ok"
+    static let accountCreated           = "Sua conta foi criada"
+    static let accountSuccessMessage    = "Agora você já pode fazer login"
+    static let signUpVCTitle            = "Cadastro"
+    static let typeYourFullName         = "Digite seu nome completo"
+    static let typeYourEmail            = "Digite seu email"
+    static let typeYourPassword         = "Digite sua senha"
+    static let resetPasswordVCTitle     = "Esqueci minha senha"
+    static let send                     = "Enviar"
+    static let resetMessage             = "Para recuperar a sua senha, precisamos de seu email de cadastro"
+    static let sendEmail                = "Email enviado"
+    static let sendEmailSuccessMessage  = "Por favor, cheque sua caixa de entrada para redefinir sua senha."
 }
 
 enum SFSymbols {
@@ -43,6 +43,9 @@ enum Images {
     static let restaurant1                 = UIImage(named: "rest-1")
     static let restaurant3                 = UIImage(named: "rest-3")
     static let rubayat                     = UIImage(named: "rubayat")
+    static let padlock                     = UIImage(named: "padlock")
+    static let register                    = UIImage(named: "cadastro")
+    static let login                       = UIImage(named: "login")
 }
 
 enum Colors {

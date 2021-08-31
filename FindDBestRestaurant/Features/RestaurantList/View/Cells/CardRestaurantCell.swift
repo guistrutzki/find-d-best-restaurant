@@ -19,7 +19,6 @@ class CardRestaurantCell: UITableViewCell {
 		let view = UIView(frame: .zero)
 		view.layer.cornerRadius = 12
 		view.clipsToBounds = true
-		view.backgroundColor = .systemPink
 		return view
 	}()
 	
@@ -36,7 +35,6 @@ class CardRestaurantCell: UITableViewCell {
 		label.font = UIFont.boldSystemFont(ofSize: 36)
 		label.numberOfLines = 0
 		label.textColor = .white
-        label.text = ""
 		return label
 	}()
 	

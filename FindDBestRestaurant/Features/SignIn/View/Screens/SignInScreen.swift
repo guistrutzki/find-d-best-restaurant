@@ -64,6 +64,10 @@ class SignInScreen: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc private func didTappedBackButton(_ button: UIButton) {
+        delegate.didTappedBackButton()
+    }
+    
     @objc private func didTappedForgetPassword(_ button: UIButton) {
         delegate.didTappedForgetPassword()
     }
@@ -129,11 +133,13 @@ extension SignInScreen: CodeView {
     func setupAdditionalConfiguration() {
         self.backgroundColor = Colors.gray500
         
+        let backButtonACtion = #selector(didTappedBackButton(_:))
         let submitButtonACtion = #selector(didTappedSubmit(_:))
         let forgetPasswordAction = #selector(didTappedForgetPassword(_:))
         
         forgetPasswordButton.addTarget(self, action:forgetPasswordAction , for: .touchUpInside)
         submitButton.addTarget(self, action: submitButtonACtion, for: .touchUpInside)
+        backButton.addTarget(self, action: backButtonACtion, for: .touchUpInside)
         
         emailTextField.configureTextFieldType(.email)
         passwordTextField.configureTextFieldType(.password)
