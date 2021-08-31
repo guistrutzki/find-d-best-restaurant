@@ -24,18 +24,19 @@ class CardRestaurantCell: UITableViewCell {
 	}()
 	
 	private var restaurantImageView: UIImageView = {
-		let imageView = UIImageView(frame: .zero)
-		imageView.contentMode = .scaleAspectFit
-        imageView.image = Images.restaurantImg
+		let imageView = UIImageView()
+        imageView.contentMode = .scaleToFill
+        imageView.image = UIImage(named: "rest-1")
 		return imageView
 	}()
 	
 	private var nameLabel: UILabel = {
-		let label = UILabel(frame: .zero)
+		let label = UILabel()
 		label.textAlignment = .left
-		label.font = UIFont.boldSystemFont(ofSize: 32)
+		label.font = UIFont.boldSystemFont(ofSize: 36)
 		label.numberOfLines = 0
 		label.textColor = .white
+        label.text = ""
 		return label
 	}()
 	
@@ -52,9 +53,14 @@ class CardRestaurantCell: UITableViewCell {
 	
 	// MARK: - Public Function
     
-    func configureCell(restaurant: Restaurant) {
+    func configureCell(restaurant: RestaurantListResponse) {
         nameLabel.text = restaurant.name
         restaurantImageView.load(url: restaurant.coverImage)
+    }
+    
+    func setup(restaurant: Restaurant) {
+        nameLabel.text = restaurant.name
+        restaurantImageView.image = restaurant.coverImage
     }
 }
 
@@ -65,7 +71,7 @@ extension CardRestaurantCell: CodeView {
 	func buildViewHierarchy() {
 		addSubview(mainView)
 		mainView.addSubview(restaurantImageView)
-		mainView.addSubview(nameLabel)
+        restaurantImageView.addSubview(nameLabel)
 	}
 	
 	func setupConstraints() {
@@ -84,9 +90,9 @@ extension CardRestaurantCell: CodeView {
 		}
 		
 		nameLabel.snp.makeConstraints { make in
-			make.left.equalTo(mainView.snp.left).offset(15)
-			make.right.equalTo(mainView.snp.right).inset(15)
-			make.bottom.equalTo(mainView.snp.bottom).inset(15)
+            make.left.equalToSuperview().offset(15)
+            make.right.equalToSuperview().inset(15)
+            make.bottom.equalToSuperview().inset(15)
 		}
 	}
 	

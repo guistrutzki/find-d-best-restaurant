@@ -16,9 +16,9 @@ class MainTabBarController: UITabBarController {
         
         viewControllers = [
             createNavigationController(for: RestaurantListViewController(), title: K.restaurants, image: SFSymbols.home ?? UIImage()),
-            createNavigationController(for: SignUpVC(), title: "", image: SFSymbols.home ?? UIImage()),
             createNavigationController(for: FavoritesViewController(), title: K.favorites, image: SFSymbols.favorite ?? UIImage()),
-            createNavigationController(for: TopRestaurantsViewController(), title: K.top, image: SFSymbols.location ?? UIImage())
+            createNavigationController(for: TopRestaurantsViewController(), title: K.top, image: SFSymbols.location ?? UIImage()),
+            createNavigationController(for: SignUpVC(), title: K.profile, image: SFSymbols.person ?? UIImage())
         ]
     }
     

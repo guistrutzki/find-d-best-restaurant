@@ -8,19 +8,20 @@
 import UIKit
 
 enum K {
-    static let restaurants              = "Restaurantes"
-    static let favorites                = "Favorites"
-    static let top                      = "Top"
-    static let enter                    = "Entrar"
-    static let forgetMyPassword         = "Esqueci minha senha"
-    static let signUp                   = "Cadastrar"
-    static let ok                       = "Ok"
-    static let accountCreated           = "Sua conta foi criada"
-    static let accountSuccessMessage    = "Agora você já pode fazer login"
-    static let signUpVCTitle            = "Cadastro"
-    static let typeYourFullName         = "Digite seu nome completo"
-    static let typeYourEmail            = "Digite seu email"
-    static let typeYourPassword         = "Digite sua senha"
+     static let profile                  = "Perfil"
+     static let restaurants              = "Restaurantes"
+     static let favorites                = "Favorites"
+     static let top                      = "Top"
+     static let enter                    = "Entrar"
+     static let forgetMyPassword         = "Esqueci minha senha"
+     static let signUp                   = "Cadastrar"
+     static let ok                       = "Ok"
+     static let accountCreated           = "Sua conta foi criada"
+     static let accountSuccessMessage    = "Agora você já pode fazer login"
+     static let signUpVCTitle            = "Cadastro"
+     static let typeYourFullName         = "Digite seu nome completo"
+     static let typeYourEmail            = "Digite seu email"
+     static let typeYourPassword         = "Digite sua senha"
 	 static let resetPasswordVCTitle     = "Esqueci minha senha"
 	 static let send                     = "Enviar"
 	 static let resetMessage             = "Para recuperar a sua senha, precisamos de seu email de cadastro"
@@ -32,12 +33,16 @@ enum SFSymbols {
     static let favorite                 = UIImage(systemName: "star")
     static let location                 = UIImage(systemName: "map")
     static let home                     = UIImage(systemName: "house")
+    static let person                   = UIImage(systemName: "person")
 }
 
 enum Images {
     static let placeholder                 = UIImage(named: "restaurant")
     static let restaurantImg               = UIImage(named: "restaurant1")
     static let restaurantPlaceholder       = UIImage(named: "placeholder")
+    static let restaurant1                 = UIImage(named: "rest-1")
+    static let restaurant3                 = UIImage(named: "rest-3")
+    static let rubayat                     = UIImage(named: "rubayat")
 }
 
 enum Colors {

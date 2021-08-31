@@ -18,9 +18,11 @@ class RestaurantListScreen: UIView {
     }()
     
     var restaurantList:[Restaurant] = [
-        Restaurant(name: "Mac", description: "fast-food", coverImage: ""),
-        Restaurant(name: "Pizzeria", description: "pizzeria", coverImage: ""),
-        Restaurant(name: "Japa", description: "japa", coverImage: "")
+        Restaurant(name: "Figueira Rubayat", description: "", coverImage: Images.rubayat ?? UIImage()),
+        Restaurant(name: "Top Paulista", description: "", coverImage: Images.restaurant1 ?? UIImage()),
+        Restaurant(name: "Paris Bistrô", description: "", coverImage: Images.restaurant3 ?? UIImage()),
+        Restaurant(name: "Figueira", description: "", coverImage: Images.rubayat ?? UIImage()),
+        Restaurant(name: "Top Garden Sp", description: "", coverImage: Images.restaurant1 ?? UIImage())
     ]
     
     var restaurants:[RestaurantListResponse] = []
@@ -55,7 +57,8 @@ class RestaurantListScreen: UIView {
         else { return UITableViewCell()}
         
         let restaurant = restaurantList[index.row]
-        cell.configureCell(restaurant:restaurant)
+//        cell.configureCell(restaurant:restaurant)
+        cell.setup(restaurant: restaurant)
         
         return cell
         
