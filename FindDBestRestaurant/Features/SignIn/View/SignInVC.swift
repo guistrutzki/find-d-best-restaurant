@@ -41,6 +41,10 @@ class SignInVC: UIViewController {
 
 extension SignInVC: SignInViewDelegate {
     
+    func didTappedBackButton() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     func didTappedSignInSubmit(email: String?, password: String?) {
         print("\(email ?? "") - \(password ?? "")")
     }

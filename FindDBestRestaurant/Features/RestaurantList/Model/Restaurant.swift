@@ -5,7 +5,7 @@
 //  Created by Bruna Drago on 29/08/21.
 //
 
-import Foundation
+import UIKit
 
 struct Restaurant {
     
@@ -13,5 +13,5 @@ struct Restaurant {
     
     let description: String
     
-    let coverImage: String
+    let coverImage: UIImage
 }
