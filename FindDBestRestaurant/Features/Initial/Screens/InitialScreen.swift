@@ -12,7 +12,6 @@ class InitialScreen: UIView {
     // MARK: - UI Element
     private lazy var backgroundImage: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "initial-screen-cover.png") ?? UIImage())
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleToFill
         imageView.applyGradient(isVertical: true, colorArray: [Colors.gradient900, Colors.gradient100])
         return imageView
@@ -20,7 +19,6 @@ class InitialScreen: UIView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "FIND D BEST"
         label.textAlignment = .center
         label.font = UIFont(name: "HelveticaNeue-Bold", size: 50)
@@ -32,7 +30,6 @@ class InitialScreen: UIView {
     
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Restaurant"
         label.textAlignment = .center
         label.font = UIFont(name: "HelveticaNeue-Light", size: 30)
@@ -65,7 +62,6 @@ class InitialScreen: UIView {
     
     private lazy var guestArrowImage: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "right-arrow.svg") ?? UIImage())
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleToFill
         imageView.tintColor = .white
         return imageView
@@ -123,12 +119,12 @@ class InitialScreen: UIView {
     
     // MARK: - Function
     @objc func handleGuestTap(_ sender: UITapGestureRecognizer) {
-        self.guestButtonView.alpha = 0.7
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+        self.guestButtonView.alpha = 0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             self.guestButtonView.alpha = 1.0
+            self.delegate.didTappedSignInAsGuest()
          }
         
-        self.delegate.didTappedSignInAsGuest()
     }
     
     @objc private func handleForgetPasswordTap() {

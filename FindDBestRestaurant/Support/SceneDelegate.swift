@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-		
+		let navController = UINavigationController(rootViewController: InitialVC())
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 		
 		window = UIWindow(windowScene: windowScene)
@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		window?.rootViewController = LaunchScreenVC()
 
 		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
-			self.window?.rootViewController = InitialVC()
+			self.window?.rootViewController = navController
 		}
 		
 		window?.makeKeyAndVisible()
