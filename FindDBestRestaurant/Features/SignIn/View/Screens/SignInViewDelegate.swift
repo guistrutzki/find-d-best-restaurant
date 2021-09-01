@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 
 protocol SignInViewDelegate: AnyObject {
+    
+    func didTappedBackButton()
+    
     func didTappedForgetPassword()
+    
     func didTappedSignInSubmit(email: String?, password: String?)
 }

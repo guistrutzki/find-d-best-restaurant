@@ -19,12 +19,6 @@ final class SignUpScreen: UIView {
         return stack
     }()
     
-    //    private lazy var nameTextField: CustomTextFieldView = {
-    //        let textField = CustomTextFieldView(frame: .zero)
-    //        textField.configureTextFieldType(.name)
-    //        return textField
-    //    }()
-    
     private lazy var nameTextField: FBRTextField = {
         let textField = FBRTextField(placeholder: K.typeYourFullName)
         textField.autocapitalizationType = .words
@@ -43,12 +37,6 @@ final class SignUpScreen: UIView {
         return textField
     }()
     
-    //    private lazy var emailTextField: CustomTextFieldView = {
-    //        let textField = CustomTextFieldView(frame: .zero)
-    //        textField.configureTextFieldType(.email)
-    //        return textField
-    //    }()
-    
     private lazy var passwordTextField: FBRTextField = {
         let textField = FBRTextField(placeholder: K.typeYourPassword)
         textField.autocapitalizationType = .none
@@ -58,12 +46,6 @@ final class SignUpScreen: UIView {
         textField.tag = 3
         return textField
     }()
-    
-    //    private lazy var passwordTextField: CustomTextFieldView = {
-    //        let textField = CustomTextFieldView(frame: .zero)
-    //        textField.configureTextFieldType(.password)
-    //        return textField
-    //    }()
     
     private lazy var signUpButton: FBRButton = {
         let button = FBRButton(backgroundColor: .systemRed, title: K.signUp, titleColor: .white)
