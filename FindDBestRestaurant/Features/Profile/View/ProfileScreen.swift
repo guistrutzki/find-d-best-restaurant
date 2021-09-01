@@ -32,7 +32,7 @@ class ProfileScreen: UIView {
         label.font = UIFont.boldSystemFont(ofSize: 24)
         label.numberOfLines = 0
         label.textColor = .white
-        label.text = "Find D Best Restaurant"
+        label.text = K.appTitle
         return label
     }()
     

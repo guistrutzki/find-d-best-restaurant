@@ -8,6 +8,7 @@
 import UIKit
 
 enum K {
+    static let appTitle                 = "Find D Best Restaurant"
     static let profile                  = "Perfil"
     static let restaurants              = "Restaurantes"
     static let favorites                = "Favorites"
@@ -22,7 +23,8 @@ enum K {
     static let typeYourFullName         = "Digite seu nome completo"
     static let typeYourEmail            = "Digite seu email"
     static let typeYourPassword         = "Digite sua senha"
-    static let resetPasswordVCTitle     = "Esqueci minha senha"
+    static let resetPassword            = "Esqueci minha senha"
+    static let register                 = "Cadastre-se"
     static let send                     = "Enviar"
     static let resetMessage             = "Para recuperar a sua senha, precisamos de seu email de cadastro"
     static let sendEmail                = "Email enviado"

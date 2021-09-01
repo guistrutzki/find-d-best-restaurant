@@ -77,17 +77,17 @@ class ProfileCell: UITableViewCell {
     // MARK: - Private Functions
    
     private func setupForResetPassword() {
-        self.titleLabel.text = "Recuperar senha"
+        self.titleLabel.text = K.resetPassword
         self.iconImage.image = Images.padlock
     }
     
     private func setupForSignIn() {
-        self.titleLabel.text = "Entrar"
+        self.titleLabel.text = K.enter
         self.iconImage.image = Images.login
     }
     
     private func setupForSignUp() {
-        self.titleLabel.text = "Cadastre-se"
+        self.titleLabel.text = K.register
         self.iconImage.image = Images.register
     }
 }

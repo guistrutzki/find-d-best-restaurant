@@ -33,7 +33,7 @@ class ResetPasswordVC: UIViewController {
     
 	private func configureView() {
 		view.backgroundColor = Colors.gray800
-		title = K.resetPasswordVCTitle
+		title = K.resetPassword
 		navigationItem.largeTitleDisplayMode = .never
 	}
 	
