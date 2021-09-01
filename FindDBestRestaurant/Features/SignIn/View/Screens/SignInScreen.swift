@@ -22,7 +22,7 @@ class SignInScreen: UIView {
     }()
     
     private lazy var submitButton: FBRButton = {
-        let button = FBRButton(backgroundColor: Colors.red500, title: K.enter)
+        let button = FBRButton(backgroundColor: Colors.red500, title: K.enter, titleColor: .white)
         return button
     }()
     

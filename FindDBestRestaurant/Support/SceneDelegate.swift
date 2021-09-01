@@ -20,11 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		window = UIWindow(windowScene: windowScene)
     
 		window?.rootViewController = LaunchScreenVC()
-//     window?.rootViewController = MainTabBarController()
-//     window?.rootViewController = SignInVC()
 
 		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
-			self.window?.rootViewController = MainTabBarController()
+			self.window?.rootViewController = InitialVC()
 		}
 		
 		window?.makeKeyAndVisible()

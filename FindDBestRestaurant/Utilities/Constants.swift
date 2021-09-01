@@ -13,6 +13,7 @@ enum K {
     static let top                      = "Top"
     static let enter                    = "Entrar"
     static let forgetMyPassword         = "Esqueci minha senha"
+    static let forgetYourPassword       = "Esqueceu sua senha?"
     static let signUp                   = "Cadastrar"
     static let ok                       = "Ok"
     static let accountCreated           = "Sua conta foi criada"
@@ -21,11 +22,13 @@ enum K {
     static let typeYourFullName         = "Digite seu nome completo"
     static let typeYourEmail            = "Digite seu email"
     static let typeYourPassword         = "Digite sua senha"
-	 static let resetPasswordVCTitle     = "Esqueci minha senha"
-	 static let send                     = "Enviar"
-	 static let resetMessage             = "Para recuperar a sua senha, precisamos de seu email de cadastro"
-	 static let sendEmail                = "Email enviado"
-	 static let sendEmailSuccessMessage  = "Por favor, cheque sua caixa de entrada para redefinir sua senha."
+    static let resetPasswordVCTitle     = "Esqueci minha senha"
+    static let send                     = "Enviar"
+    static let resetMessage             = "Para recuperar a sua senha, precisamos de seu email de cadastro"
+    static let sendEmail                = "Email enviado"
+    static let sendEmailSuccessMessage  = "Por favor, cheque sua caixa de entrada para redefinir sua senha."
+    static let continueWithoutLogin     = "Continuar sem login"
+    static let reset                    = "Redefinir"
 }
 
 enum SFSymbols {
@@ -48,4 +51,6 @@ enum Colors {
     static let gray800                  = UIColor("#1C1C1E")
     static let black                    = UIColor("#000000")
     static let red500                   = UIColor("#E73030")
+    static let gradient900              = UIColor("#090808")
+    static let gradient100              = UIColor("#000000", alpha: 0.35)
 }
