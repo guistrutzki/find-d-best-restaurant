@@ -81,6 +81,9 @@ class RestaurantDetailScreen: UIView {
    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.tableFooterView = UIView()
+        tableView.backgroundColor = Colors.gray800
+        tableView.isUserInteractionEnabled = true
         return tableView
     }()
   
@@ -103,6 +106,8 @@ class RestaurantDetailScreen: UIView {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for:index) as? MenuTableCell
         else { return UITableViewCell()}
+        
+        cell.selectionStyle = .none
         
         return cell
         
@@ -204,7 +209,7 @@ extension  RestaurantDetailScreen: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 210
     }
 }
 

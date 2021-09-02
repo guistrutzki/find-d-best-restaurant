@@ -24,9 +24,7 @@ class MenuCollectionCell: UICollectionViewCell {
     
     private lazy var cardView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemRed
-        view.layer.cornerRadius = 12
-        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        view.backgroundColor = .clear
         return view
     }()
 
@@ -73,13 +71,15 @@ extension MenuCollectionCell: CodeView {
     
     func setupConstraints() {
         containerView.snp.makeConstraints { make in
-            make.top.left.equalToSuperview().offset(5)
-            make.bottom.right.equalToSuperview().inset(5)
+            make.top.equalToSuperview().offset(24)
+            make.left.equalToSuperview().offset(16)
+            make.bottom.right.equalToSuperview().inset(16)
         }
         
         cardView.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
-            make.height.equalTo(100)
+            make.height.equalTo(200)
+            make.width.equalTo(200)
         }
         
         menuImageView.snp.makeConstraints { make in
@@ -88,10 +88,13 @@ extension MenuCollectionCell: CodeView {
         
         itemNameLabel.snp.makeConstraints { make in
             make.top.equalTo(menuImageView.snp.bottom).offset(8)
+            make.height.equalTo(20)
+            make.centerX.equalToSuperview()
         }
     }
     
     func setupAdditionalConfiguration() {
-        
+        cardView.layer.cornerRadius = 12
+        cardView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
 }

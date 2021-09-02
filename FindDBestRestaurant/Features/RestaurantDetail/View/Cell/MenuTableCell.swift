@@ -18,11 +18,16 @@ class MenuTableCell: UITableViewCell {
     private lazy var collection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        let collection = UICollectionView(
+        
+        let collectionView = UICollectionView(
             frame: .zero, collectionViewLayout: layout)
-        collection.delegate = self
-        collection.dataSource = self
-        return collection
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.isScrollEnabled = true
+        collectionView.clipsToBounds = false
+        collectionView.backgroundColor = .clear
+        return collectionView
     }()
 
     // MARK: - Inits
@@ -52,17 +57,16 @@ extension MenuTableCell: CodeView {
     
     func setupAdditionalConfiguration() {
         MenuCollectionCell.registerOn(collection)
-        backgroundColor = .systemPink
+        backgroundColor = Colors.gray800
     }
-    
-    
 }
 
 // MARK: - UICollectionViewDataSource Extension
 
-extension MenuTableCell: UICollectionViewDataSource {
+extension MenuTableCell: UICollectionViewDataSource , UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -78,21 +82,8 @@ extension MenuTableCell: UICollectionViewDataSource {
 
 extension MenuTableCell: UICollectionViewDelegateFlowLayout {
     
-    private var margin: CGFloat { 4.0 }
-    
-    private var insetForSections: UIEdgeInsets {
-        UIEdgeInsets(top: margin, left:margin, bottom: margin, right: margin)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let padding = insetForSections.left + insetForSections.right + margin
-        let width = (bounds.size.width - padding) / 2
-        let ratio: CGFloat = 1.5
-        let height = width * ratio
-        
-        return CGSize(width: width, height: height)
+        return CGSize(width: 210, height: 210)
     }
 }
-
