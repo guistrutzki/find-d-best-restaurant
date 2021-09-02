@@ -48,7 +48,7 @@ class MenuTableCell: UITableViewCell {
 
 extension MenuTableCell: CodeView {
     func buildViewHierarchy() {
-        addSubview(collection)
+        contentView.addSubview(collection)
     }
     
     func setupConstraints() {
