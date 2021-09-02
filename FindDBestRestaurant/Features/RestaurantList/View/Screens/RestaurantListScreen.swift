@@ -59,6 +59,7 @@ class RestaurantListScreen: UIView {
         let restaurant = restaurantList[index.row]
 //        cell.configureCell(restaurant:restaurant)
         cell.setup(restaurant: restaurant)
+        cell.selectionStyle = .none
         
         return cell
         

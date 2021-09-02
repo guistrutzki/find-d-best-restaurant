@@ -184,7 +184,7 @@ extension RestaurantDetailScreen: CodeView {
         tableView.snp.makeConstraints { make in
             make.top.equalTo(menuLabel.snp.bottom).offset(10)
             make.bottom.left.right.equalToSuperview()
-            make.height.equalTo(300)
+            make.height.equalTo(600)
         }
     }
     

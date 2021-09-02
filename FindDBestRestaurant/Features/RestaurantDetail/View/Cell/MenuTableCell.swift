@@ -26,6 +26,8 @@ class MenuTableCell: UITableViewCell {
         collectionView.dataSource = self
         collectionView.isScrollEnabled = true
         collectionView.clipsToBounds = false
+        collectionView.bounces = true
+        collectionView.alwaysBounceHorizontal = true
         collectionView.backgroundColor = .clear
         return collectionView
     }()
