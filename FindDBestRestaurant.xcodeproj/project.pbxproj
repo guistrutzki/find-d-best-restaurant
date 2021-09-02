@@ -34,6 +34,7 @@
 		707C4FC726E0435100C01926 /* FBRHeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707C4FC626E0435100C01926 /* FBRHeartButton.swift */; };
 		707C4FC926E045AC00C01926 /* FBRLoveItButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707C4FC826E045AC00C01926 /* FBRLoveItButton.swift */; };
 		707C4FCC26E046A800C01926 /* FBRCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707C4FCB26E046A800C01926 /* FBRCircularView.swift */; };
+		707C4FCF26E0531E00C01926 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707C4FCE26E0531E00C01926 /* MenuCell.swift */; };
 		70AB790B26D6F39300BE67BE /* SignUpScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB790A26D6F39300BE67BE /* SignUpScreenDelegate.swift */; };
 		70AB790F26D6F6E200BE67BE /* UIViewController+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB790E26D6F6E200BE67BE /* UIViewController+ext.swift */; };
 		70AB791126D6FB6900BE67BE /* FBRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB791026D6FB6900BE67BE /* FBRTextField.swift */; };
@@ -89,6 +90,7 @@
 		707C4FC626E0435100C01926 /* FBRHeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRHeartButton.swift; sourceTree = "<group>"; };
 		707C4FC826E045AC00C01926 /* FBRLoveItButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRLoveItButton.swift; sourceTree = "<group>"; };
 		707C4FCB26E046A800C01926 /* FBRCircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRCircularView.swift; sourceTree = "<group>"; };
+		707C4FCE26E0531E00C01926 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		70AB790A26D6F39300BE67BE /* SignUpScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenDelegate.swift; sourceTree = "<group>"; };
 		70AB790E26D6F6E200BE67BE /* UIViewController+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ext.swift"; sourceTree = "<group>"; };
 		70AB791026D6FB6900BE67BE /* FBRTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRTextField.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 		707C4FBD26E031B400C01926 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				707C4FCD26E052E700C01926 /* Cell */,
 				707C4FBF26E031DC00C01926 /* RestaurantDetailScreen.swift */,
 				707C4FC126E031FB00C01926 /* RestaurantDetailViewController.swift */,
 			);
@@ -437,6 +440,14 @@
 				707C4FCB26E046A800C01926 /* FBRCircularView.swift */,
 			);
 			path = FBRCircularView;
+			sourceTree = "<group>";
+		};
+		707C4FCD26E052E700C01926 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				707C4FCE26E0531E00C01926 /* MenuCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		70AB790C26D6F67200BE67BE /* Extensions */ = {
@@ -745,6 +756,7 @@
 				7034B04F26DEEF1D008B586A /* ProfileController.swift in Sources */,
 				70E1D69926DC4C2F00E1A31D /* NetworkManager.swift in Sources */,
 				707C4FCC26E046A800C01926 /* FBRCircularView.swift in Sources */,
+				707C4FCF26E0531E00C01926 /* MenuCell.swift in Sources */,
 				70E1D68E26DC40D200E1A31D /* RestaurantListScreen.swift in Sources */,
 				5B94D67426C5F68C00346B9B /* SceneDelegate.swift in Sources */,
 				70E1D69626DC494400E1A31D /* Restaurant.swift in Sources */,
