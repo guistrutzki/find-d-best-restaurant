@@ -28,10 +28,21 @@ class RestaurantListViewController: UIViewController {
         super.viewDidLoad()
         controller.fetchRestaurantList()
     }
+    
+    // MARK: - Private Functions
+    
+    private func proceedToDetails(restaurant: Restaurant) {
+        let viewController = RestaurantDetailViewController()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 extension RestaurantListViewController: RestaurantListScreenDelegate {
     
+    func proceedToDetailScreen(restaurant: Restaurant) {
+        proceedToDetails(restaurant: restaurant)
+    }
+
     func loadData() {
         
     }

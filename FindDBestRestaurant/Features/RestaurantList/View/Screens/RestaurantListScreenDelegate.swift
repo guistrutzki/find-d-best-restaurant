@@ -10,4 +10,6 @@ import Foundation
 protocol RestaurantListScreenDelegate: AnyObject {
     
     func loadData()
+    
+    func proceedToDetailScreen(restaurant: Restaurant)
 }
