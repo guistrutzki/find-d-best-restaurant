@@ -52,6 +52,8 @@ enum Images {
     static let padlock                     = UIImage(named: "padlock")
     static let register                    = UIImage(named: "cadastro")
     static let login                       = UIImage(named: "login")
+    static let heartFilled                 = UIImage(named: "heartFilled")
+    static let hearttoFullfill             = UIImage(named: "heart-empty")
 }
 
 enum Colors {

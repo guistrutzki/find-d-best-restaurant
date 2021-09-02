@@ -59,6 +59,7 @@ class RestaurantListScreen: UIView {
         let restaurant = restaurantList[index.row]
 //        cell.configureCell(restaurant:restaurant)
         cell.setup(restaurant: restaurant)
+        cell.selectionStyle = .none
         
         return cell
         
@@ -79,6 +80,11 @@ extension RestaurantListScreen: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let restaurant = restaurantList[indexPath.row]
+        delegate?.proceedToDetailScreen(restaurant: restaurant)
     }
 }
 

@@ -9,7 +9,7 @@ import UIKit
 
 class CardRestaurantCell: UITableViewCell {
 	
-	// MARK: - Variable
+	// MARK: - Identifier
     
 	static let identifier: String = String(describing: CardRestaurantCell.self)
 	
