@@ -23,6 +23,7 @@ class RestaurantDetailScreen: UIView {
     
     private lazy var containerView: UIView = {
         let view = UIView()
+        view.backgroundColor = Colors.gray800
         return view
     }()
 
@@ -77,19 +78,12 @@ class RestaurantDetailScreen: UIView {
         label.text = "Menu"
         return label
     } ()
-    
-    private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        
-        let collectionView = UICollectionView(
-            frame: .zero, collectionViewLayout: layout)
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = .systemBackground
-        return collectionView
+   
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        return tableView
     }()
+  
     
     // MARK: - Inits
     
@@ -100,6 +94,18 @@ class RestaurantDetailScreen: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    // MARK: - Private Functions
+    
+    private func getMenuCell(index: IndexPath) -> UITableViewCell {
+        let identifier = MenuTableCell.identifier
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for:index) as? MenuTableCell
+        else { return UITableViewCell()}
+        
+        return cell
+        
     }
 }
 
@@ -114,17 +120,16 @@ extension RestaurantDetailScreen: CodeView {
         containerView.addSubview(restaurantImageView)
         restaurantImageView.addSubview(loveItButton)
         restaurantImageView.addSubview(nameLabel)
-        scrollContent.addSubview(aboutRestaurantTitleLabel)
-        scrollContent.addSubview(infoLabel)
-        scrollContent.addSubview(menuLabel)
-        scrollContent.addSubview(collectionView)
+        containerView.addSubview(aboutRestaurantTitleLabel)
+        containerView.addSubview(infoLabel)
+        containerView.addSubview(menuLabel)
+        containerView.addSubview(tableView)
     }
     
     func setupConstraints() {
-        
         scrollView.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
-            make.top.bottom.equalToSuperview()
+            make.left.right.equalTo(safeAreaLayoutGuide)
+            make.top.bottom.equalTo(safeAreaLayoutGuide)
         }
         
         scrollContent.snp.makeConstraints { make in
@@ -134,12 +139,13 @@ extension RestaurantDetailScreen: CodeView {
         }
         
         containerView.snp.makeConstraints { make in
-            make.top.left.right.equalToSuperview()
-            make.height.equalTo(300)
+            make.left.right.equalToSuperview()
+            make.top.bottom.equalToSuperview()
         }
         
         restaurantImageView.snp.makeConstraints { make in
-            make.top.bottom.left.right.equalToSuperview()
+            make.top.left.right.equalToSuperview()
+            make.height.equalTo(300)
         }
         
         loveItButton.snp.makeConstraints { make in
@@ -155,7 +161,7 @@ extension RestaurantDetailScreen: CodeView {
         }
         
         aboutRestaurantTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(containerView.snp.bottom).offset(30)
+            make.top.equalTo(restaurantImageView.snp.bottom).offset(30)
             make.left.equalToSuperview().offset(15)
         }
         
@@ -170,26 +176,35 @@ extension RestaurantDetailScreen: CodeView {
             make.left.equalToSuperview().offset(15)
         }
         
-        collectionView.snp.makeConstraints { make in
-            make.top.equalTo(menuLabel.snp.bottom).offset(20)
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(menuLabel.snp.bottom).offset(10)
             make.bottom.left.right.equalToSuperview()
+            make.height.equalTo(300)
         }
     }
     
     func setupAdditionalConfiguration() {
         backgroundColor = Colors.gray800
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        MenuTableCell.registerOn(tableView)
     }
 }
 
-extension RestaurantDetailScreen: UICollectionViewDelegate, UICollectionViewDataSource {
+extension  RestaurantDetailScreen: UITableViewDelegate, UITableViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return getMenuCell(index: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
 }
 
