@@ -48,7 +48,7 @@ final class SignUpScreen: UIView {
     }()
     
     private lazy var signUpButton: FBRButton = {
-        let button = FBRButton(backgroundColor: .systemRed, title: K.signUp)
+        let button = FBRButton(backgroundColor: .systemRed, title: K.signUp, titleColor: .white)
         return button
     }()
     

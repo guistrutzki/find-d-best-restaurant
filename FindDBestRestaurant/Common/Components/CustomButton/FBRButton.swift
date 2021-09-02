@@ -16,10 +16,11 @@ class FBRButton: UIButton {
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  convenience init(backgroundColor: UIColor, title: String) {
+    convenience init(backgroundColor: UIColor, title: String, titleColor: UIColor) {
     self.init(frame: .zero)
     self.backgroundColor = backgroundColor
     self.setTitle(title, for: .normal)
+    self.setTitleColor(titleColor, for: .normal)
   }
   // MARK: - Private Functions
   private func configure() {
