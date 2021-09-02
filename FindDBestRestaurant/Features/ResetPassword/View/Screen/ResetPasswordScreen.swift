@@ -40,7 +40,7 @@ final class ResetPasswordScreen: UIView {
 	}()
 	
 	private var sendButton: FBRButton = {
-		let button = FBRButton(backgroundColor: .systemRed, title: K.send)
+        let button = FBRButton(backgroundColor: .systemRed, title: K.send, titleColor: .white)
 		return button
 	}()
 	
