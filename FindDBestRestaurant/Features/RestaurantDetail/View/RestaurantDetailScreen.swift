@@ -84,8 +84,14 @@ class RestaurantDetailScreen: UIView {
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = Colors.gray800
         tableView.isUserInteractionEnabled = true
+        tableView.separatorColor = .clear
         return tableView
     }()
+    
+    enum TableViewSection: Int, CaseIterable {
+        case menu = 0
+        case gallery = 1
+    }
   
     
     // MARK: - Inits
@@ -110,7 +116,17 @@ class RestaurantDetailScreen: UIView {
         cell.selectionStyle = .none
         
         return cell
+    }
+    
+    private func getGalleryCell(index: IndexPath) -> UITableViewCell {
+        let identifier = PhotoGalleryTableCell.identifier
         
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for:index) as? PhotoGalleryTableCell
+        else { return UITableViewCell()}
+        
+        cell.selectionStyle = .none
+        
+        return cell
     }
 }
 
@@ -194,10 +210,15 @@ extension RestaurantDetailScreen: CodeView {
         tableView.delegate = self
         tableView.dataSource = self
         MenuTableCell.registerOn(tableView)
+        PhotoGalleryTableCell.registerOn(tableView)
     }
 }
 
 extension  RestaurantDetailScreen: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return TableViewSection.allCases.count
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -210,6 +231,20 @@ extension  RestaurantDetailScreen: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 210
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 0 ? 16.0 : 0.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = .clear
+        return view
     }
 }
 

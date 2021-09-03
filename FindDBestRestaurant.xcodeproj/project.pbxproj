@@ -35,6 +35,8 @@
 		70751EB626E1324700F6D85F /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70751EB526E1324700F6D85F /* MenuTableCell.swift */; };
 		70751EB826E1342400F6D85F /* MenuCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70751EB726E1342400F6D85F /* MenuCollectionCell.swift */; };
 		70751EBA26E1352200F6D85F /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70751EB926E1352200F6D85F /* UICollectionView+Ext.swift */; };
+		70751EBC26E197EF00F6D85F /* PhotoGalleryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70751EBB26E197EF00F6D85F /* PhotoGalleryTableCell.swift */; };
+		70751EBE26E198D000F6D85F /* PhotoGalleryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70751EBD26E198D000F6D85F /* PhotoGalleryCollectionCell.swift */; };
 		707C4FC026E031DC00C01926 /* RestaurantDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707C4FBF26E031DC00C01926 /* RestaurantDetailScreen.swift */; };
 		707C4FC226E031FB00C01926 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707C4FC126E031FB00C01926 /* RestaurantDetailViewController.swift */; };
 		707C4FC426E0320B00C01926 /* RestaurantDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707C4FC326E0320B00C01926 /* RestaurantDetailController.swift */; };
@@ -97,6 +99,8 @@
 		70751EB526E1324700F6D85F /* MenuTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
 		70751EB726E1342400F6D85F /* MenuCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionCell.swift; sourceTree = "<group>"; };
 		70751EB926E1352200F6D85F /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
+		70751EBB26E197EF00F6D85F /* PhotoGalleryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryTableCell.swift; sourceTree = "<group>"; };
+		70751EBD26E198D000F6D85F /* PhotoGalleryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryCollectionCell.swift; sourceTree = "<group>"; };
 		707C4FBF26E031DC00C01926 /* RestaurantDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailScreen.swift; sourceTree = "<group>"; };
 		707C4FC126E031FB00C01926 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		707C4FC326E0320B00C01926 /* RestaurantDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailController.swift; sourceTree = "<group>"; };
@@ -222,11 +226,7 @@
 		70311A3026D196EE005B0C0E /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				BC5C500526DBF3B000CDF9C4 /* ResetPassword */,
 				5B3BC84026DAB280001E694F /* Initial */,
-				BC84A60826D59A6F001B63C7 /* SignUp */,
-				5BC25F7626D357410053BDF5 /* SignIn */,
-				70311A4A26D1A1FD005B0C0E /* TopRestaurants */,
 				70311A4326D1A13D005B0C0E /* Favorites */,
 				7034B04326DED9D9008B586A /* Profile */,
 				BC5C500526DBF3B000CDF9C4 /* ResetPassword */,
@@ -482,6 +482,8 @@
 			children = (
 				70751EB526E1324700F6D85F /* MenuTableCell.swift */,
 				70751EB726E1342400F6D85F /* MenuCollectionCell.swift */,
+				70751EBB26E197EF00F6D85F /* PhotoGalleryTableCell.swift */,
+				70751EBD26E198D000F6D85F /* PhotoGalleryCollectionCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -794,6 +796,8 @@
 				707C4FC926E045AC00C01926 /* FBRLoveItButton.swift in Sources */,
 				5B94D67226C5F68C00346B9B /* AppDelegate.swift in Sources */,
 				707C4FC026E031DC00C01926 /* RestaurantDetailScreen.swift in Sources */,
+				70751EBE26E198D000F6D85F /* PhotoGalleryCollectionCell.swift in Sources */,
+				70751EBC26E197EF00F6D85F /* PhotoGalleryTableCell.swift in Sources */,
 				70E1D69426DC442300E1A31D /* UIImageView+Ext.swift in Sources */,
 				5BC25F7D26D359460053BDF5 /* SignInScreen.swift in Sources */,
 				BC5C500926DBF43300CDF9C4 /* ResetPasswordScreen.swift in Sources */,
