@@ -21,7 +21,7 @@ class PhotoGalleryTableCell: UITableViewCell {
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.numberOfLines = 0
         label.textColor = .white
-        label.text = "Galeria de fotos"
+        label.text = K.photoGallery
         return label
     }()
     

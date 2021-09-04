@@ -21,7 +21,7 @@ class MenuTableCell: UITableViewCell {
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.numberOfLines = 0
         label.textColor = .white
-        label.text = "Menu"
+        label.text = K.menu
         return label
     }()
     
