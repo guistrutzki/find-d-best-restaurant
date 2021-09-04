@@ -35,6 +35,14 @@ class RestaurantDetailScreen: UIView {
         return imageView
     }()
     
+    lazy var backButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "arrow-left"), for: .normal)
+        button.tintColor = .white
+        return button
+    }()
+    
     private lazy var loveItButton: FBRLoveItButton = {
         let button = FBRLoveItButton(frame: .zero)
         return button
@@ -84,10 +92,12 @@ class RestaurantDetailScreen: UIView {
         case gallery = 1
     }
   
+    weak var delegate: RestaurantDetailScreenDelegate?
     
     // MARK: - Inits
     
-    init() {
+    init(_ delegate: RestaurantDetailScreenDelegate) {
+        self.delegate = delegate
         super.init(frame: .zero)
         setupView()
     }
@@ -97,6 +107,16 @@ class RestaurantDetailScreen: UIView {
     }
     
     // MARK: - Private Functions
+    
+    @objc private func didTappedBackButton(_ button: UIButton) {
+        print("===BACK")
+        delegate?.didTappedBackButton()
+    }
+    
+    @objc private func didTappedHeartButton(_ button: UIButton) {
+        print("===LOVEIT")
+        delegate?.didTappedHeartButton()
+    }
     
     private func getMenuCell(index: IndexPath) -> UITableViewCell {
         let identifier = MenuTableCell.identifier
@@ -130,11 +150,12 @@ extension RestaurantDetailScreen: CodeView {
         scrollView.addSubview(scrollContent)
         scrollContent.addSubview(containerView)
         containerView.addSubview(restaurantImageView)
-        restaurantImageView.addSubview(loveItButton)
-        restaurantImageView.addSubview(nameLabel)
-        containerView.addSubview(aboutRestaurantTitleLabel)
-        containerView.addSubview(infoLabel)
-        containerView.addSubview(tableView)
+        scrollContent.addSubview(backButton)
+        scrollContent.addSubview(loveItButton)
+        scrollContent.addSubview(nameLabel)
+        scrollContent.addSubview(aboutRestaurantTitleLabel)
+        scrollContent.addSubview(infoLabel)
+        scrollContent.addSubview(tableView)
     }
     
     func setupConstraints() {
@@ -157,6 +178,12 @@ extension RestaurantDetailScreen: CodeView {
         restaurantImageView.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
             make.height.equalTo(300)
+        }
+        
+        backButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(20)
+            make.left.equalToSuperview().offset(20)
+            make.height.equalTo(40)
         }
         
         loveItButton.snp.makeConstraints { make in
@@ -191,11 +218,18 @@ extension RestaurantDetailScreen: CodeView {
     
     func setupAdditionalConfiguration() {
         backgroundColor = Colors.gray800
+        scrollView.showsVerticalScrollIndicator = false
         
         tableView.delegate = self
         tableView.dataSource = self
         MenuTableCell.registerOn(tableView)
         PhotoGalleryTableCell.registerOn(tableView)
+        
+        let backButtonACtion = #selector(didTappedBackButton(_:))
+        backButton.addTarget(self, action: backButtonACtion, for: .touchUpInside)
+        
+        let loveItButtonACtion = #selector(didTappedHeartButton(_:))
+        loveItButton.addTarget(self, action: loveItButtonACtion, for: .touchUpInside)
     }
 }
 

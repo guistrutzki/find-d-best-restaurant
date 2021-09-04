@@ -8,7 +8,7 @@
 import UIKit
 
 class RestaurantListViewController: UIViewController {
-
+    
     // MARK: - Variable
     
     lazy var restaurantListScreen: RestaurantListScreen = {
@@ -23,13 +23,28 @@ class RestaurantListViewController: UIViewController {
     override func loadView() {
         view = restaurantListScreen
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         controller.fetchRestaurantList()
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNavigationStyle()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     // MARK: - Private Functions
+    
+    private func setNavigationStyle() {
+        setNeedsStatusBarAppearanceUpdate()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     
     private func proceedToDetails(restaurant: Restaurant) {
         let viewController = RestaurantDetailViewController()
@@ -42,7 +57,7 @@ extension RestaurantListViewController: RestaurantListScreenDelegate {
     func proceedToDetailScreen(restaurant: Restaurant) {
         proceedToDetails(restaurant: restaurant)
     }
-
+    
     func loadData() {
         
     }

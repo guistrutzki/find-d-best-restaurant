@@ -33,6 +33,9 @@ enum K {
     
     ///G
     ///H
+    
+    static let home                     = "Home"
+    
     ///I
     ///J
     ///K
@@ -40,7 +43,7 @@ enum K {
     
     ///M
     
-    static let menu                       = "Menu"
+    static let menu                     = "Menu"
     
     ///N
     ///O
