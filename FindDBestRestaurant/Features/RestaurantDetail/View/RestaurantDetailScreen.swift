@@ -31,6 +31,7 @@ class RestaurantDetailScreen: UIView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
         imageView.image = UIImage(named: "rest-1")
+        imageView.applyGradient(isVertical: true, colorArray: [Colors.gradient040, Colors.gradient900])
         return imageView
     }()
     
@@ -55,7 +56,7 @@ class RestaurantDetailScreen: UIView {
         label.font = UIFont.boldSystemFont(ofSize: 24)
         label.numberOfLines = 0
         label.textColor = .white
-        label.text = "Sobre o restaurante"
+        label.text = K.aboutRestaurant
         return label
     }()
     

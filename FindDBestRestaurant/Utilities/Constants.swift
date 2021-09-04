@@ -10,7 +10,7 @@ import UIKit
 enum K {
     
     ///A
-    
+    static let aboutRestaurant          = "Sobre o restaurante"
     static let accountCreated           = "Sua conta foi criada"
     static let accountSuccessMessage    = "Agora você já pode fazer login"
     static let appTitle                 = "Find D Best Restaurant"
@@ -115,4 +115,5 @@ enum Colors {
     static let red500                   = UIColor("#E73030")
     static let gradient900              = UIColor("#090808")
     static let gradient100              = UIColor("#000000", alpha: 0.35)
+    static let gradient040              = UIColor("#000000", alpha: 0.40)
 }
