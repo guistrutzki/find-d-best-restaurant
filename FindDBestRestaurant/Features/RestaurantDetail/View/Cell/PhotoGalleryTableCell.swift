@@ -15,6 +15,16 @@ class PhotoGalleryTableCell: UITableViewCell {
     
     // MARK: - UI Element
     
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .left
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.numberOfLines = 0
+        label.textColor = .white
+        label.text = "Galeria de fotos"
+        return label
+    }()
+    
     private lazy var collection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -29,6 +39,7 @@ class PhotoGalleryTableCell: UITableViewCell {
         collectionView.bounces = true
         collectionView.alwaysBounceHorizontal = true
         collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
 
@@ -49,12 +60,19 @@ class PhotoGalleryTableCell: UITableViewCell {
 
 extension PhotoGalleryTableCell: CodeView {
     func buildViewHierarchy() {
+        contentView.addSubview(titleLabel)
         contentView.addSubview(collection)
     }
     
     func setupConstraints() {
+        titleLabel.snp.makeConstraints { make in
+            make.top.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().inset(16)
+        }
+        
         collection.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalToSuperview()
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.left.right.bottom.equalToSuperview()
         }
     }
     
@@ -87,7 +105,7 @@ extension PhotoGalleryTableCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 145, height: 255)
+        return CGSize(width: 145, height: 270)
     }
 }
 

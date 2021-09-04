@@ -25,7 +25,9 @@ class PhotoGalleryCollectionCell: UICollectionViewCell {
     private lazy var menuImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        imageView.image = Images.restaurant3
+        imageView.image = Images.restaurant1
+        imageView.layer.cornerRadius = 12
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -53,7 +55,7 @@ extension PhotoGalleryCollectionCell: CodeView {
     
     func setupConstraints() {
         containerView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(8)
+            make.top.equalToSuperview().offset(16)
             make.left.equalToSuperview().offset(8)
             make.bottom.right.equalToSuperview().inset(8)
         }

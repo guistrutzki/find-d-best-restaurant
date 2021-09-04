@@ -68,17 +68,7 @@ class RestaurantDetailScreen: UIView {
         label.text = "Oferecemos Carnes selecionadas servidas em sistemas de rodízio, acompanhadas de irresistível e variado buffet de saladas e pratos quentes."
         return label
     } ()
-    
-    private lazy var menuLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.numberOfLines = 0
-        label.textColor = .white
-        label.text = "Menu"
-        return label
-    } ()
-   
+
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.tableFooterView = UIView()
@@ -143,7 +133,6 @@ extension RestaurantDetailScreen: CodeView {
         restaurantImageView.addSubview(nameLabel)
         containerView.addSubview(aboutRestaurantTitleLabel)
         containerView.addSubview(infoLabel)
-        containerView.addSubview(menuLabel)
         containerView.addSubview(tableView)
     }
     
@@ -191,16 +180,11 @@ extension RestaurantDetailScreen: CodeView {
             make.left.equalToSuperview().offset(15)
             make.right.equalToSuperview().inset(15)
         }
-        
-        menuLabel.snp.makeConstraints { make in
-            make.top.equalTo(infoLabel.snp.bottom).offset(20)
-            make.left.equalToSuperview().offset(15)
-        }
-        
+  
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(menuLabel.snp.bottom).offset(10)
+            make.top.equalTo(infoLabel.snp.bottom).offset(20)
             make.bottom.left.right.equalToSuperview()
-            make.height.equalTo(600)
+            make.height.equalTo(700)
         }
     }
     
@@ -224,28 +208,33 @@ extension  RestaurantDetailScreen: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return getMenuCell(index: indexPath)
+        guard let section = TableViewSection(rawValue: indexPath.section) else { return UITableViewCell()}
+        
+        switch section {
+        case .gallery:
+            return getGalleryCell(index: indexPath)
+        case .menu:
+            return getMenuCell(index: indexPath)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 210
+        guard let section = TableViewSection(rawValue: indexPath.section) else { return 0}
+        
+        switch section {
+        case .gallery:
+            return 310
+        case .menu:
+            return 270
+        }
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 16.0 : 0.0
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.0
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: .zero)
-        view.backgroundColor = .clear
-        return view
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let view = UIView(frame: .zero)
+//        view.backgroundColor = .clear
+//        return view
+//    }
 }
 
 
