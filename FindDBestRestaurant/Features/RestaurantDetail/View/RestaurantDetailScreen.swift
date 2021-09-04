@@ -212,13 +212,16 @@ extension RestaurantDetailScreen: CodeView {
         tableView.snp.makeConstraints { make in
             make.top.equalTo(infoLabel.snp.bottom).offset(20)
             make.bottom.left.right.equalToSuperview()
-            make.height.equalTo(700)
+            make.height.equalTo(600)
         }
     }
     
     func setupAdditionalConfiguration() {
         backgroundColor = Colors.gray800
         scrollView.showsVerticalScrollIndicator = false
+        
+        restaurantImageView.layer.cornerRadius = 12
+        restaurantImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
         tableView.delegate = self
         tableView.dataSource = self

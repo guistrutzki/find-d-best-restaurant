@@ -27,12 +27,14 @@ class RestaurantListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         controller.fetchRestaurantList()
+      //  setupSearchBar()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setNavigationStyle()
+       // setupNavigation()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -40,6 +42,20 @@ class RestaurantListViewController: UIViewController {
     }
     
     // MARK: - Private Functions
+    
+    private func setupNavigation() {
+        navigationItem.title = "Restaurantes"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    private func setupSearchBar() {
+        let search = FBRSearchController()
+        search.searchDelegate = self
+        
+        navigationItem.searchController = search
+        navigationItem.hidesSearchBarWhenScrolling = false
+    }
     
     private func setNavigationStyle() {
         setNeedsStatusBarAppearanceUpdate()
@@ -60,5 +76,16 @@ extension RestaurantListViewController: RestaurantListScreenDelegate {
     
     func loadData() {
         
+    }
+}
+
+extension RestaurantListViewController: FBRSearchControllerDelegate {
+    
+    func didFinishSearch(_ searchText: String) {
+        print("===FINISH")
+    }
+    
+    func didCancelSearch() {
+        print("==== CANCEL")
     }
 }
