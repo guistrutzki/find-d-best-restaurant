@@ -229,12 +229,6 @@ extension  RestaurantDetailScreen: UITableViewDelegate, UITableViewDataSource {
             return 270
         }
     }
-    
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let view = UIView(frame: .zero)
-//        view.backgroundColor = .clear
-//        return view
-//    }
 }
 
 
