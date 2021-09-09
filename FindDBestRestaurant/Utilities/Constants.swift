@@ -119,4 +119,5 @@ enum Colors {
     static let gradient900              = UIColor("#090808")
     static let gradient100              = UIColor("#000000", alpha: 0.35)
     static let gradient040              = UIColor("#000000", alpha: 0.40)
+    static let darkness                 = UIColor(red: 13, green: 25, blue: 33, alpha: 0)
 }

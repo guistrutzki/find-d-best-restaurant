@@ -38,6 +38,11 @@
 		7067ABE526EAC3EA00CACBFD /* FavoritesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067ABE326EAC3EA00CACBFD /* FavoritesScreen.swift */; };
 		7067ABE626EAC3EA00CACBFD /* FavoritesScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067ABE426EAC3EA00CACBFD /* FavoritesScreenDelegate.swift */; };
 		7067ABEA26EAC47B00CACBFD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067ABE926EAC47B00CACBFD /* FavoritesViewController.swift */; };
+		7067ABED26EAC96C00CACBFD /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067ABEC26EAC96C00CACBFD /* FavoritesCell.swift */; };
+		7067ABF026EAC9DC00CACBFD /* FBRCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067ABEF26EAC9DC00CACBFD /* FBRCardView.swift */; };
+		7067ABF226EACCFB00CACBFD /* FavoritesCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067ABF126EACCFB00CACBFD /* FavoritesCellDelegate.swift */; };
+		7067ABF426EACF4700CACBFD /* EmptyFavoritesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067ABF326EACF4700CACBFD /* EmptyFavoritesScreen.swift */; };
+		7067ABF626EAD30700CACBFD /* restaurantAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 7067ABF526EAD30700CACBFD /* restaurantAnimation.json */; };
 		70751EB626E1324700F6D85F /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70751EB526E1324700F6D85F /* MenuTableCell.swift */; };
 		70751EB826E1342400F6D85F /* MenuCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70751EB726E1342400F6D85F /* MenuCollectionCell.swift */; };
 		70751EBA26E1352200F6D85F /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70751EB926E1352200F6D85F /* UICollectionView+Ext.swift */; };
@@ -108,6 +113,11 @@
 		7067ABE326EAC3EA00CACBFD /* FavoritesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesScreen.swift; sourceTree = "<group>"; };
 		7067ABE426EAC3EA00CACBFD /* FavoritesScreenDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesScreenDelegate.swift; sourceTree = "<group>"; };
 		7067ABE926EAC47B00CACBFD /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		7067ABEC26EAC96C00CACBFD /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
+		7067ABEF26EAC9DC00CACBFD /* FBRCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRCardView.swift; sourceTree = "<group>"; };
+		7067ABF126EACCFB00CACBFD /* FavoritesCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCellDelegate.swift; sourceTree = "<group>"; };
+		7067ABF326EACF4700CACBFD /* EmptyFavoritesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyFavoritesScreen.swift; sourceTree = "<group>"; };
+		7067ABF526EAD30700CACBFD /* restaurantAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = restaurantAnimation.json; sourceTree = "<group>"; };
 		70751EB526E1324700F6D85F /* MenuTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
 		70751EB726E1342400F6D85F /* MenuCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionCell.swift; sourceTree = "<group>"; };
 		70751EB926E1352200F6D85F /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
@@ -299,6 +309,7 @@
 		70311A4526D1A166005B0C0E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7067ABEB26EAC94800CACBFD /* Cell */,
 				70311A4F26D1A23E005B0C0E /* Views */,
 			);
 			path = View;
@@ -384,6 +395,7 @@
 				7067ABE926EAC47B00CACBFD /* FavoritesViewController.swift */,
 				7067ABE426EAC3EA00CACBFD /* FavoritesScreenDelegate.swift */,
 				7067ABE326EAC3EA00CACBFD /* FavoritesScreen.swift */,
+				7067ABF326EACF4700CACBFD /* EmptyFavoritesScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -400,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				5B94D67D26C5F68F00346B9B /* Assets.xcassets */,
+				7067ABF526EAD30700CACBFD /* restaurantAnimation.json */,
 				BC61D76026D4901F00019CC0 /* restaurant.json */,
 			);
 			path = Resources;
@@ -447,6 +460,23 @@
 				7034B04A26DEDC6C008B586A /* ProfileCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		7067ABEB26EAC94800CACBFD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7067ABEC26EAC96C00CACBFD /* FavoritesCell.swift */,
+				7067ABF126EACCFB00CACBFD /* FavoritesCellDelegate.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		7067ABEE26EAC9B000CACBFD /* FBRCardView */ = {
+			isa = PBXGroup;
+			children = (
+				7067ABEF26EAC9DC00CACBFD /* FBRCardView.swift */,
+			);
+			path = FBRCardView;
 			sourceTree = "<group>";
 		};
 		707C4FBB26E0304900C01926 /* RestaurantDetail */ = {
@@ -635,6 +665,7 @@
 		BCE50B6026D28EC8009388AA /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7067ABEE26EAC9B000CACBFD /* FBRCardView */,
 				7004776026E4368F006C32F4 /* FBRSearch */,
 				707C4FCA26E0468800C01926 /* FBRCircularView */,
 				707C4FC526E0432F00C01926 /* FBRHeartButton */,
@@ -738,6 +769,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B94D68126C5F68F00346B9B /* LaunchScreen.storyboard in Resources */,
+				7067ABF626EAD30700CACBFD /* restaurantAnimation.json in Resources */,
 				5B94D67E26C5F68F00346B9B /* Assets.xcassets in Resources */,
 				BC61D76126D4901F00019CC0 /* restaurant.json in Resources */,
 			);
@@ -797,6 +829,7 @@
 				7034B05126DEEF79008B586A /* ProfileScreenDelegate.swift in Sources */,
 				70751EB826E1342400F6D85F /* MenuCollectionCell.swift in Sources */,
 				BCE50B6326D28F6B009388AA /* CustomButtonView.swift in Sources */,
+				7067ABF026EAC9DC00CACBFD /* FBRCardView.swift in Sources */,
 				707C4FC426E0320B00C01926 /* RestaurantDetailController.swift in Sources */,
 				707C4FC226E031FB00C01926 /* RestaurantDetailViewController.swift in Sources */,
 				BC5C500D26DBFA3000CDF9C4 /* ResetPasswordVC.swift in Sources */,
@@ -806,6 +839,7 @@
 				7067ABE226EAC3D900CACBFD /* FavoritesController.swift in Sources */,
 				5BC25F7B26D357940053BDF5 /* SignInVC.swift in Sources */,
 				BC1C9AA926D2FC6D00893506 /* CustomTextFieldView.swift in Sources */,
+				7067ABF226EACCFB00CACBFD /* FavoritesCellDelegate.swift in Sources */,
 				70311A3526D1982D005B0C0E /* RestaurantListViewController.swift in Sources */,
 				BCE50B6826D29D83009388AA /* CodeView.swift in Sources */,
 				70E1D69E26DC520800E1A31D /* RestaurantListController.swift in Sources */,
@@ -813,6 +847,7 @@
 				BC5C500B26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift in Sources */,
 				5B3BC84826DAB575001E694F /* InitialScreenDelegate.swift in Sources */,
 				70311A3726D1983E005B0C0E /* TopRestaurantsViewController.swift in Sources */,
+				7067ABF426EACF4700CACBFD /* EmptyFavoritesScreen.swift in Sources */,
 				70E1D69C26DC4C4500E1A31D /* RestaurantListResponse.swift in Sources */,
 				5BD562FF26DEE56700699FCF /* UIView+ext.swift in Sources */,
 				5B3BC84226DAB2B8001E694F /* InitialVC.swift in Sources */,
@@ -835,6 +870,7 @@
 				7034B04F26DEEF1D008B586A /* ProfileController.swift in Sources */,
 				70E1D69926DC4C2F00E1A31D /* NetworkManager.swift in Sources */,
 				707C4FCC26E046A800C01926 /* FBRCircularView.swift in Sources */,
+				7067ABED26EAC96C00CACBFD /* FavoritesCell.swift in Sources */,
 				70E1D68E26DC40D200E1A31D /* RestaurantListScreen.swift in Sources */,
 				5B94D67426C5F68C00346B9B /* SceneDelegate.swift in Sources */,
 				70E1D69626DC494400E1A31D /* Restaurant.swift in Sources */,
