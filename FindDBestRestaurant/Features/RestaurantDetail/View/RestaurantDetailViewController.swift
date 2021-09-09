@@ -12,7 +12,7 @@ class RestaurantDetailViewController: UIViewController {
     // MARK: - Variable
     
     lazy var restaurantDetailScreen: RestaurantDetailScreen = {
-        let screen = RestaurantDetailScreen()
+        let screen = RestaurantDetailScreen(self)
         return screen
     }()
 
@@ -25,5 +25,18 @@ class RestaurantDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+}
+
+// MARK: - RestaurantDetailScreenDelegate extension
+
+extension RestaurantDetailViewController: RestaurantDetailScreenDelegate {
+    
+    func didTappedHeartButton() {
+        print("====HEART BUTTON=====")
+    }
+    
+    func didTappedBackButton() {
+        navigationController?.popToRootViewController(animated: true)
     }
 }
