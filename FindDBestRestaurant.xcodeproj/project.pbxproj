@@ -22,6 +22,9 @@
 		5BC25F8126D456D20053BDF5 /* FBRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F8026D456D20053BDF5 /* FBRButton.swift */; };
 		5BC25F8326D459EF0053BDF5 /* SignInViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F8226D459EF0053BDF5 /* SignInViewDelegate.swift */; };
 		5BD562FF26DEE56700699FCF /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD562FE26DEE56700699FCF /* UIView+ext.swift */; };
+		5BF91D1F26EDB06D005E440B /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF91D1E26EDB06D005E440B /* SignUpModel.swift */; };
+		5BF91D2126EDB207005E440B /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF91D2026EDB207005E440B /* SignUpController.swift */; };
+		5BF91D2326EDB6A5005E440B /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF91D2226EDB6A5005E440B /* APIManager.swift */; };
 		7004775F26E429EB006C32F4 /* RestaurantDetailScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004775E26E429EB006C32F4 /* RestaurantDetailScreenDelegate.swift */; };
 		7004776226E436C9006C32F4 /* FBRSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004776126E436C9006C32F4 /* FBRSearchController.swift */; };
 		7004776426E4374F006C32F4 /* FBRSearchControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004776326E4374F006C32F4 /* FBRSearchControllerDelegate.swift */; };
@@ -89,6 +92,9 @@
 		5BC25F8026D456D20053BDF5 /* FBRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRButton.swift; sourceTree = "<group>"; };
 		5BC25F8226D459EF0053BDF5 /* SignInViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewDelegate.swift; sourceTree = "<group>"; };
 		5BD562FE26DEE56700699FCF /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
+		5BF91D1E26EDB06D005E440B /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		5BF91D2026EDB207005E440B /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		5BF91D2226EDB6A5005E440B /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		7004775E26E429EB006C32F4 /* RestaurantDetailScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailScreenDelegate.swift; sourceTree = "<group>"; };
 		7004776126E436C9006C32F4 /* FBRSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRSearchController.swift; sourceTree = "<group>"; };
 		7004776326E4374F006C32F4 /* FBRSearchControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRSearchControllerDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +221,14 @@
 				5BC25F7A26D357940053BDF5 /* SignInVC.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5BF91D1D26EDAFB4005E440B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5BF91D2026EDB207005E440B /* SignUpController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		7004776026E4368F006C32F4 /* FBRSearch */ = {
@@ -550,6 +564,7 @@
 			children = (
 				70E1D69A26DC4C3500E1A31D /* Model */,
 				70E1D69826DC4C2F00E1A31D /* NetworkManager.swift */,
+				5BF91D2226EDB6A5005E440B /* APIManager.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -558,6 +573,7 @@
 			isa = PBXGroup;
 			children = (
 				70E1D69B26DC4C4500E1A31D /* RestaurantListResponse.swift */,
+				5BF91D1E26EDB06D005E440B /* SignUpModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -608,6 +624,7 @@
 		BC84A60826D59A6F001B63C7 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				5BF91D1D26EDAFB4005E440B /* Controller */,
 				BC84A60926D59A7D001B63C7 /* Screens */,
 				BC84A60F26D59FFD001B63C7 /* SignUpVC.swift */,
 			);
@@ -795,6 +812,7 @@
 				707C4FC726E0435100C01926 /* FBRHeartButton.swift in Sources */,
 				5B94D67C26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld in Sources */,
 				5BC25F7B26D357940053BDF5 /* SignInVC.swift in Sources */,
+				5BF91D2326EDB6A5005E440B /* APIManager.swift in Sources */,
 				BC1C9AA926D2FC6D00893506 /* CustomTextFieldView.swift in Sources */,
 				70311A3526D1982D005B0C0E /* RestaurantListViewController.swift in Sources */,
 				BCE50B6826D29D83009388AA /* CodeView.swift in Sources */,
@@ -804,6 +822,8 @@
 				70311A3926D1984C005B0C0E /* FavoritesViewController.swift in Sources */,
 				5B3BC84826DAB575001E694F /* InitialScreenDelegate.swift in Sources */,
 				70311A3726D1983E005B0C0E /* TopRestaurantsViewController.swift in Sources */,
+				5BF91D1F26EDB06D005E440B /* SignUpModel.swift in Sources */,
+				5BF91D2126EDB207005E440B /* SignUpController.swift in Sources */,
 				70E1D69C26DC4C4500E1A31D /* RestaurantListResponse.swift in Sources */,
 				5BD562FF26DEE56700699FCF /* UIView+ext.swift in Sources */,
 				5B3BC84226DAB2B8001E694F /* InitialVC.swift in Sources */,
