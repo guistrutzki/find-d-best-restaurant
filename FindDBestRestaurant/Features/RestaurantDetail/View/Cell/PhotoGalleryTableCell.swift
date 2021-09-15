@@ -1,5 +1,5 @@
 //
-//  MenuTableCell.swift
+//  PhotoGalleryTableCell.swift
 //  FindDBestRestaurant
 //
 //  Created by Bruna Drago on 02/09/21.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class MenuTableCell: UITableViewCell {
+class PhotoGalleryTableCell: UITableViewCell {
     
     // MARK: - Identifier
     
-    static let identifier: String = String(describing: MenuTableCell.self)
+    static let identifier: String = String(describing: PhotoGalleryTableCell.self)
     
     // MARK: - UI Element
     
@@ -21,7 +21,7 @@ class MenuTableCell: UITableViewCell {
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.numberOfLines = 0
         label.textColor = .white
-        label.text = K.menu
+        label.text = K.photoGallery
         return label
     }()
     
@@ -53,11 +53,12 @@ class MenuTableCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
 }
 
 // MARK: - CodeView Extension
 
-extension MenuTableCell: CodeView {
+extension PhotoGalleryTableCell: CodeView {
     func buildViewHierarchy() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(collection)
@@ -70,29 +71,29 @@ extension MenuTableCell: CodeView {
         }
         
         collection.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
             make.left.right.bottom.equalToSuperview()
         }
     }
     
     func setupAdditionalConfiguration() {
-        MenuCollectionCell.registerOn(collection)
+        PhotoGalleryCollectionCell.registerOn(collection)
         backgroundColor = Colors.gray800
     }
 }
 
 // MARK: - UICollectionViewDataSource Extension
 
-extension MenuTableCell: UICollectionViewDataSource , UICollectionViewDelegate {
+extension PhotoGalleryTableCell: UICollectionViewDataSource , UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let identifier = MenuCollectionCell.identifier
+        let identifier = PhotoGalleryCollectionCell.identifier
         
-        guard let cell = collection.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? MenuCollectionCell else { return UICollectionViewCell()}
+        guard let cell = collection.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? PhotoGalleryCollectionCell else { return UICollectionViewCell()}
         
         return cell
     }
@@ -100,10 +101,11 @@ extension MenuTableCell: UICollectionViewDataSource , UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDelegateFlowLayout Extension
 
-extension MenuTableCell: UICollectionViewDelegateFlowLayout {
+extension PhotoGalleryTableCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 200)
+        return CGSize(width: 145, height: 270)
     }
 }
+

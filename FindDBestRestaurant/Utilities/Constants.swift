@@ -8,31 +8,83 @@
 import UIKit
 
 enum K {
-    static let appTitle                 = "Find D Best Restaurant"
-    static let profile                  = "Perfil"
-    static let restaurants              = "Restaurantes"
-    static let favorites                = "Favorites"
-    static let top                      = "Top"
-    static let enter                    = "Entrar"
-    static let forgetMyPassword         = "Esqueci minha senha"
-    static let forgetYourPassword       = "Esqueceu sua senha?"
-    static let signUp                   = "Cadastrar"
-    static let ok                       = "Ok"
+    
+    ///A
+    static let aboutRestaurant          = "Sobre o restaurante"
     static let accountCreated           = "Sua conta foi criada"
     static let accountSuccessMessage    = "Agora você já pode fazer login"
+    static let appTitle                 = "Find D Best Restaurant"
+    
+    ///B
+    ///C
+    
+    static let continueWithoutLogin     = "Continuar sem login"
+    
+    ///D
+    ///E
+    
+    static let enter                    = "Entrar"
+    
+    ///F
+    
+    static let favorites                = "Favorites"
+    static let forgetMyPassword         = "Esqueci minha senha"
+    static let forgetYourPassword       = "Esqueceu sua senha?"
+    
+    ///G
+    ///H
+    
+    static let home                     = "Home"
+    
+    ///I
+    ///J
+    ///K
+    ///L
+    
+    ///M
+    
+    static let menu                     = "Menu"
+    
+    ///N
+    ///O
+    
+    static let ok                       = "Ok"
+    
+    ///P
+    
+    static let profile                  = "Perfil"
+    static let photoGallery             = "Galeria de fotos"
+    
+    ///Q
+    ///R
+    
+    static let register                 = "Cadastre-se"
+    static let reset                    = "Redefinir"
+    static let resetMessage             = "Para recuperar a sua senha, precisamos de seu email de cadastro"
+    static let resetPasswordVCTitle     = "Esqueci minha senha"
+    static let resetPassword            = "Esqueci minha senha"
+    static let restaurants              = "Restaurantes"
+    
+    ///S
+    
+    static let send                     = "Enviar"
+    static let sendEmail                = "Email enviado"
+    static let sendEmailSuccessMessage  = "Por favor, cheque sua caixa de entrada para redefinir sua senha."
+    static let signUp                   = "Cadastrar"
     static let signUpVCTitle            = "Cadastro"
+    
+    ///T
+    
+    static let top                      = "Top"
     static let typeYourFullName         = "Digite seu nome completo"
     static let typeYourEmail            = "Digite seu email"
     static let typeYourPassword         = "Digite sua senha"
-    static let resetPasswordVCTitle     = "Esqueci minha senha"
-    static let resetPassword            = "Esqueci minha senha"
-    static let register                 = "Cadastre-se"
-    static let send                     = "Enviar"
-    static let resetMessage             = "Para recuperar a sua senha, precisamos de seu email de cadastro"
-    static let sendEmail                = "Email enviado"
-    static let sendEmailSuccessMessage  = "Por favor, cheque sua caixa de entrada para redefinir sua senha."
-    static let continueWithoutLogin     = "Continuar sem login"
-    static let reset                    = "Redefinir"
+    
+    ///U
+    ///V
+    ///X
+    ///Z
+    
 }
 
 enum SFSymbols {
@@ -66,4 +118,5 @@ enum Colors {
     static let red500                   = UIColor("#E73030")
     static let gradient900              = UIColor("#090808")
     static let gradient100              = UIColor("#000000", alpha: 0.35)
+    static let gradient040              = UIColor("#000000", alpha: 0.40)
 }

@@ -31,7 +31,16 @@ class RestaurantDetailScreen: UIView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
         imageView.image = UIImage(named: "rest-1")
+        imageView.applyGradient(isVertical: true, colorArray: [Colors.gradient040, Colors.gradient900])
         return imageView
+    }()
+    
+    lazy var backButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "arrow-left"), for: .normal)
+        button.tintColor = .white
+        return button
     }()
     
     private lazy var loveItButton: FBRLoveItButton = {
@@ -55,7 +64,7 @@ class RestaurantDetailScreen: UIView {
         label.font = UIFont.boldSystemFont(ofSize: 24)
         label.numberOfLines = 0
         label.textColor = .white
-        label.text = "Sobre o restaurante"
+        label.text = K.aboutRestaurant
         return label
     }()
     
@@ -68,29 +77,27 @@ class RestaurantDetailScreen: UIView {
         label.text = "Oferecemos Carnes selecionadas servidas em sistemas de rodízio, acompanhadas de irresistível e variado buffet de saladas e pratos quentes."
         return label
     } ()
-    
-    private lazy var menuLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.numberOfLines = 0
-        label.textColor = .white
-        label.text = "Menu"
-        return label
-    } ()
-   
+
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = Colors.gray800
         tableView.isUserInteractionEnabled = true
+        tableView.separatorColor = .clear
         return tableView
     }()
+    
+    enum TableViewSection: Int, CaseIterable {
+        case menu = 0
+        case gallery = 1
+    }
   
+    weak var delegate: RestaurantDetailScreenDelegate?
     
     // MARK: - Inits
     
-    init() {
+    init(_ delegate: RestaurantDetailScreenDelegate) {
+        self.delegate = delegate
         super.init(frame: .zero)
         setupView()
     }
@@ -101,6 +108,16 @@ class RestaurantDetailScreen: UIView {
     
     // MARK: - Private Functions
     
+    @objc private func didTappedBackButton(_ button: UIButton) {
+        print("===BACK")
+        delegate?.didTappedBackButton()
+    }
+    
+    @objc private func didTappedHeartButton(_ button: UIButton) {
+        print("===LOVEIT")
+        delegate?.didTappedHeartButton()
+    }
+    
     private func getMenuCell(index: IndexPath) -> UITableViewCell {
         let identifier = MenuTableCell.identifier
         
@@ -110,7 +127,17 @@ class RestaurantDetailScreen: UIView {
         cell.selectionStyle = .none
         
         return cell
+    }
+    
+    private func getGalleryCell(index: IndexPath) -> UITableViewCell {
+        let identifier = PhotoGalleryTableCell.identifier
         
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for:index) as? PhotoGalleryTableCell
+        else { return UITableViewCell()}
+        
+        cell.selectionStyle = .none
+        
+        return cell
     }
 }
 
@@ -123,12 +150,12 @@ extension RestaurantDetailScreen: CodeView {
         scrollView.addSubview(scrollContent)
         scrollContent.addSubview(containerView)
         containerView.addSubview(restaurantImageView)
-        restaurantImageView.addSubview(loveItButton)
-        restaurantImageView.addSubview(nameLabel)
-        containerView.addSubview(aboutRestaurantTitleLabel)
-        containerView.addSubview(infoLabel)
-        containerView.addSubview(menuLabel)
-        containerView.addSubview(tableView)
+        scrollContent.addSubview(backButton)
+        scrollContent.addSubview(loveItButton)
+        scrollContent.addSubview(nameLabel)
+        scrollContent.addSubview(aboutRestaurantTitleLabel)
+        scrollContent.addSubview(infoLabel)
+        scrollContent.addSubview(tableView)
     }
     
     func setupConstraints() {
@@ -153,6 +180,12 @@ extension RestaurantDetailScreen: CodeView {
             make.height.equalTo(300)
         }
         
+        backButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(20)
+            make.left.equalToSuperview().offset(20)
+            make.height.equalTo(40)
+        }
+        
         loveItButton.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(20)
             make.right.equalToSuperview().inset(20)
@@ -175,14 +208,9 @@ extension RestaurantDetailScreen: CodeView {
             make.left.equalToSuperview().offset(15)
             make.right.equalToSuperview().inset(15)
         }
-        
-        menuLabel.snp.makeConstraints { make in
-            make.top.equalTo(infoLabel.snp.bottom).offset(20)
-            make.left.equalToSuperview().offset(15)
-        }
-        
+  
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(menuLabel.snp.bottom).offset(10)
+            make.top.equalTo(infoLabel.snp.bottom).offset(20)
             make.bottom.left.right.equalToSuperview()
             make.height.equalTo(600)
         }
@@ -190,26 +218,54 @@ extension RestaurantDetailScreen: CodeView {
     
     func setupAdditionalConfiguration() {
         backgroundColor = Colors.gray800
+        scrollView.showsVerticalScrollIndicator = false
+        
+        restaurantImageView.layer.cornerRadius = 12
+        restaurantImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
         tableView.delegate = self
         tableView.dataSource = self
         MenuTableCell.registerOn(tableView)
+        PhotoGalleryTableCell.registerOn(tableView)
+        
+        let backButtonACtion = #selector(didTappedBackButton(_:))
+        backButton.addTarget(self, action: backButtonACtion, for: .touchUpInside)
+        
+        let loveItButtonACtion = #selector(didTappedHeartButton(_:))
+        loveItButton.addTarget(self, action: loveItButtonACtion, for: .touchUpInside)
     }
 }
 
 extension  RestaurantDetailScreen: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return TableViewSection.allCases.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return getMenuCell(index: indexPath)
+        guard let section = TableViewSection(rawValue: indexPath.section) else { return UITableViewCell()}
+        
+        switch section {
+        case .gallery:
+            return getGalleryCell(index: indexPath)
+        case .menu:
+            return getMenuCell(index: indexPath)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 210
+        guard let section = TableViewSection(rawValue: indexPath.section) else { return 0}
+        
+        switch section {
+        case .gallery:
+            return 310
+        case .menu:
+            return 270
+        }
     }
 }
 
