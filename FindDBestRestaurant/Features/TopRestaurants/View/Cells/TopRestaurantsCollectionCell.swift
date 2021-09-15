@@ -120,9 +120,9 @@ final class TopRestaurantsCollectionCell: UICollectionViewCell {
 	func setupCell(restaurant: RestaurantListResponse) {
 		titleLabel.text = restaurant.name
 		
-//		for index in 0..<restaurant.rating {
-//			arrayStars[index].image = UIImage(systemName: "star.fill")
-//		}
+		for index in 0..<restaurant.rating {
+			arrayStars[index].image = UIImage(systemName: "star.fill")
+		}
 		
 	}
 	

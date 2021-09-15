@@ -61,7 +61,6 @@ class TopRestaurantsViewController: UIViewController {
 			case .authorizedWhenInUse:
 				self.topRestaurantScreen.showsUserLocation()
 				self.topRestaurantScreen.centerViewOnUserLocation(locationManager)
-				//				locationManager.startUpdatingLocation()
 				break
 			case .denied:
 				break
@@ -82,6 +81,33 @@ class TopRestaurantsViewController: UIViewController {
 
 // MARK: - Extension MKMapViewDelegate
 extension TopRestaurantsViewController: MKMapViewDelegate {
+	
+	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+		guard let locationUser = locationManager.location?.coordinate else { return nil }
+		
+		if annotation.coordinate.latitude != locationUser.latitude
+				&& annotation.coordinate.longitude != locationUser.longitude {
+			let identifier = "AnnotationPin"
+			let view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+			view.canShowCallout = true
+			view.calloutOffset = CGPoint(x: -5, y: 5)
+			view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+			return view
+		}
+		
+		return nil
+	}
+	
+	func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+		guard let locationAnnotation = view.annotation?.coordinate else { return }
+		
+		let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+		let placemark = MKPlacemark(coordinate: locationAnnotation)
+		let mapItem = MKMapItem(placemark: placemark)
+		mapItem.name = view.annotation?.title ?? "Destino"
+		mapItem.openInMaps(launchOptions: launchOptions)
+	}
+	
 }
 
 // MARK: - Extension UICollectionViewDelegate
@@ -125,10 +151,6 @@ extension TopRestaurantsViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: - Extension CLLocationManagerDelegate
 extension TopRestaurantsViewController: CLLocationManagerDelegate {
-	
-	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-		//		self.topRestaurantScreen.centerViewOnUserLocation(manager)
-	}
 	
 	func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
 		checkLocationAuthorization()
