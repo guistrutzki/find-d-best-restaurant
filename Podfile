@@ -10,5 +10,6 @@ target 'FindDBestRestaurant' do
    pod 'lottie-ios'
    pod 'Kingfisher', '~> 6.0'
    pod 'Alamofire', '5.4.3'
-
+   pod 'Firebase/Analytics'
+   pod 'Firebase/Crashlytics'
 end
