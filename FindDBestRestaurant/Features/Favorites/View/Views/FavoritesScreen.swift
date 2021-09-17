@@ -155,9 +155,15 @@ extension FavoritesScreen : CodeView {
     
     func buildViewHierarchy() {
         addSubview(collectionView)
+        addSubview(emptyFavoritesScreen)
     }
     
     func setupConstraints() {
+        emptyFavoritesScreen.snp.makeConstraints { make in
+            make.left.right.equalTo(safeAreaLayoutGuide)
+            make.top.equalTo(safeAreaLayoutGuide).offset(48)
+        }
+        
         collectionView.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16)
             make.right.equalToSuperview().inset(16)
