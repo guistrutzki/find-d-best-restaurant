@@ -24,11 +24,13 @@ struct RestaurantListResponse: Decodable {
     let logoImage: String
     
     let address: String
+	
+	 let rating: Int
     
     let createdAt: String
     
     enum CodingKeys: String, CodingKey {
-        case id, name, description, lat, lng, coverImage, logoImage, address
+        case id, name, description, lat, lng, coverImage, logoImage, address, rating
         case createdAt = "created_at"
     }
 }

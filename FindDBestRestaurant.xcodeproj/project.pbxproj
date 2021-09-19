@@ -11,6 +11,7 @@
 		5B3BC84226DAB2B8001E694F /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BC84126DAB2B8001E694F /* InitialVC.swift */; };
 		5B3BC84526DAB2ED001E694F /* InitialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BC84426DAB2ED001E694F /* InitialScreen.swift */; };
 		5B3BC84826DAB575001E694F /* InitialScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BC84726DAB575001E694F /* InitialScreenDelegate.swift */; };
+		5B3C0FD526F416A9004C9371 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B3C0FD426F416A9004C9371 /* GoogleService-Info.plist */; };
 		5B94D67226C5F68C00346B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D67126C5F68C00346B9B /* AppDelegate.swift */; };
 		5B94D67426C5F68C00346B9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D67326C5F68C00346B9B /* SceneDelegate.swift */; };
 		5B94D67C26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D67A26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld */; };
@@ -65,6 +66,8 @@
 		70E1D69C26DC4C4500E1A31D /* RestaurantListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1D69B26DC4C4500E1A31D /* RestaurantListResponse.swift */; };
 		70E1D69E26DC520800E1A31D /* RestaurantListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1D69D26DC520800E1A31D /* RestaurantListController.swift */; };
 		70E1D6A026DC6D8600E1A31D /* RestaurantListScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1D69F26DC6D8600E1A31D /* RestaurantListScreenDelegate.swift */; };
+		BC0E63F826E6DA2B00A68212 /* TopRestaurantsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E63F726E6DA2B00A68212 /* TopRestaurantsScreen.swift */; };
+		BC0E63FB26E6E73100A68212 /* TopRestaurantsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E63FA26E6E73100A68212 /* TopRestaurantsCollectionCell.swift */; };
 		BC1C9AA926D2FC6D00893506 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9AA826D2FC6D00893506 /* CustomTextFieldView.swift */; };
 		BC5C500926DBF43300CDF9C4 /* ResetPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5C500826DBF43300CDF9C4 /* ResetPasswordScreen.swift */; };
 		BC5C500B26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5C500A26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift */; };
@@ -74,6 +77,7 @@
 		BC61D76126D4901F00019CC0 /* restaurant.json in Resources */ = {isa = PBXBuildFile; fileRef = BC61D76026D4901F00019CC0 /* restaurant.json */; };
 		BC84A60B26D59AAB001B63C7 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84A60A26D59AAB001B63C7 /* SignUpScreen.swift */; };
 		BC84A61026D59FFD001B63C7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84A60F26D59FFD001B63C7 /* SignUpVC.swift */; };
+		BCDC02DA26E978A800B05931 /* TopRestaurantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDC02D926E978A800B05931 /* TopRestaurantsController.swift */; };
 		BCE50B6326D28F6B009388AA /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE50B6226D28F6B009388AA /* CustomButtonView.swift */; };
 		BCE50B6826D29D83009388AA /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE50B6726D29D83009388AA /* CodeView.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +88,7 @@
 		5B3BC84126DAB2B8001E694F /* InitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
 		5B3BC84426DAB2ED001E694F /* InitialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreen.swift; sourceTree = "<group>"; };
 		5B3BC84726DAB575001E694F /* InitialScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreenDelegate.swift; sourceTree = "<group>"; };
+		5B3C0FD426F416A9004C9371 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B94D66E26C5F68C00346B9B /* FindDBestRestaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindDBestRestaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B94D67126C5F68C00346B9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B94D67326C5F68C00346B9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +146,8 @@
 		70E1D69D26DC520800E1A31D /* RestaurantListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListController.swift; sourceTree = "<group>"; };
 		70E1D69F26DC6D8600E1A31D /* RestaurantListScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListScreenDelegate.swift; sourceTree = "<group>"; };
 		A1CB12D0950B0BA3055A0234 /* Pods_FindDBestRestaurant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindDBestRestaurant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC0E63F726E6DA2B00A68212 /* TopRestaurantsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRestaurantsScreen.swift; sourceTree = "<group>"; };
+		BC0E63FA26E6E73100A68212 /* TopRestaurantsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRestaurantsCollectionCell.swift; sourceTree = "<group>"; };
 		BC1C9AA826D2FC6D00893506 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		BC5C500826DBF43300CDF9C4 /* ResetPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordScreen.swift; sourceTree = "<group>"; };
 		BC5C500A26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +157,7 @@
 		BC61D76026D4901F00019CC0 /* restaurant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = restaurant.json; sourceTree = "<group>"; };
 		BC84A60A26D59AAB001B63C7 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
 		BC84A60F26D59FFD001B63C7 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		BCDC02D926E978A800B05931 /* TopRestaurantsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TopRestaurantsController.swift; path = FindDBestRestaurant/Features/TopRestaurants/Controller/TopRestaurantsController.swift; sourceTree = SOURCE_ROOT; };
 		BCE50B6226D28F6B009388AA /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		BCE50B6726D29D83009388AA /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,6 +213,7 @@
 		5B94D67026C5F68C00346B9B /* FindDBestRestaurant */ = {
 			isa = PBXGroup;
 			children = (
+				5B3C0FD426F416A9004C9371 /* GoogleService-Info.plist */,
 				70E1D69726DC4B6700E1A31D /* NetworkManager */,
 				70AB790D26D6F69800BE67BE /* Common */,
 				70311A3026D196EE005B0C0E /* Features */,
@@ -369,7 +378,8 @@
 		70311A4C26D1A212005B0C0E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				70311A4E26D1A226005B0C0E /* Views */,
+				BC0E63F926E6E6D700A68212 /* Cells */,
+				BC0E63F626E6D9E900A68212 /* Screens */,
 				70311A3626D1983E005B0C0E /* TopRestaurantsViewController.swift */,
 			);
 			path = View;
@@ -378,15 +388,9 @@
 		70311A4D26D1A218005B0C0E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BCDC02D926E978A800B05931 /* TopRestaurantsController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		70311A4E26D1A226005B0C0E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		70311A4F26D1A23E005B0C0E /* Views */ = {
@@ -601,6 +605,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BC0E63F626E6D9E900A68212 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BC0E63F726E6DA2B00A68212 /* TopRestaurantsScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		BC0E63F926E6E6D700A68212 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BC0E63FA26E6E73100A68212 /* TopRestaurantsCollectionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		BC1C9AA726D2FC6D00893506 /* CustomTextFieldView */ = {
 			isa = PBXGroup;
 			children = (
@@ -721,6 +741,7 @@
 				5B94D66B26C5F68C00346B9B /* Frameworks */,
 				5B94D66C26C5F68C00346B9B /* Resources */,
 				B6F2EEC737F26D4A74A61970 /* [CP] Embed Pods Frameworks */,
+				5B3C0FD626F4195B004C9371 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -768,6 +789,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3C0FD526F416A9004C9371 /* GoogleService-Info.plist in Resources */,
 				5B94D68126C5F68F00346B9B /* LaunchScreen.storyboard in Resources */,
 				7067ABF626EAD30700CACBFD /* restaurantAnimation.json in Resources */,
 				5B94D67E26C5F68F00346B9B /* Assets.xcassets in Resources */,
@@ -799,6 +821,25 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		5B3C0FD626F4195B004C9371 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		B6F2EEC737F26D4A74A61970 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -833,11 +874,13 @@
 				707C4FC426E0320B00C01926 /* RestaurantDetailController.swift in Sources */,
 				707C4FC226E031FB00C01926 /* RestaurantDetailViewController.swift in Sources */,
 				BC5C500D26DBFA3000CDF9C4 /* ResetPasswordVC.swift in Sources */,
+				BC0E63F826E6DA2B00A68212 /* TopRestaurantsScreen.swift in Sources */,
 				5BC25F8326D459EF0053BDF5 /* SignInViewDelegate.swift in Sources */,
 				707C4FC726E0435100C01926 /* FBRHeartButton.swift in Sources */,
 				5B94D67C26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld in Sources */,
 				7067ABE226EAC3D900CACBFD /* FavoritesController.swift in Sources */,
 				5BC25F7B26D357940053BDF5 /* SignInVC.swift in Sources */,
+				BC0E63FB26E6E73100A68212 /* TopRestaurantsCollectionCell.swift in Sources */,
 				BC1C9AA926D2FC6D00893506 /* CustomTextFieldView.swift in Sources */,
 				7067ABF226EACCFB00CACBFD /* FavoritesCellDelegate.swift in Sources */,
 				70311A3526D1982D005B0C0E /* RestaurantListViewController.swift in Sources */,
@@ -867,6 +910,7 @@
 				70E1D69426DC442300E1A31D /* UIImageView+Ext.swift in Sources */,
 				5BC25F7D26D359460053BDF5 /* SignInScreen.swift in Sources */,
 				BC5C500926DBF43300CDF9C4 /* ResetPasswordScreen.swift in Sources */,
+				BCDC02DA26E978A800B05931 /* TopRestaurantsController.swift in Sources */,
 				7034B04F26DEEF1D008B586A /* ProfileController.swift in Sources */,
 				70E1D69926DC4C2F00E1A31D /* NetworkManager.swift in Sources */,
 				707C4FCC26E046A800C01926 /* FBRCircularView.swift in Sources */,
@@ -1028,6 +1072,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = H4BUWZ2875;
 				INFOPLIST_FILE = FindDBestRestaurant/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
