@@ -42,7 +42,7 @@
 		7067ABED26EAC96C00CACBFD /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067ABEC26EAC96C00CACBFD /* FavoritesCell.swift */; };
 		7067ABF026EAC9DC00CACBFD /* FBRCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067ABEF26EAC9DC00CACBFD /* FBRCardView.swift */; };
 		7067ABF226EACCFB00CACBFD /* FavoritesCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067ABF126EACCFB00CACBFD /* FavoritesCellDelegate.swift */; };
-		7067ABF426EACF4700CACBFD /* EmptyFavoritesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067ABF326EACF4700CACBFD /* EmptyFavoritesScreen.swift */; };
+		7067ABF426EACF4700CACBFD /* EmptyStateScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067ABF326EACF4700CACBFD /* EmptyStateScreen.swift */; };
 		7067ABF626EAD30700CACBFD /* restaurantAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 7067ABF526EAD30700CACBFD /* restaurantAnimation.json */; };
 		70751EB626E1324700F6D85F /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70751EB526E1324700F6D85F /* MenuTableCell.swift */; };
 		70751EB826E1342400F6D85F /* MenuCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70751EB726E1342400F6D85F /* MenuCollectionCell.swift */; };
@@ -121,7 +121,7 @@
 		7067ABEC26EAC96C00CACBFD /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		7067ABEF26EAC9DC00CACBFD /* FBRCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRCardView.swift; sourceTree = "<group>"; };
 		7067ABF126EACCFB00CACBFD /* FavoritesCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCellDelegate.swift; sourceTree = "<group>"; };
-		7067ABF326EACF4700CACBFD /* EmptyFavoritesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyFavoritesScreen.swift; sourceTree = "<group>"; };
+		7067ABF326EACF4700CACBFD /* EmptyStateScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateScreen.swift; sourceTree = "<group>"; };
 		7067ABF526EAD30700CACBFD /* restaurantAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = restaurantAnimation.json; sourceTree = "<group>"; };
 		70751EB526E1324700F6D85F /* MenuTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
 		70751EB726E1342400F6D85F /* MenuCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionCell.swift; sourceTree = "<group>"; };
@@ -399,7 +399,6 @@
 				7067ABE926EAC47B00CACBFD /* FavoritesViewController.swift */,
 				7067ABE426EAC3EA00CACBFD /* FavoritesScreenDelegate.swift */,
 				7067ABE326EAC3EA00CACBFD /* FavoritesScreen.swift */,
-				7067ABF326EACF4700CACBFD /* EmptyFavoritesScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -464,6 +463,14 @@
 				7034B04A26DEDC6C008B586A /* ProfileCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		705A141426F7D00E00DB51F9 /* FBREmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				7067ABF326EACF4700CACBFD /* EmptyStateScreen.swift */,
+			);
+			path = FBREmptyView;
 			sourceTree = "<group>";
 		};
 		7067ABEB26EAC94800CACBFD /* Cell */ = {
@@ -685,6 +692,7 @@
 		BCE50B6026D28EC8009388AA /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				705A141426F7D00E00DB51F9 /* FBREmptyView */,
 				7067ABEE26EAC9B000CACBFD /* FBRCardView */,
 				7004776026E4368F006C32F4 /* FBRSearch */,
 				707C4FCA26E0468800C01926 /* FBRCircularView */,
@@ -890,7 +898,7 @@
 				BC5C500B26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift in Sources */,
 				5B3BC84826DAB575001E694F /* InitialScreenDelegate.swift in Sources */,
 				70311A3726D1983E005B0C0E /* TopRestaurantsViewController.swift in Sources */,
-				7067ABF426EACF4700CACBFD /* EmptyFavoritesScreen.swift in Sources */,
+				7067ABF426EACF4700CACBFD /* EmptyStateScreen.swift in Sources */,
 				70E1D69C26DC4C4500E1A31D /* RestaurantListResponse.swift in Sources */,
 				5BD562FF26DEE56700699FCF /* UIView+ext.swift in Sources */,
 				5B3BC84226DAB2B8001E694F /* InitialVC.swift in Sources */,

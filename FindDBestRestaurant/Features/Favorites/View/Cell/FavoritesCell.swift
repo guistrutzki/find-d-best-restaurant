@@ -64,6 +64,15 @@ class FavoritesCell: UICollectionViewCell {
         setupView()
     }
     
+    // MARK: - Public Functions
+    
+    func setup(_ restaurant: Restaurant) {
+        favoriteName.text = restaurant.name
+        favoriteImage.image = restaurant.coverImage
+        //favoriteImage.load(url: restaurant.coverImage)
+        loveItButton.isFilled = true
+    }
+    
     // MARK: - Private Functions
     
     @objc

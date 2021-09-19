@@ -12,9 +12,9 @@ class FavoritesScreen: UIView {
     
     // MARK: - UI Components
     
-    private lazy var emptyFavoritesScreen: EmptyFavoritesScreen = {
-        let view = EmptyFavoritesScreen(frame: .zero)
-        view.backgroundColor = .clear
+    private lazy var emptyFavoritesScreen: EmptyStateScreen = {
+        let view = EmptyStateScreen(frame: .zero)
+        // view.backgroundColor = .clear
         return view
     }()
     
@@ -34,6 +34,12 @@ class FavoritesScreen: UIView {
     // MARK: - Variable
     
     weak var delegate: FavoritesScreenDelegate?
+    
+    var favoritesList:[Restaurant] = [
+        Restaurant(name: "Figueira Rubayat", description: "", coverImage: Images.rubayat ?? UIImage()),
+        Restaurant(name: "Top Paulista", description: "", coverImage: Images.restaurant1 ?? UIImage()),
+        Restaurant(name: "Top Garden Sp", description: "", coverImage: Images.restaurant1 ?? UIImage())
+    ]
     
     // MARK: - Inits
     
@@ -78,7 +84,7 @@ extension FavoritesScreen: UICollectionViewDelegate {
             inSection: indexPath.section) - 1
         
         if lastRowIndex == indexPath.row {
-           // fetchCharacterNextPage()
+            // fetchCharacterNextPage()
         }
         
         cell.alpha = 0.0
@@ -91,7 +97,7 @@ extension FavoritesScreen: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //selectCharacter(at: indexPath.item)
+        selectCharacter(at: indexPath.item)
     }
 }
 
@@ -100,7 +106,7 @@ extension FavoritesScreen: UICollectionViewDelegate {
 extension FavoritesScreen: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return favoritesList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -111,7 +117,8 @@ extension FavoritesScreen: UICollectionViewDataSource {
         else { return UICollectionViewCell() }
         
         cell.delegate = self
-       // cell.setup(characterList[indexPath.item])
+        let favorite = favoritesList[indexPath.item]
+        cell.setup(favorite)
         
         return cell
     }
@@ -160,8 +167,8 @@ extension FavoritesScreen : CodeView {
     
     func setupConstraints() {
         emptyFavoritesScreen.snp.makeConstraints { make in
-            make.left.right.equalTo(safeAreaLayoutGuide)
             make.top.equalTo(safeAreaLayoutGuide).offset(48)
+            make.left.right.bottom.equalToSuperview()
         }
         
         collectionView.snp.makeConstraints { make in
@@ -172,6 +179,8 @@ extension FavoritesScreen : CodeView {
     }
     
     func setupAdditionalConfiguration() {
+        emptyFavoritesScreen.isHidden = false
+        collectionView.isHidden = true
         backgroundColor = .systemBackground
         FavoritesCell.registerOn(collectionView)
     }

@@ -82,7 +82,15 @@ enum K {
     
     ///U
     ///V
+    ///W
+    
+    static let whatAboutStartNow        = "Que tal começar agora?"
     ///X
+    
+    ///Y
+    
+    static let youDontHaveAFavorite     = "Você ainda não possui favoritos"
+    
     ///Z
     
 }
@@ -106,6 +114,7 @@ enum Images {
     static let login                       = UIImage(named: "login")
     static let heartFilled                 = UIImage(named: "heartFilled")
     static let hearttoFullfill             = UIImage(named: "heart-empty")
+    static let favoritePlace               = UIImage(named: "favoritePlace")
 }
 
 enum Colors {

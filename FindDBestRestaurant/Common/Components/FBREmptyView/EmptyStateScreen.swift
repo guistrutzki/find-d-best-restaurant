@@ -6,23 +6,15 @@
 //
 
 import UIKit
-import Lottie
 
-class EmptyFavoritesScreen: UIView {
+class EmptyStateScreen: UIView {
     
     // MARK: - UI Elements
     
-    private var animationView: AnimationView = {
-        let lottieView = AnimationView(frame: .zero)
-        let animation = Animation.named("restaurantAnimation")
-        
-        lottieView.translatesAutoresizingMaskIntoConstraints = false
-        lottieView.animation = animation
-        lottieView.contentMode = .scaleAspectFit
-        lottieView.backgroundColor = UIColor(named: "backgroundColorFind")
-        lottieView.play(fromFrame: 0, toFrame: 200, loopMode: .loop)
-        lottieView.animationSpeed = 1.5
-        return lottieView
+    private lazy var emptyFavoriteImage: UIImageView = {
+        let image = UIImageView()
+        image.image = Images.favoritePlace
+        return image
     }()
     
     private lazy var title: UILabel = {
@@ -30,7 +22,8 @@ class EmptyFavoritesScreen: UIView {
         label.numberOfLines = 0
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.text = ""
+        label.text = K.youDontHaveAFavorite
+        label.textColor = .secondaryLabel
         return label
     }()
     
@@ -38,8 +31,9 @@ class EmptyFavoritesScreen: UIView {
         let label = UILabel(frame: .zero)
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 18)
-        label.text = ""
+        label.font = .systemFont(ofSize: 16)
+        label.text = K.whatAboutStartNow
+        label.textColor = .secondaryLabel
         return label
     }()
     
@@ -58,25 +52,25 @@ class EmptyFavoritesScreen: UIView {
 
 // MARK: - CodeView extension
 
-extension EmptyFavoritesScreen: CodeView {
+extension EmptyStateScreen: CodeView {
     
     func buildViewHierarchy() {
-        addSubview(animationView)
+        addSubview(emptyFavoriteImage)
         addSubview(title)
         addSubview(subtitle)
     }
     
     func setupConstraints() {
-        animationView.snp.makeConstraints { make in
-            make.width.height.equalTo(128)
-            make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(16)
+        emptyFavoriteImage.snp.makeConstraints { make in
+            make.left.top.equalToSuperview().offset(16)
+            make.right.equalToSuperview().inset(16)
+            make.height.equalTo(400)
         }
         
         title.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16)
             make.right.equalToSuperview().inset(16)
-            make.top.equalTo(animationView.snp.bottom).offset(8)
+            make.top.equalTo(emptyFavoriteImage.snp.bottom).offset(16)
         }
         
         subtitle.snp.makeConstraints { make in
@@ -87,6 +81,6 @@ extension EmptyFavoritesScreen: CodeView {
     }
     
     func setupAdditionalConfiguration() {
-        
+        backgroundColor = .systemBackground
     }
 }
