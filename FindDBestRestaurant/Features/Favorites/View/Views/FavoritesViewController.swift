@@ -27,6 +27,11 @@ class FavoritesViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        controller.getFavoritesList()
+    }
+    
     // MARK: - Private Functions
 }
 
@@ -56,5 +61,18 @@ extension FavoritesViewController: FavoritesScreenDelegate {
     
     func setFavorite(at index: Int, value: Bool) {
         
+    }
+}
+
+// MARK: - FavoritesControllerDelegate extension
+
+extension FavoritesViewController: FavoritesControllerDelegate {
+    
+    func showError(_ error: String) {
+        showMessage(title: K.error, message: error)
+    }
+    
+    func updateUI() {
+        favoritesView.updateData()
     }
 }

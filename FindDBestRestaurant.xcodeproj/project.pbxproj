@@ -35,6 +35,8 @@
 		7034B04D26DEE047008B586A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7034B04C26DEE047008B586A /* ProfileViewController.swift */; };
 		7034B04F26DEEF1D008B586A /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7034B04E26DEEF1D008B586A /* ProfileController.swift */; };
 		7034B05126DEEF79008B586A /* ProfileScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7034B05026DEEF79008B586A /* ProfileScreenDelegate.swift */; };
+		705A141726F7E54000DB51F9 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A141626F7E54000DB51F9 /* PersistenceManager.swift */; };
+		705A141B26F7E84D00DB51F9 /* FBRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A141A26F7E84D00DB51F9 /* FBRError.swift */; };
 		7067ABE226EAC3D900CACBFD /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067ABE126EAC3D900CACBFD /* FavoritesController.swift */; };
 		7067ABE526EAC3EA00CACBFD /* FavoritesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067ABE326EAC3EA00CACBFD /* FavoritesScreen.swift */; };
 		7067ABE626EAC3EA00CACBFD /* FavoritesScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067ABE426EAC3EA00CACBFD /* FavoritesScreenDelegate.swift */; };
@@ -114,6 +116,8 @@
 		7034B04C26DEE047008B586A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7034B04E26DEEF1D008B586A /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		7034B05026DEEF79008B586A /* ProfileScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenDelegate.swift; sourceTree = "<group>"; };
+		705A141626F7E54000DB51F9 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		705A141A26F7E84D00DB51F9 /* FBRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRError.swift; sourceTree = "<group>"; };
 		7067ABE126EAC3D900CACBFD /* FavoritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
 		7067ABE326EAC3EA00CACBFD /* FavoritesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesScreen.swift; sourceTree = "<group>"; };
 		7067ABE426EAC3EA00CACBFD /* FavoritesScreenDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesScreenDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 		5B94D67026C5F68C00346B9B /* FindDBestRestaurant */ = {
 			isa = PBXGroup;
 			children = (
+				705A141526F7E52900DB51F9 /* PersistenceManager */,
 				5B3C0FD426F416A9004C9371 /* GoogleService-Info.plist */,
 				70E1D69726DC4B6700E1A31D /* NetworkManager */,
 				70AB790D26D6F69800BE67BE /* Common */,
@@ -407,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				70311A5226D1A294005B0C0E /* Constants.swift */,
+				705A141A26F7E84D00DB51F9 /* FBRError.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -471,6 +477,14 @@
 				7067ABF326EACF4700CACBFD /* FBREmptyStateScreen.swift */,
 			);
 			path = FBREmptyView;
+			sourceTree = "<group>";
+		};
+		705A141526F7E52900DB51F9 /* PersistenceManager */ = {
+			isa = PBXGroup;
+			children = (
+				705A141626F7E54000DB51F9 /* PersistenceManager.swift */,
+			);
+			path = PersistenceManager;
 			sourceTree = "<group>";
 		};
 		7067ABEB26EAC94800CACBFD /* Cell */ = {
@@ -884,6 +898,7 @@
 				BC5C500D26DBFA3000CDF9C4 /* ResetPasswordVC.swift in Sources */,
 				BC0E63F826E6DA2B00A68212 /* TopRestaurantsScreen.swift in Sources */,
 				5BC25F8326D459EF0053BDF5 /* SignInViewDelegate.swift in Sources */,
+				705A141726F7E54000DB51F9 /* PersistenceManager.swift in Sources */,
 				707C4FC726E0435100C01926 /* FBRHeartButton.swift in Sources */,
 				5B94D67C26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld in Sources */,
 				7067ABE226EAC3D900CACBFD /* FavoritesController.swift in Sources */,
@@ -905,6 +920,7 @@
 				70AB790F26D6F6E200BE67BE /* UIViewController+ext.swift in Sources */,
 				70311A3326D19753005B0C0E /* MainTabBarController.swift in Sources */,
 				70AB790B26D6F39300BE67BE /* SignUpScreenDelegate.swift in Sources */,
+				705A141B26F7E84D00DB51F9 /* FBRError.swift in Sources */,
 				70751EBA26E1352200F6D85F /* UICollectionView+Ext.swift in Sources */,
 				707C4FC926E045AC00C01926 /* FBRLoveItButton.swift in Sources */,
 				5B94D67226C5F68C00346B9B /* AppDelegate.swift in Sources */,

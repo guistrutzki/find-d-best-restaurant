@@ -34,12 +34,6 @@ class FavoritesScreen: UIView {
     
     weak var delegate: FavoritesScreenDelegate?
     
-    var favoritesList:[Restaurant] = [
-        Restaurant(name: "Figueira Rubayat", description: "", coverImage: Images.rubayat ?? UIImage()),
-        Restaurant(name: "Top Paulista", description: "", coverImage: Images.restaurant1 ?? UIImage()),
-        Restaurant(name: "Top Garden Sp", description: "", coverImage: Images.restaurant1 ?? UIImage())
-    ]
-    
     // MARK: - Inits
     
     init(_ delegate: FavoritesScreenDelegate) {
@@ -54,6 +48,12 @@ class FavoritesScreen: UIView {
     }
     
     // MARK: - Public Functions
+    
+    func updateData() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
     
     func setUIState(_ isHidden: Bool) {
         emptyFavoritesScreen.isHidden = !isHidden

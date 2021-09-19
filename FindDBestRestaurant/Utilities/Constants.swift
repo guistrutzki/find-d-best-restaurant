@@ -22,7 +22,7 @@ enum K {
     
     ///D
     ///E
-    
+    static let error                    = "Erro!"
     static let enter                    = "Entrar"
     
     ///F
