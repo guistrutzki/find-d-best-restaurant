@@ -1,5 +1,5 @@
 //
-//  EmptyFavoritesScreen.swift
+//  FBREmptyStateScreen.swift
 //  FindDBestRestaurant
 //
 //  Created by Bruna Drago on 09/09/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EmptyStateScreen: UIView {
+class FBREmptyStateScreen: UIView {
     
     // MARK: - UI Elements
     
@@ -52,7 +52,7 @@ class EmptyStateScreen: UIView {
 
 // MARK: - CodeView extension
 
-extension EmptyStateScreen: CodeView {
+extension FBREmptyStateScreen: CodeView {
     
     func buildViewHierarchy() {
         addSubview(emptyFavoriteImage)

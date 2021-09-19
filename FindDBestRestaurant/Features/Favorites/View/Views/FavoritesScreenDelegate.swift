@@ -14,4 +14,10 @@ protocol FavoritesScreenDelegate: AnyObject {
     func selectCharacter(at index: Int)
     
     func setFavorite(at index: Int, value: Bool)
+    
+    func isEmpty() -> Bool
+    
+    func setListCount() -> Int
+    
+    func getFavorites(index: Int) -> Restaurant?
 }

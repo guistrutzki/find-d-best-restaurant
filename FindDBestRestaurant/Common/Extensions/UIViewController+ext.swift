@@ -23,4 +23,10 @@ extension UIViewController {
         alertController.view.tintColor = .systemBlue
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func showEmptyStateView(in view: UIView) {
+        let emptyStateView = FBREmptyStateScreen()
+        emptyStateView.frame = view.bounds
+        view.addSubview(emptyStateView)
+    }
 }

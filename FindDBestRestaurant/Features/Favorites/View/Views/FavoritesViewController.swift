@@ -34,6 +34,18 @@ class FavoritesViewController: UIViewController {
 
 extension FavoritesViewController: FavoritesScreenDelegate {
     
+    func isEmpty() -> Bool {
+        return controller.isEmpty()
+    }
+    
+    func getFavorites(index: Int) -> Restaurant? {
+        return controller.getFavorite(index: index)
+    }
+
+    func setListCount() -> Int {
+       return controller.count
+    }
+
     func fetchCharacterNextPage() {
         
     }

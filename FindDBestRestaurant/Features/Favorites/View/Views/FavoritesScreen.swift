@@ -12,9 +12,8 @@ class FavoritesScreen: UIView {
     
     // MARK: - UI Components
     
-    private lazy var emptyFavoritesScreen: EmptyStateScreen = {
-        let view = EmptyStateScreen(frame: .zero)
-        // view.backgroundColor = .clear
+    private lazy var emptyFavoritesScreen: FBREmptyStateScreen = {
+        let view = FBREmptyStateScreen(frame: .zero)
         return view
     }()
     
@@ -56,6 +55,10 @@ class FavoritesScreen: UIView {
     
     // MARK: - Public Functions
     
+    func setUIState(_ isHidden: Bool) {
+        emptyFavoritesScreen.isHidden = !isHidden
+        collectionView.isHidden = isHidden
+    }
     
     // MARK: - Private Functions
     
@@ -65,11 +68,6 @@ class FavoritesScreen: UIView {
     
     private func selectCharacter(at index: Int) {
         delegate?.selectCharacter(at: index)
-    }
-    
-    private func setCollectionHidden(_ hidden: Bool) {
-        emptyFavoritesScreen.isHidden = !hidden
-        collectionView.isHidden = hidden
     }
 }
 
@@ -106,7 +104,15 @@ extension FavoritesScreen: UICollectionViewDelegate {
 extension FavoritesScreen: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return favoritesList.count
+        let count = delegate?.setListCount()
+        let isEmpty = (delegate?.isEmpty())!
+        if count == 0 {
+            setUIState(isEmpty)
+            return 0
+        } else {
+            setUIState(isEmpty)
+            return delegate?.setListCount() ?? 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -117,7 +123,7 @@ extension FavoritesScreen: UICollectionViewDataSource {
         else { return UICollectionViewCell() }
         
         cell.delegate = self
-        let favorite = favoritesList[indexPath.item]
+        guard let favorite = delegate?.getFavorites(index: indexPath.item) else { return UICollectionViewCell()}//favoritesList[indexPath.item]
         cell.setup(favorite)
         
         return cell
@@ -179,8 +185,7 @@ extension FavoritesScreen : CodeView {
     }
     
     func setupAdditionalConfiguration() {
-        emptyFavoritesScreen.isHidden = false
-        collectionView.isHidden = true
+        emptyFavoritesScreen.isHidden = true
         backgroundColor = .systemBackground
         FavoritesCell.registerOn(collectionView)
     }
