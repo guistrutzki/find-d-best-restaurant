@@ -72,6 +72,7 @@ enum K {
     static let sendEmailSuccessMessage  = "Por favor, cheque sua caixa de entrada para redefinir sua senha."
     static let signUp                   = "Cadastrar"
     static let signUpVCTitle            = "Cadastro"
+    static let save                     = "Salvar"
     
     ///T
     

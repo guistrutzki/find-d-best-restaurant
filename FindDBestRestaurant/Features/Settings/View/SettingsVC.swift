@@ -24,5 +24,8 @@ class SettingsVC: UIViewController {
 }
 
 extension SettingsVC: SettingsScreenDelegate {
-    
+    func didTappedUpdateName() {
+        let modalVC = UpdateNameVC()
+        self.present(modalVC, animated: true, completion: nil)
+    }
 }

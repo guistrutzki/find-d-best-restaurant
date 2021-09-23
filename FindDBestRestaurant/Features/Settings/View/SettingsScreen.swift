@@ -110,6 +110,7 @@ class SettingsScreen: UIView {
         button.setTitle("Alterar nome", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.poppinsRegular, size: 18)
+        button.addTarget(self, action: #selector(self.handleUpdateNameTapped), for: .touchUpInside)
         return button
     }()
     
@@ -149,10 +150,13 @@ class SettingsScreen: UIView {
         self.setupView()
     }
     
-    
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK - Obj Functions
+    @objc private func handleUpdateNameTapped() {
+        self.delegate.didTappedUpdateName()
     }
 }
 

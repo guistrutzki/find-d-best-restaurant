@@ -7,4 +7,6 @@
 
 import Foundation
 
-protocol SettingsScreenDelegate: AnyObject {}
+protocol SettingsScreenDelegate: AnyObject {
+    func didTappedUpdateName()
+}

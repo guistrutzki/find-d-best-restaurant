@@ -18,6 +18,9 @@
 		5B8EEBD026FAACCC005F83CB /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EEBCF26FAACCC005F83CB /* Poppins-Regular.ttf */; };
 		5B8EEBD226FAACD9005F83CB /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EEBD126FAACD9005F83CB /* Poppins-Bold.ttf */; };
 		5B8EEBD426FAACE8005F83CB /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EEBD326FAACE7005F83CB /* Poppins-Medium.ttf */; };
+		5B8EEBDB26FC1C2F005F83CB /* UpdateNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EEBDA26FC1C2F005F83CB /* UpdateNameVC.swift */; };
+		5B8EEBDE26FC2037005F83CB /* UpdateNameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EEBDD26FC2037005F83CB /* UpdateNameScreen.swift */; };
+		5B8EEBE026FC22F6005F83CB /* UpdateNameScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EEBDF26FC22F6005F83CB /* UpdateNameScreenDelegate.swift */; };
 		5B94D67226C5F68C00346B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D67126C5F68C00346B9B /* AppDelegate.swift */; };
 		5B94D67426C5F68C00346B9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D67326C5F68C00346B9B /* SceneDelegate.swift */; };
 		5B94D67C26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D67A26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld */; };
@@ -88,6 +91,9 @@
 		5B8EEBCF26FAACCC005F83CB /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		5B8EEBD126FAACD9005F83CB /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		5B8EEBD326FAACE7005F83CB /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		5B8EEBDA26FC1C2F005F83CB /* UpdateNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNameVC.swift; sourceTree = "<group>"; };
+		5B8EEBDD26FC2037005F83CB /* UpdateNameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNameScreen.swift; sourceTree = "<group>"; };
+		5B8EEBDF26FC22F6005F83CB /* UpdateNameScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNameScreenDelegate.swift; sourceTree = "<group>"; };
 		5B94D66E26C5F68C00346B9B /* FindDBestRestaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindDBestRestaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B94D67126C5F68C00346B9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B94D67326C5F68C00346B9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +212,24 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		5B8EEBD926FC1BCF005F83CB /* UpdateName */ = {
+			isa = PBXGroup;
+			children = (
+				5B8EEBDC26FC2009005F83CB /* View */,
+			);
+			path = UpdateName;
+			sourceTree = "<group>";
+		};
+		5B8EEBDC26FC2009005F83CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B8EEBDA26FC1C2F005F83CB /* UpdateNameVC.swift */,
+				5B8EEBDD26FC2037005F83CB /* UpdateNameScreen.swift */,
+				5B8EEBDF26FC22F6005F83CB /* UpdateNameScreenDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5B94D66526C5F68C00346B9B = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +304,7 @@
 		70311A3026D196EE005B0C0E /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				5B8EEBD926FC1BCF005F83CB /* UpdateName */,
 				5B8EEBC626FA9BB0005F83CB /* Settings */,
 				5B3BC84026DAB280001E694F /* Initial */,
 				70311A4326D1A13D005B0C0E /* Favorites */,
@@ -830,6 +855,7 @@
 				BC1C9AA926D2FC6D00893506 /* CustomTextFieldView.swift in Sources */,
 				70311A3526D1982D005B0C0E /* RestaurantListViewController.swift in Sources */,
 				BCE50B6826D29D83009388AA /* CodeView.swift in Sources */,
+				5B8EEBDB26FC1C2F005F83CB /* UpdateNameVC.swift in Sources */,
 				70E1D69E26DC520800E1A31D /* RestaurantListController.swift in Sources */,
 				70E1D6A026DC6D8600E1A31D /* RestaurantListScreenDelegate.swift in Sources */,
 				BC5C500B26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift in Sources */,
@@ -870,8 +896,10 @@
 				BC5C501326DC3E7E00CDF9C4 /* CardRestaurantCell.swift in Sources */,
 				BC61D75F26D48D0E00019CC0 /* LaunchScreenVC.swift in Sources */,
 				70751EB626E1324700F6D85F /* MenuTableCell.swift in Sources */,
+				5B8EEBDE26FC2037005F83CB /* UpdateNameScreen.swift in Sources */,
 				5BC25F7F26D35ACB0053BDF5 /* UIColor+ext.swift in Sources */,
 				5BC25F8126D456D20053BDF5 /* FBRButton.swift in Sources */,
+				5B8EEBE026FC22F6005F83CB /* UpdateNameScreenDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
