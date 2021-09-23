@@ -12,6 +12,15 @@
 		5B3BC84526DAB2ED001E694F /* InitialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BC84426DAB2ED001E694F /* InitialScreen.swift */; };
 		5B3BC84826DAB575001E694F /* InitialScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BC84726DAB575001E694F /* InitialScreenDelegate.swift */; };
 		5B3C0FD526F416A9004C9371 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B3C0FD426F416A9004C9371 /* GoogleService-Info.plist */; };
+		5B8EEBC926FA9D1F005F83CB /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EEBC826FA9D1F005F83CB /* SettingsScreen.swift */; };
+		5B8EEBCB26FA9D4E005F83CB /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EEBCA26FA9D4E005F83CB /* SettingsVC.swift */; };
+		5B8EEBCD26FA9E89005F83CB /* SettingsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EEBCC26FA9E89005F83CB /* SettingsScreenDelegate.swift */; };
+		5B8EEBD026FAACCC005F83CB /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EEBCF26FAACCC005F83CB /* Poppins-Regular.ttf */; };
+		5B8EEBD226FAACD9005F83CB /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EEBD126FAACD9005F83CB /* Poppins-Bold.ttf */; };
+		5B8EEBD426FAACE8005F83CB /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EEBD326FAACE7005F83CB /* Poppins-Medium.ttf */; };
+		5B8EEBDB26FC1C2F005F83CB /* UpdateNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EEBDA26FC1C2F005F83CB /* UpdateNameVC.swift */; };
+		5B8EEBDE26FC2037005F83CB /* UpdateNameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EEBDD26FC2037005F83CB /* UpdateNameScreen.swift */; };
+		5B8EEBE026FC22F6005F83CB /* UpdateNameScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EEBDF26FC22F6005F83CB /* UpdateNameScreenDelegate.swift */; };
 		5B94D67226C5F68C00346B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D67126C5F68C00346B9B /* AppDelegate.swift */; };
 		5B94D67426C5F68C00346B9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D67326C5F68C00346B9B /* SceneDelegate.swift */; };
 		5B94D67C26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B94D67A26C5F68C00346B9B /* FindDBestRestaurant.xcdatamodeld */; };
@@ -91,6 +100,15 @@
 		5B3BC84426DAB2ED001E694F /* InitialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreen.swift; sourceTree = "<group>"; };
 		5B3BC84726DAB575001E694F /* InitialScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreenDelegate.swift; sourceTree = "<group>"; };
 		5B3C0FD426F416A9004C9371 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5B8EEBC826FA9D1F005F83CB /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		5B8EEBCA26FA9D4E005F83CB /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		5B8EEBCC26FA9E89005F83CB /* SettingsScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenDelegate.swift; sourceTree = "<group>"; };
+		5B8EEBCF26FAACCC005F83CB /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		5B8EEBD126FAACD9005F83CB /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		5B8EEBD326FAACE7005F83CB /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		5B8EEBDA26FC1C2F005F83CB /* UpdateNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNameVC.swift; sourceTree = "<group>"; };
+		5B8EEBDD26FC2037005F83CB /* UpdateNameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNameScreen.swift; sourceTree = "<group>"; };
+		5B8EEBDF26FC22F6005F83CB /* UpdateNameScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNameScreenDelegate.swift; sourceTree = "<group>"; };
 		5B94D66E26C5F68C00346B9B /* FindDBestRestaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindDBestRestaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B94D67126C5F68C00346B9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B94D67326C5F68C00346B9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +214,52 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		5B8EEBC626FA9BB0005F83CB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5B8EEBC726FA9BC6005F83CB /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		5B8EEBC726FA9BC6005F83CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B8EEBC826FA9D1F005F83CB /* SettingsScreen.swift */,
+				5B8EEBCA26FA9D4E005F83CB /* SettingsVC.swift */,
+				5B8EEBCC26FA9E89005F83CB /* SettingsScreenDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5B8EEBCE26FAAC86005F83CB /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5B8EEBD326FAACE7005F83CB /* Poppins-Medium.ttf */,
+				5B8EEBD126FAACD9005F83CB /* Poppins-Bold.ttf */,
+				5B8EEBCF26FAACCC005F83CB /* Poppins-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		5B8EEBD926FC1BCF005F83CB /* UpdateName */ = {
+			isa = PBXGroup;
+			children = (
+				5B8EEBDC26FC2009005F83CB /* View */,
+			);
+			path = UpdateName;
+			sourceTree = "<group>";
+		};
+		5B8EEBDC26FC2009005F83CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B8EEBDA26FC1C2F005F83CB /* UpdateNameVC.swift */,
+				5B8EEBDD26FC2037005F83CB /* UpdateNameScreen.swift */,
+				5B8EEBDF26FC22F6005F83CB /* UpdateNameScreenDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5B94D66526C5F68C00346B9B = {
 			isa = PBXGroup;
 			children = (
@@ -271,9 +335,10 @@
 		70311A3026D196EE005B0C0E /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				5B8EEBD926FC1BCF005F83CB /* UpdateName */,
+				5B8EEBC626FA9BB0005F83CB /* Settings */,
 				5B3BC84026DAB280001E694F /* Initial */,
 				70311A4326D1A13D005B0C0E /* Favorites */,
-				7034B04326DED9D9008B586A /* Profile */,
 				BC5C500526DBF3B000CDF9C4 /* ResetPassword */,
 				707C4FBB26E0304900C01926 /* RestaurantDetail */,
 				70311A4226D1A12F005B0C0E /* RestaurantList */,
@@ -420,6 +485,7 @@
 		70311A5426D1B113005B0C0E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5B8EEBCE26FAAC86005F83CB /* fonts */,
 				5B94D67D26C5F68F00346B9B /* Assets.xcassets */,
 				7067ABF526EAD30700CACBFD /* restaurantAnimation.json */,
 				BC61D76026D4901F00019CC0 /* restaurant.json */,
@@ -812,10 +878,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B3C0FD526F416A9004C9371 /* GoogleService-Info.plist in Resources */,
+				5B8EEBD426FAACE8005F83CB /* Poppins-Medium.ttf in Resources */,
+				5B8EEBD226FAACD9005F83CB /* Poppins-Bold.ttf in Resources */,
 				5B94D68126C5F68F00346B9B /* LaunchScreen.storyboard in Resources */,
 				7067ABF626EAD30700CACBFD /* restaurantAnimation.json in Resources */,
 				5B94D67E26C5F68F00346B9B /* Assets.xcassets in Resources */,
 				BC61D76126D4901F00019CC0 /* restaurant.json in Resources */,
+				5B8EEBD026FAACCC005F83CB /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,7 +958,6 @@
 			files = (
 				5B3BC84526DAB2ED001E694F /* InitialScreen.swift in Sources */,
 				7004775F26E429EB006C32F4 /* RestaurantDetailScreenDelegate.swift in Sources */,
-				7034B05126DEEF79008B586A /* ProfileScreenDelegate.swift in Sources */,
 				70751EB826E1342400F6D85F /* MenuCollectionCell.swift in Sources */,
 				BCE50B6326D28F6B009388AA /* CustomButtonView.swift in Sources */,
 				7067ABF026EAC9DC00CACBFD /* FBRCardView.swift in Sources */,
@@ -908,6 +976,7 @@
 				7067ABF226EACCFB00CACBFD /* FavoritesCellDelegate.swift in Sources */,
 				70311A3526D1982D005B0C0E /* RestaurantListViewController.swift in Sources */,
 				BCE50B6826D29D83009388AA /* CodeView.swift in Sources */,
+				5B8EEBDB26FC1C2F005F83CB /* UpdateNameVC.swift in Sources */,
 				70E1D69E26DC520800E1A31D /* RestaurantListController.swift in Sources */,
 				70E1D6A026DC6D8600E1A31D /* RestaurantListScreenDelegate.swift in Sources */,
 				BC5C500B26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift in Sources */,
@@ -917,6 +986,7 @@
 				70E1D69C26DC4C4500E1A31D /* RestaurantListResponse.swift in Sources */,
 				5BD562FF26DEE56700699FCF /* UIView+ext.swift in Sources */,
 				5B3BC84226DAB2B8001E694F /* InitialVC.swift in Sources */,
+				5B8EEBCD26FA9E89005F83CB /* SettingsScreenDelegate.swift in Sources */,
 				70AB790F26D6F6E200BE67BE /* UIViewController+ext.swift in Sources */,
 				70311A3326D19753005B0C0E /* MainTabBarController.swift in Sources */,
 				70AB790B26D6F39300BE67BE /* SignUpScreenDelegate.swift in Sources */,
@@ -935,7 +1005,6 @@
 				5BC25F7D26D359460053BDF5 /* SignInScreen.swift in Sources */,
 				BC5C500926DBF43300CDF9C4 /* ResetPasswordScreen.swift in Sources */,
 				BCDC02DA26E978A800B05931 /* TopRestaurantsController.swift in Sources */,
-				7034B04F26DEEF1D008B586A /* ProfileController.swift in Sources */,
 				70E1D69926DC4C2F00E1A31D /* NetworkManager.swift in Sources */,
 				707C4FCC26E046A800C01926 /* FBRCircularView.swift in Sources */,
 				7067ABED26EAC96C00CACBFD /* FavoritesCell.swift in Sources */,
@@ -944,18 +1013,19 @@
 				70E1D69626DC494400E1A31D /* Restaurant.swift in Sources */,
 				BC84A61026D59FFD001B63C7 /* SignUpVC.swift in Sources */,
 				70AB791126D6FB6900BE67BE /* FBRTextField.swift in Sources */,
+				5B8EEBCB26FA9D4E005F83CB /* SettingsVC.swift in Sources */,
 				70E1D69226DC43EA00E1A31D /* UITableViewCell+Ext.swift in Sources */,
 				70311A5326D1A294005B0C0E /* Constants.swift in Sources */,
-				7034B04526DED9F1008B586A /* ProfileScreen.swift in Sources */,
 				BC84A60B26D59AAB001B63C7 /* SignUpScreen.swift in Sources */,
+				5B8EEBC926FA9D1F005F83CB /* SettingsScreen.swift in Sources */,
 				BC5C501326DC3E7E00CDF9C4 /* CardRestaurantCell.swift in Sources */,
 				BC61D75F26D48D0E00019CC0 /* LaunchScreenVC.swift in Sources */,
-				7034B04B26DEDC6C008B586A /* ProfileCell.swift in Sources */,
-				7034B04D26DEE047008B586A /* ProfileViewController.swift in Sources */,
 				70751EB626E1324700F6D85F /* MenuTableCell.swift in Sources */,
+				5B8EEBDE26FC2037005F83CB /* UpdateNameScreen.swift in Sources */,
 				5BC25F7F26D35ACB0053BDF5 /* UIColor+ext.swift in Sources */,
 				7067ABEA26EAC47B00CACBFD /* FavoritesViewController.swift in Sources */,
 				5BC25F8126D456D20053BDF5 /* FBRButton.swift in Sources */,
+				5B8EEBE026FC22F6005F83CB /* UpdateNameScreenDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
