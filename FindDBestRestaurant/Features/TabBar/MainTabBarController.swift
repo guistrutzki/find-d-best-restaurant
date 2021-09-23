@@ -15,11 +15,10 @@ class MainTabBarController: UITabBarController {
         setNavigationTitleStyle()
         
         viewControllers = [
-            //createNavigationController(for: RestaurantDetailViewController(), title: "", image: SFSymbols.home ?? UIImage()),
             createNavigationController(for: RestaurantListViewController(), title: K.home, image: SFSymbols.home ?? UIImage()),
-            createNavigationController(for: FavoritesViewController(), title: K.favorites, image: SFSymbols.favorite ?? UIImage()),
             createNavigationController(for: TopRestaurantsViewController(), title: K.top, image: SFSymbols.location ?? UIImage()),
-            createNavigationController(for: ProfileViewController(), title: K.profile, image: SFSymbols.person ?? UIImage())
+            createNavigationController(for: FavoritesViewController(), title: K.favorites, image: SFSymbols.favorite ?? UIImage()),
+            createNavigationController(for: SettingsVC(), title: K.settings, image: SFSymbols.person ?? UIImage())
         ]
     }
     
@@ -37,9 +36,15 @@ class MainTabBarController: UITabBarController {
     
     private func setNavigationTitleStyle() {
         UINavigationBar.appearance().prefersLargeTitles = true
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
     }
     
     private func setTabBarStyle() {
-        tabBar.tintColor = .systemRed
+        UITabBar.appearance().tintColor = .white
+        UITabBar.appearance().isTranslucent = false
+        UITabBar.appearance().barTintColor = Colors.gray800
     }
 }

@@ -27,14 +27,14 @@ enum K {
     
     ///F
     
-    static let favorites                = "Favorites"
+    static let favorites                = "Favoritos"
     static let forgetMyPassword         = "Esqueci minha senha"
     static let forgetYourPassword       = "Esqueceu sua senha?"
     
     ///G
     ///H
     
-    static let home                     = "Home"
+    static let home                     = "Início"
     
     ///I
     ///J
@@ -52,7 +52,7 @@ enum K {
     
     ///P
     
-    static let profile                  = "Perfil"
+    static let settings                 = "Ajustes"
     static let photoGallery             = "Galeria de fotos"
     
     ///Q
@@ -72,10 +72,11 @@ enum K {
     static let sendEmailSuccessMessage  = "Por favor, cheque sua caixa de entrada para redefinir sua senha."
     static let signUp                   = "Cadastrar"
     static let signUpVCTitle            = "Cadastro"
+    static let save                     = "Salvar"
     
     ///T
     
-    static let top                      = "Top"
+    static let top                      = "Mapa"
     static let typeYourFullName         = "Digite seu nome completo"
     static let typeYourEmail            = "Digite seu email"
     static let typeYourPassword         = "Digite sua senha"
@@ -106,6 +107,7 @@ enum Images {
     static let login                       = UIImage(named: "login")
     static let heartFilled                 = UIImage(named: "heartFilled")
     static let hearttoFullfill             = UIImage(named: "heart-empty")
+    static let editIcon                    = UIImage(named: "pencil")
 }
 
 enum Colors {
@@ -119,4 +121,10 @@ enum Colors {
     static let gradient900              = UIColor("#090808")
     static let gradient100              = UIColor("#000000", alpha: 0.35)
     static let gradient040              = UIColor("#000000", alpha: 0.40)
+}
+
+enum Fonts {
+    static let poppinsRegular           = "Poppins-Regular"
+    static let poppinsBold              = "Poppins-Bold"
+    static let poppinsMedium            = "Poppins-Medium"
 }
