@@ -30,7 +30,6 @@ class RestaurantDetailScreen: UIView {
     private lazy var restaurantImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        imageView.image = UIImage(named: "rest-1")
         imageView.applyGradient(isVertical: true, colorArray: [Colors.gradient040, Colors.gradient900])
         return imageView
     }()
@@ -51,10 +50,9 @@ class RestaurantDetailScreen: UIView {
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 36)
+        label.font = UIFont.boldSystemFont(ofSize: 26)
         label.numberOfLines = 0
         label.textColor = .white
-        label.text = "Nome do restaurante"
         return label
     }()
     
@@ -74,7 +72,6 @@ class RestaurantDetailScreen: UIView {
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.numberOfLines = 0
         label.textColor = .white
-        label.text = "Oferecemos Carnes selecionadas servidas em sistemas de rodízio, acompanhadas de irresistível e variado buffet de saladas e pratos quentes."
         return label
     } ()
 
@@ -96,7 +93,7 @@ class RestaurantDetailScreen: UIView {
     
     weak var delegate: RestaurantDetailScreenDelegate?
     
-    var restaurantDetail: RestaurantList?
+    var restaurantDetail: RestaurantListResponse?
     
     // MARK: - Inits
     
@@ -108,6 +105,14 @@ class RestaurantDetailScreen: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    // MARK: - Public Functions
+    
+    func configureView(restaurant: RestaurantListResponse) {
+        restaurantImageView.load(url: restaurant.coverImage)
+        nameLabel.text = restaurant.name
+        infoLabel.text = restaurant.description
     }
     
     // MARK: - Private Functions
@@ -161,7 +166,7 @@ extension RestaurantDetailScreen: CodeView {
         containerView.addSubview(restaurantImageView)
         scrollContent.addSubview(backButton)
         scrollContent.addSubview(loveItButton)
-        scrollContent.addSubview(nameLabel)
+        restaurantImageView.addSubview(nameLabel)
         scrollContent.addSubview(aboutRestaurantTitleLabel)
         scrollContent.addSubview(infoLabel)
         scrollContent.addSubview(tableView)

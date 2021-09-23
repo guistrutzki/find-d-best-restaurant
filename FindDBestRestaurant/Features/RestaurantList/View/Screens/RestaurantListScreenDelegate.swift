@@ -9,7 +9,9 @@ import Foundation
 
 protocol RestaurantListScreenDelegate: AnyObject {
     
-    func loadData()
+    func setListCount() -> Int 
     
-    func proceedToDetailScreen(restaurant: Restaurant)
+    func proceedToDetailScreen(restaurant: RestaurantListResponse)
+    
+    func getRestaurants(index: IndexPath) -> RestaurantListResponse?
 }

@@ -16,13 +16,20 @@ protocol RestaurantDetailControllerDelegate: AnyObject {
 
 class RestaurantDetailController {
     
-    private weak var delegate: RestaurantDetailControllerDelegate?
+    weak var delegate: RestaurantDetailControllerDelegate?
+    
+    var restaurant: RestaurantListResponse?
+    
     
     //MARK: - Public Functions
     
-    func addRestaurantToFavorites(restaurant: RestaurantList) {
-        let favorite = RestaurantList(
-            name: restaurant.name, description: "", coverImage: restaurant.coverImage)
+    func getRestaurantDetails() -> RestaurantListResponse? {
+        guard let details = restaurant  else { return nil }
+        return details
+    }
+    
+    func addRestaurantToFavorites(restaurant: RestaurantListResponse) {
+        let favorite = restaurant
         
         PersistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
             guard let self = self else { return }

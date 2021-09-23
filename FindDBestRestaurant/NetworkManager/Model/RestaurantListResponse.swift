@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RestaurantListResponse: Decodable {
+struct RestaurantListResponse: Codable, Equatable {
     
     let id: String
     

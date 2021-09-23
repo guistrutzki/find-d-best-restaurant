@@ -19,7 +19,7 @@ enum PersistenceManager {
         static let favorites = "favorites"
     }
     
-    static func updateWith(favorite: RestaurantList, actionType:PersistenceActionType, completion: @escaping (FBRError?) -> Void) {
+    static func updateWith(favorite: RestaurantListResponse, actionType:PersistenceActionType, completion: @escaping (FBRError?) -> Void) {
         retrieveFavorites { result in
             switch result {
             case .success(var favorites):
@@ -47,7 +47,7 @@ enum PersistenceManager {
     ///Usando RestaurantList pq o Restaurant usa UIImage e isso nao é decodable
     ///O UserDefaults quando salva um custom object faz encoding e decondig e salva o objeto como Data
     
-    static func retrieveFavorites(completion: @escaping (Result<[RestaurantList],FBRError>)-> Void) {
+    static func retrieveFavorites(completion: @escaping (Result<[ RestaurantListResponse],FBRError>)-> Void) {
         guard let favoritesData = defaults.object(forKey: Keys.favorites) as? Data else {
             completion(.success([]))
             return
@@ -55,14 +55,14 @@ enum PersistenceManager {
         
         do {
             let decoder = JSONDecoder()
-            let favoritesList = try decoder.decode([RestaurantList].self, from: favoritesData)
+            let favoritesList = try decoder.decode([ RestaurantListResponse].self, from: favoritesData)
             completion(.success(favoritesList))
         } catch {
             completion(.failure(.unableToFavorite))
         }
     }
     
-    static func saveFavorites(favorites: [RestaurantList]) -> FBRError? {
+    static func saveFavorites(favorites: [ RestaurantListResponse]) -> FBRError? {
         do {
             let encoder = JSONEncoder()
             let encodedFavorites = try encoder.encode(favorites)

@@ -7,6 +7,11 @@
 
 import Foundation
 
+protocol RestaurantListControllerDelegate: AnyObject {
+    
+    func updateView(restaurantList: [RestaurantListResponse])
+}
+
 class RestaurantListController {
     
     // MARK: - Variable
@@ -14,8 +19,10 @@ class RestaurantListController {
     private var restaurants: [RestaurantListResponse] = []
     
     var count: Int {
-        return restaurants.count
+        return restaurants.count 
     }
+    
+    weak var delegate: RestaurantListControllerDelegate?
     
     // MARK: - Public Functions
     
@@ -43,13 +50,15 @@ class RestaurantListController {
         return restaurants[indexPath.row]
     }
     
+//    func getRestaurants1(indexPath: Int) -> RestaurantListResponse {
+//        return restaurants[indexPath]
+//    }
+    
     // MARK: - Private Functions
     
     private func didFetchSuccess(_ response: [RestaurantListResponse]) {
-        for item in response {
-            print(item.name)
-            self.restaurants.append(contentsOf: response)
-        }
+        restaurants.append(contentsOf: response)
+        delegate?.updateView(restaurantList: restaurants)
     }
     
     private func didFetchFailed(error: Error) {
