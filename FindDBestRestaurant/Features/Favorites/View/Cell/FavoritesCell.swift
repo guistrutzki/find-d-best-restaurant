@@ -66,10 +66,9 @@ class FavoritesCell: UICollectionViewCell {
     
     // MARK: - Public Functions
     
-    func setup(_ restaurant: Restaurant) {
+    func setup(_ restaurant: RestaurantListResponse) {
         favoriteName.text = restaurant.name
-        favoriteImage.image = restaurant.coverImage
-        //favoriteImage.load(url: restaurant.coverImage)
+        favoriteImage.load(url: restaurant.coverImage)
         loveItButton.isFilled = true
     }
     

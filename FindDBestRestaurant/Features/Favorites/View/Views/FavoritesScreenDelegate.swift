@@ -19,5 +19,5 @@ protocol FavoritesScreenDelegate: AnyObject {
     
     func setListCount() -> Int
     
-    func getFavorites(index: Int) -> Restaurant?
+    func getFavorites(index: Int) -> RestaurantListResponse?
 }

@@ -29,8 +29,6 @@ class RestaurantListScreen: UIView {
 
     // MARK: - Variable
     
-    var restaurants:[RestaurantListResponse] = []
-    
     weak var delegate: RestaurantListScreenDelegate?
     
     // MARK: - Inits
@@ -47,11 +45,6 @@ class RestaurantListScreen: UIView {
     
     // MARK: - Public Functions
     
-    func setup(_ restaurantList: [RestaurantListResponse] ) {
-        self.restaurants.append(contentsOf: restaurantList)
-        tableView.reloadData()
-    }
-    
     func updateView() {
         tableView.reloadData()
     }
@@ -63,13 +56,13 @@ class RestaurantListScreen: UIView {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for:index) as? CardRestaurantCell
         else { return UITableViewCell()}
-        
-        guard let restaurant = delegate?.getRestaurants(index: index) else { return UITableViewCell()}
-        cell.configureCell(restaurant: restaurant)
-        cell.selectionStyle = .none
-        
+
+        if let restaurant = delegate?.getRestaurants(index: index) {
+            cell.configureCell(restaurant: restaurant)
+            cell.selectionStyle = .none
+        }
+       
         return cell
-        
     }
 }
 
@@ -90,8 +83,9 @@ extension RestaurantListScreen: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let restaurant = restaurants[indexPath.row]
-        delegate?.proceedToDetailScreen(restaurant: restaurant)
+        if let restaurant = delegate?.getRestaurants(index: indexPath) {
+            self.delegate?.proceedToDetailScreen(restaurant: restaurant)
+        }
     }
 }
 

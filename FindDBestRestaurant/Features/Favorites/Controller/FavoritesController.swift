@@ -24,10 +24,10 @@ class FavoritesController {
         Restaurant(name: "Top Garden Sp", description: "", coverImage: Images.restaurant1 ?? UIImage())
     ]
     
-    var favoritesList: [RestaurantList] = []
+    var favoritesList: [RestaurantListResponse] = []
     
     var count: Int {
-        favorites.count
+        favoritesList.count
     }
     
     weak var delegate: FavoritesControllerDelegate?
@@ -35,11 +35,11 @@ class FavoritesController {
     // MARK: - Public Functions
     
     func isEmpty() -> Bool {
-        return favorites.isEmpty
+        return favoritesList.isEmpty
     }
     
-    func getFavorite(index: Int) -> Restaurant {
-        return favorites[index]
+    func getFavorite(index: Int) -> RestaurantListResponse {
+        return favoritesList[index]
     }
     
     func getFavoritesList() {

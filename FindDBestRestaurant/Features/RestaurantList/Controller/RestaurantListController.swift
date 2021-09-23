@@ -50,22 +50,15 @@ class RestaurantListController {
         return restaurants[indexPath.row]
     }
     
+    func getRestaurants1(indexPath: Int) -> RestaurantListResponse {
+        return restaurants[indexPath]
+    }
+    
     // MARK: - Private Functions
     
     private func didFetchSuccess(_ response: [RestaurantListResponse]) {
         restaurants.append(contentsOf: response)
-        print("COUNT: =====\(restaurants.count)")
-        print("RESTAURANTS: \(restaurants)")
         delegate?.updateView(restaurantList: restaurants)
-        
-//                for item in response {
-//                    print(item.name)
-//                    print("===== RESPONSE \(response)")
-//                    self.restaurants.append(contentsOf: response)
-//                    delegate?.updateView(restaurantList: restaurants)
-//                    print("RESTAURANTS: \(restaurants)")
-//                }
-        
     }
     
     private func didFetchFailed(error: Error) {

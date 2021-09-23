@@ -16,7 +16,12 @@ class RestaurantListViewController: UIViewController {
         return screen
     }()
     
-    let controller = RestaurantListController()
+    private lazy var controller: RestaurantListController = {
+        let controller = RestaurantListController()
+        controller.delegate = self
+        return controller
+    }()
+    
     
     // MARK: - Life cycle
     
@@ -85,10 +90,6 @@ extension RestaurantListViewController: RestaurantListScreenDelegate {
 
 extension RestaurantListViewController: RestaurantListControllerDelegate {
     func updateView(restaurantList: [RestaurantListResponse]) {
-        restaurantListScreen.setup(restaurantList)
-    }
-    
-    func updateView() {
         restaurantListScreen.updateView()
     }
 }

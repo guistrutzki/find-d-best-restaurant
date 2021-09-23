@@ -43,7 +43,7 @@ extension FavoritesViewController: FavoritesScreenDelegate {
         return controller.isEmpty()
     }
     
-    func getFavorites(index: Int) -> Restaurant? {
+    func getFavorites(index: Int) -> RestaurantListResponse? {
         return controller.getFavorite(index: index)
     }
 
