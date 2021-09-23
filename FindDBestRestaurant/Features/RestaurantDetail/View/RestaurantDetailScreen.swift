@@ -92,7 +92,11 @@ class RestaurantDetailScreen: UIView {
         case gallery = 1
     }
   
+    // MARK: - Variable
+    
     weak var delegate: RestaurantDetailScreenDelegate?
+    
+    var restaurantDetail: RestaurantList?
     
     // MARK: - Inits
     
@@ -109,13 +113,18 @@ class RestaurantDetailScreen: UIView {
     // MARK: - Private Functions
     
     @objc private func didTappedBackButton(_ button: UIButton) {
-        print("===BACK")
         delegate?.didTappedBackButton()
     }
     
     @objc private func didTappedHeartButton(_ button: UIButton) {
-        print("===LOVEIT")
-        delegate?.didTappedHeartButton()
+        loveItButton.toggleIt()
+        let value = loveItButton.isFilled
+        
+        guard let favorite = restaurantDetail else { return }
+        
+        if value {
+            delegate?.didTappedHeartButton(restaurant: favorite)
+        }
     }
     
     private func getMenuCell(index: IndexPath) -> UITableViewCell {

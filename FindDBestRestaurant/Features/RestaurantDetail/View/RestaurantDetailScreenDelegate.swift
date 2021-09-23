@@ -11,5 +11,5 @@ protocol RestaurantDetailScreenDelegate: AnyObject {
     
     func didTappedBackButton()
     
-    func didTappedHeartButton()
+    func didTappedHeartButton(restaurant: RestaurantList)
 }

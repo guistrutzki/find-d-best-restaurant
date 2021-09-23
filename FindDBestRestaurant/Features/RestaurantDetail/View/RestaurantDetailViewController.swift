@@ -16,6 +16,9 @@ class RestaurantDetailViewController: UIViewController {
         return screen
     }()
 
+    let controller = RestaurantDetailController()
+    
+
     // MARK: - Life cycle
 
     override func loadView() {
@@ -31,9 +34,9 @@ class RestaurantDetailViewController: UIViewController {
 // MARK: - RestaurantDetailScreenDelegate extension
 
 extension RestaurantDetailViewController: RestaurantDetailScreenDelegate {
-    
-    func didTappedHeartButton() {
-        print("====HEART BUTTON=====")
+
+    func didTappedHeartButton(restaurant: RestaurantList) {
+        controller.addRestaurantToFavorites(restaurant: restaurant)
     }
     
     func didTappedBackButton() {
