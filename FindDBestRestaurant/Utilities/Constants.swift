@@ -22,7 +22,7 @@ enum K {
     
     ///D
     ///E
-    
+    static let error                    = "Erro!"
     static let enter                    = "Entrar"
     
     ///F
@@ -83,7 +83,15 @@ enum K {
     
     ///U
     ///V
+    ///W
+    
+    static let whatAboutStartNow        = "Que tal começar agora?"
     ///X
+    
+    ///Y
+    
+    static let youDontHaveAFavorite     = "Você ainda não possui favoritos"
+    
     ///Z
     
 }
@@ -107,6 +115,7 @@ enum Images {
     static let login                       = UIImage(named: "login")
     static let heartFilled                 = UIImage(named: "heartFilled")
     static let hearttoFullfill             = UIImage(named: "heart-empty")
+    static let favoritePlace               = UIImage(named: "favoritePlace")
     static let editIcon                    = UIImage(named: "pencil")
 }
 
@@ -121,6 +130,7 @@ enum Colors {
     static let gradient900              = UIColor("#090808")
     static let gradient100              = UIColor("#000000", alpha: 0.35)
     static let gradient040              = UIColor("#000000", alpha: 0.40)
+    static let darkness                 = UIColor(red: 13, green: 25, blue: 33, alpha: 0)
 }
 
 enum Fonts {
