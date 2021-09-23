@@ -50,9 +50,9 @@ class RestaurantListController {
         return restaurants[indexPath.row]
     }
     
-    func getRestaurants1(indexPath: Int) -> RestaurantListResponse {
-        return restaurants[indexPath]
-    }
+//    func getRestaurants1(indexPath: Int) -> RestaurantListResponse {
+//        return restaurants[indexPath]
+//    }
     
     // MARK: - Private Functions
     

@@ -22,6 +22,8 @@ class RestaurantDetailViewController: UIViewController {
         return controller
     }()
     
+    var restaurantDetail : RestaurantListResponse?
+    
     // MARK: - Life cycle
 
     override func loadView() {
@@ -30,7 +32,13 @@ class RestaurantDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getRestaurantDetails()
+    }
+    
+    private func getRestaurantDetails() {
+        if let details = restaurantDetail {
+            restaurantDetailScreen.configureView(restaurant: details)
+        }
     }
 }
 

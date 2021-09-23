@@ -30,7 +30,6 @@ class RestaurantDetailScreen: UIView {
     private lazy var restaurantImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-       // imageView.image = UIImage(named: "rest-1")
         imageView.applyGradient(isVertical: true, colorArray: [Colors.gradient040, Colors.gradient900])
         return imageView
     }()
@@ -51,7 +50,7 @@ class RestaurantDetailScreen: UIView {
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 36)
+        label.font = UIFont.boldSystemFont(ofSize: 26)
         label.numberOfLines = 0
         label.textColor = .white
         return label
@@ -167,7 +166,7 @@ extension RestaurantDetailScreen: CodeView {
         containerView.addSubview(restaurantImageView)
         scrollContent.addSubview(backButton)
         scrollContent.addSubview(loveItButton)
-        scrollContent.addSubview(nameLabel)
+        restaurantImageView.addSubview(nameLabel)
         scrollContent.addSubview(aboutRestaurantTitleLabel)
         scrollContent.addSubview(infoLabel)
         scrollContent.addSubview(tableView)

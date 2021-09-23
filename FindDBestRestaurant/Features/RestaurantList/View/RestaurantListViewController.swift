@@ -69,6 +69,7 @@ class RestaurantListViewController: UIViewController {
     
     private func proceedToDetails(restaurant: RestaurantListResponse) {
         let viewController = RestaurantDetailViewController()
+        viewController.restaurantDetail = restaurant
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
