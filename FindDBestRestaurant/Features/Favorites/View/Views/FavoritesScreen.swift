@@ -123,7 +123,7 @@ extension FavoritesScreen: UICollectionViewDataSource {
         else { return UICollectionViewCell() }
         
         cell.delegate = self
-        guard let favorite = delegate?.getFavorites(index: indexPath.item) else { return UICollectionViewCell()}//favoritesList[indexPath.item]
+        guard let favorite = delegate?.getFavorites(index: indexPath.item) else { return UICollectionViewCell()}
         cell.setup(favorite)
         
         return cell
