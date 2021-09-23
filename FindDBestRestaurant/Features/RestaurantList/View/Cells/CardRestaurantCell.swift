@@ -55,11 +55,6 @@ class CardRestaurantCell: UITableViewCell {
         nameLabel.text = restaurant.name
         restaurantImageView.load(url: restaurant.coverImage)
     }
-    
-    func setup(restaurant: Restaurant) {
-        nameLabel.text = restaurant.name
-        restaurantImageView.image = restaurant.coverImage
-    }
 }
 
 // MARK: - Extension Code View

@@ -26,14 +26,8 @@ class RestaurantListScreen: UIView {
         tableView.backgroundColor = Colors.gray800
         return tableView
     }()
-    
-    var restaurantList:[Restaurant] = [
-        Restaurant(name: "Figueira Rubayat", description: "", coverImage: Images.rubayat ?? UIImage()),
-        Restaurant(name: "Top Paulista", description: "", coverImage: Images.restaurant1 ?? UIImage()),
-        Restaurant(name: "Paris Bistrô", description: "", coverImage: Images.restaurant3 ?? UIImage()),
-        Restaurant(name: "Figueira", description: "", coverImage: Images.rubayat ?? UIImage()),
-        Restaurant(name: "Top Garden Sp", description: "", coverImage: Images.restaurant1 ?? UIImage())
-    ]
+
+    // MARK: - Variable
     
     var restaurants:[RestaurantListResponse] = []
     
@@ -58,6 +52,10 @@ class RestaurantListScreen: UIView {
         tableView.reloadData()
     }
     
+    func updateView() {
+        tableView.reloadData()
+    }
+    
     // MARK: - Private Functions
     
     private func getCardRestaurantCell(index: IndexPath) -> UITableViewCell {
@@ -66,9 +64,8 @@ class RestaurantListScreen: UIView {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for:index) as? CardRestaurantCell
         else { return UITableViewCell()}
         
-        let restaurant = restaurantList[index.row]
-        //        cell.configureCell(restaurant:restaurant)
-        cell.setup(restaurant: restaurant)
+        guard let restaurant = delegate?.getRestaurants(index: index) else { return UITableViewCell()}
+        cell.configureCell(restaurant: restaurant)
         cell.selectionStyle = .none
         
         return cell
@@ -81,7 +78,7 @@ class RestaurantListScreen: UIView {
 extension RestaurantListScreen: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurantList.count
+        return delegate?.setListCount() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -93,7 +90,7 @@ extension RestaurantListScreen: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let restaurant = restaurantList[indexPath.row]
+        let restaurant = restaurants[indexPath.row]
         delegate?.proceedToDetailScreen(restaurant: restaurant)
     }
 }

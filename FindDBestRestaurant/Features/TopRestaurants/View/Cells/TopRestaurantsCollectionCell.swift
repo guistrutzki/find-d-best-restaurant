@@ -119,6 +119,7 @@ final class TopRestaurantsCollectionCell: UICollectionViewCell {
 	// MARK: - Function
 	func setupCell(restaurant: RestaurantListResponse) {
 		titleLabel.text = restaurant.name
+        restaurantImageView.load(url: restaurant.logoImage)
 		
 		for index in 0..<restaurant.rating {
 			arrayStars[index].image = UIImage(systemName: "star.fill")

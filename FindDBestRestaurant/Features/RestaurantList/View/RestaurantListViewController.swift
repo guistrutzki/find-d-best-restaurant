@@ -62,20 +62,34 @@ class RestaurantListViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    private func proceedToDetails(restaurant: Restaurant) {
+    private func proceedToDetails(restaurant: RestaurantListResponse) {
         let viewController = RestaurantDetailViewController()
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
 extension RestaurantListViewController: RestaurantListScreenDelegate {
-    
-    func proceedToDetailScreen(restaurant: Restaurant) {
-        proceedToDetails(restaurant: restaurant)
+
+    func getRestaurants(index: IndexPath) -> RestaurantListResponse? {
+        controller.getRestaurants(indexPath: index)
     }
     
-    func loadData() {
-        
+    func setListCount() -> Int {
+       return controller.count
+    }
+    
+    func proceedToDetailScreen(restaurant: RestaurantListResponse) {
+        proceedToDetails(restaurant: restaurant)
+    }
+}
+
+extension RestaurantListViewController: RestaurantListControllerDelegate {
+    func updateView(restaurantList: [RestaurantListResponse]) {
+        restaurantListScreen.setup(restaurantList)
+    }
+    
+    func updateView() {
+        restaurantListScreen.updateView()
     }
 }
 
