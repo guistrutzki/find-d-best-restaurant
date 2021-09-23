@@ -7,6 +7,8 @@
 
 import UIKit
 
+public let API_BASE_URL = "https://restaurant-api.guistrutzki.dev"
+
 enum K {
     
     ///A
