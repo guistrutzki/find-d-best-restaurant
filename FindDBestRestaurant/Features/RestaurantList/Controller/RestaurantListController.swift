@@ -50,10 +50,6 @@ class RestaurantListController {
         return restaurants[indexPath.row]
     }
     
-//    func getRestaurants1(indexPath: Int) -> RestaurantListResponse {
-//        return restaurants[indexPath]
-//    }
-    
     // MARK: - Private Functions
     
     private func didFetchSuccess(_ response: [RestaurantListResponse]) {

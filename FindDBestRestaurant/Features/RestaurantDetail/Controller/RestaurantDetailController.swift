@@ -20,6 +20,10 @@ class RestaurantDetailController {
     
     var restaurant: RestaurantListResponse?
     
+    var count: Int {
+        return restaurant?.gallery.count ?? 0
+    }
+    
     
     //MARK: - Public Functions
     
@@ -28,10 +32,28 @@ class RestaurantDetailController {
         return details
     }
     
-    func addRestaurantToFavorites(restaurant: RestaurantListResponse) {
-        let favorite = restaurant
+    func getGalleryNumberOfItems() -> Int {
+        return restaurant?.gallery.count ?? 0
+    }
+    
+    func getGalleryItems(indexPath: IndexPath) -> String? {
+        return restaurant?.gallery[indexPath.row]
+    }
+    
+    ///Usar em caso do count não funcionar
+    func getGalleryItemsCount() -> Int? {
+        let gallery = restaurant?.gallery ?? []
+        var totalItems = 0
+        for imageUrl in gallery {
+            print(imageUrl)
+            totalItems += 1
+        }
         
-        PersistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
+        return totalItems
+    }
+    
+    func addRestaurantToFavorites(restaurant: RestaurantListResponse) {
+        PersistenceManager.updateWith(favorite: restaurant, actionType: .add) { [weak self] error in
             guard let self = self else { return }
             
             guard let error = error else {
@@ -42,5 +64,4 @@ class RestaurantDetailController {
             self.delegate?.didSaveFavoriteFailed()
         }
     }
-    
 }

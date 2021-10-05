@@ -58,10 +58,22 @@ extension RestaurantDetailViewController: RestaurantDetailScreenDelegate {
 extension RestaurantDetailViewController: RestaurantDetailControllerDelegate {
     
     func didSaveFavoriteWithSuccess() {
-        
+        print("SUCESSO!!")
     }
     
     func didSaveFavoriteFailed() {
-        
+        print("DEU RUIM")
     }
+}
+
+extension RestaurantDetailViewController: PhotoGalleryTableCellDelegate {
+    func getGalleryItems() -> Int {
+        controller.getGalleryNumberOfItems()
+    }
+    
+    func getRestaurants(index: IndexPath) -> RestaurantListResponse? {
+        <#code#>
+    }
+    
+    
 }

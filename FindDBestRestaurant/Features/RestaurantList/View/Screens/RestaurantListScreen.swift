@@ -106,7 +106,6 @@ extension RestaurantListScreen: CodeView {
         tableView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(8)
             make.left.right.bottom.equalTo(safeAreaLayoutGuide)
-          //  make.top.left.right.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
     

@@ -22,7 +22,7 @@ class PhotoGalleryCollectionCell: UICollectionViewCell {
         return view
     }()
 
-    private lazy var menuImageView: UIImageView = {
+    private lazy var galleryImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
         imageView.image = Images.restaurant1
@@ -42,6 +42,13 @@ class PhotoGalleryCollectionCell: UICollectionViewCell {
         super.init(coder: coder)
         
     }
+    
+    // MARK: - Public Functions
+    
+    func configureCell(restaurant: RestaurantListResponse) {
+        let image = restaurant.gallery.first ?? ""
+        galleryImageView.load(url: image)
+    }
 }
 
 // MARK: - CodeView Extension
@@ -50,7 +57,7 @@ extension PhotoGalleryCollectionCell: CodeView {
     
     func buildViewHierarchy() {
         addSubview(containerView)
-        containerView.addSubview(menuImageView)
+        containerView.addSubview(galleryImageView)
     }
     
     func setupConstraints() {
@@ -60,7 +67,7 @@ extension PhotoGalleryCollectionCell: CodeView {
             make.bottom.right.equalToSuperview().inset(8)
         }
         
-        menuImageView.snp.makeConstraints { make in
+        galleryImageView.snp.makeConstraints { make in
             make.top.bottom.left.right.equalToSuperview()
         }
     }

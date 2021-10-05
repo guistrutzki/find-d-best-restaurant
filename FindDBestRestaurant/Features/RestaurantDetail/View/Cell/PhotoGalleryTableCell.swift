@@ -7,6 +7,13 @@
 
 import UIKit
 
+protocol PhotoGalleryTableCellDelegate: AnyObject {
+    
+    func getGalleryItems() -> Int
+    
+    func getRestaurants(index: IndexPath) -> RestaurantListResponse?
+}
+
 class PhotoGalleryTableCell: UITableViewCell {
     
     // MARK: - Identifier
@@ -42,6 +49,8 @@ class PhotoGalleryTableCell: UITableViewCell {
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
+    
+    weak var delegate: PhotoGalleryTableCellDelegate?
 
     // MARK: - Inits
     
@@ -87,7 +96,7 @@ extension PhotoGalleryTableCell: CodeView {
 extension PhotoGalleryTableCell: UICollectionViewDataSource , UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return delegate?.getGalleryItems() ?? 0//5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -95,6 +104,10 @@ extension PhotoGalleryTableCell: UICollectionViewDataSource , UICollectionViewDe
         
         guard let cell = collection.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? PhotoGalleryCollectionCell else { return UICollectionViewCell()}
         
+        if let restaurant = delegate?.getRestaurants(index: indexPath) {
+            cell.configureCell(restaurant: restaurant)
+        }
+       
         return cell
     }
 }

@@ -24,13 +24,15 @@ struct RestaurantListResponse: Codable, Equatable {
     let logoImage: String
     
     let address: String
-	
-	 let rating: Int
+    
+    let rating: Int
+    
+    let gallery: [String]
     
     let createdAt: String
     
     enum CodingKeys: String, CodingKey {
-        case id, name, description, lat, lng, coverImage, logoImage, address, rating
+        case id, name, description, lat, lng, coverImage, logoImage, address, rating, gallery
         case createdAt = "created_at"
     }
 }
