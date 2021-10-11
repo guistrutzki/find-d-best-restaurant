@@ -8,6 +8,6 @@
 import Foundation
 
 protocol SignUpScreenDelegate: AnyObject {
-    
+    func didTappedBackButton()
     func didTappedSignUpButton()
 }
