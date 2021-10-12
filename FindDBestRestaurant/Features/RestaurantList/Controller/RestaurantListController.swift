@@ -45,6 +45,24 @@ class RestaurantListController {
             }
         }
     }
+	
+	func loadRestaurantList(token: String?) {
+		guard let token = token else { return }
+		let urlString = "\(API_BASE_URL)/restaurants"
+		guard let url = URL(string: urlString) else { return }
+		
+		APIManager.loadRestaurantList(url: url, token: token) { success, error in
+			if let result = success {
+				print(result)
+				self.didFetchSuccess(result)
+			} else {
+				if let error = error {
+					self.didFetchFailed(error: error)
+				}
+			}
+		}
+		
+	}
     
     func getRestaurants(indexPath: IndexPath) -> RestaurantListResponse? {
         return restaurants[indexPath.row]

@@ -55,7 +55,8 @@ extension InitialVC: InitialScreenDelegate {
     
     func didTappedSignInAsGuest() {
         print("Navigate to TabBar")
-        let tabBarController: MainTabBarController = MainTabBarController()
-        self.navigationController?.pushViewController(tabBarController, animated: true)
+//        let tabBarController: MainTabBarController = MainTabBarController()
+		 let restaurantVC = RestaurantListViewController()
+        self.navigationController?.pushViewController(restaurantVC, animated: true)
     }
 }

@@ -20,9 +20,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		window = UIWindow(windowScene: windowScene)
     
 		window?.rootViewController = LaunchScreenVC()
+		
+		let token = TokenUserDefaults.getToken()
 
 		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
-			self.window?.rootViewController = navController
+			if token == nil {
+				self.window?.rootViewController = navController
+			} else {
+				let tabBarController = MainTabBarController(token: token)
+				self.window?.rootViewController = UINavigationController(rootViewController: tabBarController)
+			}
 		}
 		
 		window?.makeKeyAndVisible()

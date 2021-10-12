@@ -42,11 +42,6 @@
 		70311A3526D1982D005B0C0E /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A3426D1982C005B0C0E /* RestaurantListViewController.swift */; };
 		70311A3726D1983E005B0C0E /* TopRestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A3626D1983E005B0C0E /* TopRestaurantsViewController.swift */; };
 		70311A5326D1A294005B0C0E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70311A5226D1A294005B0C0E /* Constants.swift */; };
-		7034B04526DED9F1008B586A /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7034B04426DED9F1008B586A /* ProfileScreen.swift */; };
-		7034B04B26DEDC6C008B586A /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7034B04A26DEDC6C008B586A /* ProfileCell.swift */; };
-		7034B04D26DEE047008B586A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7034B04C26DEE047008B586A /* ProfileViewController.swift */; };
-		7034B04F26DEEF1D008B586A /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7034B04E26DEEF1D008B586A /* ProfileController.swift */; };
-		7034B05126DEEF79008B586A /* ProfileScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7034B05026DEEF79008B586A /* ProfileScreenDelegate.swift */; };
 		705A141726F7E54000DB51F9 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A141626F7E54000DB51F9 /* PersistenceManager.swift */; };
 		705A141B26F7E84D00DB51F9 /* FBRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A141A26F7E84D00DB51F9 /* FBRError.swift */; };
 		7067ABE226EAC3D900CACBFD /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067ABE126EAC3D900CACBFD /* FavoritesController.swift */; };
@@ -89,6 +84,8 @@
 		BC5C501326DC3E7E00CDF9C4 /* CardRestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5C501226DC3E7E00CDF9C4 /* CardRestaurantCell.swift */; };
 		BC61D75F26D48D0E00019CC0 /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC61D75E26D48D0E00019CC0 /* LaunchScreenVC.swift */; };
 		BC61D76126D4901F00019CC0 /* restaurant.json in Resources */ = {isa = PBXBuildFile; fileRef = BC61D76026D4901F00019CC0 /* restaurant.json */; };
+		BC6633D9271621AE007BEBBF /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6633D8271621AE007BEBBF /* SignInController.swift */; };
+		BC6633DB27162ABD007BEBBF /* TokenUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6633DA27162ABD007BEBBF /* TokenUserDefaults.swift */; };
 		BC84A60B26D59AAB001B63C7 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84A60A26D59AAB001B63C7 /* SignUpScreen.swift */; };
 		BC84A61026D59FFD001B63C7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84A60F26D59FFD001B63C7 /* SignUpVC.swift */; };
 		BCDC02DA26E978A800B05931 /* TopRestaurantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDC02D926E978A800B05931 /* TopRestaurantsController.swift */; };
@@ -135,11 +132,6 @@
 		70311A3426D1982C005B0C0E /* RestaurantListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewController.swift; sourceTree = "<group>"; };
 		70311A3626D1983E005B0C0E /* TopRestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRestaurantsViewController.swift; sourceTree = "<group>"; };
 		70311A5226D1A294005B0C0E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		7034B04426DED9F1008B586A /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
-		7034B04A26DEDC6C008B586A /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
-		7034B04C26DEE047008B586A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		7034B04E26DEEF1D008B586A /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
-		7034B05026DEEF79008B586A /* ProfileScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenDelegate.swift; sourceTree = "<group>"; };
 		705A141626F7E54000DB51F9 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		705A141A26F7E84D00DB51F9 /* FBRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRError.swift; sourceTree = "<group>"; };
 		7067ABE126EAC3D900CACBFD /* FavoritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
@@ -183,6 +175,8 @@
 		BC5C501226DC3E7E00CDF9C4 /* CardRestaurantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardRestaurantCell.swift; sourceTree = "<group>"; };
 		BC61D75E26D48D0E00019CC0 /* LaunchScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
 		BC61D76026D4901F00019CC0 /* restaurant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = restaurant.json; sourceTree = "<group>"; };
+		BC6633D8271621AE007BEBBF /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		BC6633DA27162ABD007BEBBF /* TokenUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUserDefaults.swift; sourceTree = "<group>"; };
 		BC84A60A26D59AAB001B63C7 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
 		BC84A60F26D59FFD001B63C7 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		BCDC02D926E978A800B05931 /* TopRestaurantsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TopRestaurantsController.swift; path = FindDBestRestaurant/Features/TopRestaurants/Controller/TopRestaurantsController.swift; sourceTree = SOURCE_ROOT; };
@@ -303,6 +297,7 @@
 		5BC25F7626D357410053BDF5 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				BC6633D727162188007BEBBF /* Controller */,
 				5BC25F7826D3575B0053BDF5 /* View */,
 			);
 			path = SignIn;
@@ -505,50 +500,6 @@
 				BC61D76026D4901F00019CC0 /* restaurant.json */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		7034B04326DED9D9008B586A /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				7034B04826DEDA46008B586A /* Controller */,
-				7034B04726DEDA40008B586A /* View */,
-				7034B04626DEDA34008B586A /* Model */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		7034B04626DEDA34008B586A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7034B04726DEDA40008B586A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7034B04926DEDC06008B586A /* Cells */,
-				7034B04426DED9F1008B586A /* ProfileScreen.swift */,
-				7034B04C26DEE047008B586A /* ProfileViewController.swift */,
-				7034B05026DEEF79008B586A /* ProfileScreenDelegate.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7034B04826DEDA46008B586A /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				7034B04E26DEEF1D008B586A /* ProfileController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		7034B04926DEDC06008B586A /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				7034B04A26DEDC6C008B586A /* ProfileCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		705A141426F7D00E00DB51F9 /* FBREmptyView */ = {
@@ -767,6 +718,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		BC6633D727162188007BEBBF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC6633D8271621AE007BEBBF /* SignInController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		BC84A60826D59A6F001B63C7 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -813,6 +772,7 @@
 			isa = PBXGroup;
 			children = (
 				BCE50B6726D29D83009388AA /* CodeView.swift */,
+				BC6633DA27162ABD007BEBBF /* TokenUserDefaults.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -974,6 +934,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B3BC84526DAB2ED001E694F /* InitialScreen.swift in Sources */,
+				BC6633DB27162ABD007BEBBF /* TokenUserDefaults.swift in Sources */,
 				7004775F26E429EB006C32F4 /* RestaurantDetailScreenDelegate.swift in Sources */,
 				70751EB826E1342400F6D85F /* MenuCollectionCell.swift in Sources */,
 				BCE50B6326D28F6B009388AA /* CustomButtonView.swift in Sources */,
@@ -1034,6 +995,7 @@
 				BC84A61026D59FFD001B63C7 /* SignUpVC.swift in Sources */,
 				70AB791126D6FB6900BE67BE /* FBRTextField.swift in Sources */,
 				5B8EEBCB26FA9D4E005F83CB /* SettingsVC.swift in Sources */,
+				BC6633D9271621AE007BEBBF /* SignInController.swift in Sources */,
 				70E1D69226DC43EA00E1A31D /* UITableViewCell+Ext.swift in Sources */,
 				70311A5326D1A294005B0C0E /* Constants.swift in Sources */,
 				BC84A60B26D59AAB001B63C7 /* SignUpScreen.swift in Sources */,
