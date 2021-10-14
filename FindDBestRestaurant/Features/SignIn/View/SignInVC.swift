@@ -50,8 +50,6 @@ extension SignInVC: SignInViewDelegate {
     }
     
     func didTappedSignInSubmit(email: String?, password: String?) {
-        print("\(email ?? "") - \(password ?? "")")
-		 
 		 guard let _email = email, let _password = password else { return }
 		 let sessionRequest = SessionRequest(email: _email, password: _password)
 		 controller.createSession(sessionRequest: sessionRequest)
@@ -67,11 +65,11 @@ extension SignInVC: SignInControllerDelegate {
 	
 	func successSession() {
 		print("Session criada com Sucesso")
+		
 		let token = TokenUserDefaults.getToken()
 		let tabBarController: MainTabBarController = MainTabBarController(token: token)
-		
 		DispatchQueue.main.async {
-			self.show(tabBarController, sender: nil)
+			self.navigationController?.pushViewController(tabBarController, animated: true)
 		}
 	}
 	

@@ -19,7 +19,7 @@ class RestaurantListController {
     private var restaurants: [RestaurantListResponse] = []
     
     var count: Int {
-        return restaurants.count 
+		 return restaurants.count
     }
     
     weak var delegate: RestaurantListControllerDelegate?
@@ -48,6 +48,7 @@ class RestaurantListController {
 	
 	func loadRestaurantList(token: String?) {
 		guard let token = token else { return }
+		
 		let urlString = "\(API_BASE_URL)/restaurants"
 		guard let url = URL(string: urlString) else { return }
 		

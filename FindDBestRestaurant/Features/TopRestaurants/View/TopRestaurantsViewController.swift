@@ -26,6 +26,17 @@ class TopRestaurantsViewController: UIViewController {
 	
 	private let locationManager = CLLocationManager()
 	
+	private var token: String?
+	
+	init(token: String?) {
+		self.token = token
+		super.init(nibName: nil, bundle: nil)
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
 	// MARK: - Life cycle
 	override func loadView() {
 		self.view = topRestaurantScreen
@@ -39,7 +50,8 @@ class TopRestaurantsViewController: UIViewController {
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-		controller.loadRestaurantList()
+//		controller.loadRestaurantList()
+		controller.loadRestaurantList(token: token)
 		self.topRestaurantScreen.centerViewOnUserLocation(locationManager)
 	}
 	
@@ -75,6 +87,7 @@ class TopRestaurantsViewController: UIViewController {
 		listRestaurant.forEach { restaurant in
 			self.topRestaurantScreen.addAnnotation(restaurant: restaurant)
 		}
+//		self.topRestaurantScreen.showAnnotations()
 	}
 	
 }
@@ -164,6 +177,7 @@ extension TopRestaurantsViewController: TopRestaurantsControllerDelegate {
 	func successLoad(_ list: [RestaurantListResponse]) {
 		createAnnotationRestaurant(list)
 		self.topRestaurantScreen.reloadData()
+//		self.topRestaurantScreen.showAnnotations()
 	}
 	
 	func errorLoad() {

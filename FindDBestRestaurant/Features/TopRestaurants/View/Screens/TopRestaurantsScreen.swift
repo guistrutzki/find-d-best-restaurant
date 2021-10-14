@@ -48,6 +48,8 @@ class TopRestaurantsScreen: UIView {
 	}()
 	
 	private weak var delegate: TopRestaurantsScreenDelegate?
+	
+	private var listAnnotations = [MKPointAnnotation]()
 		
 	// MARK: - Initialize
 	init(delegate: TopRestaurantsScreenDelegate?) {
@@ -77,7 +79,9 @@ class TopRestaurantsScreen: UIView {
 	}
 	
 	func reloadData() {
-		self.collectionView.reloadData()
+		DispatchQueue.main.async {
+			self.collectionView.reloadData()
+		}
 	}
 	
 	func showsUserLocation() {
@@ -112,7 +116,15 @@ class TopRestaurantsScreen: UIView {
 		annotation.subtitle = restaurant.description
 		
 		mapView.addAnnotation(annotation)
+		listAnnotations.append(annotation)
 	}
+	
+	func showAnnotations() {
+		DispatchQueue.main.async {
+			self.mapView.showAnnotations(self.listAnnotations, animated: true)
+		}
+	}
+	
 	
 	@objc
 	func didTappedLocation(_ sender: UITapGestureRecognizer) {
@@ -146,7 +158,7 @@ extension TopRestaurantsScreen: CodeView {
 		
 		locationView.snp.makeConstraints { make in
 			make.top.equalTo(mapView.snp.top).offset(20)
-			make.right.equalTo(mapView.snp.right)
+			make.right.equalTo(mapView.snp.right).inset(10)
 			make.height.equalTo(60)
 			make.width.equalTo(50)
 		}
