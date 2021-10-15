@@ -87,7 +87,6 @@ class TopRestaurantsViewController: UIViewController {
 		listRestaurant.forEach { restaurant in
 			self.topRestaurantScreen.addAnnotation(restaurant: restaurant)
 		}
-//		self.topRestaurantScreen.showAnnotations()
 	}
 	
 }
@@ -177,7 +176,6 @@ extension TopRestaurantsViewController: TopRestaurantsControllerDelegate {
 	func successLoad(_ list: [RestaurantListResponse]) {
 		createAnnotationRestaurant(list)
 		self.topRestaurantScreen.reloadData()
-//		self.topRestaurantScreen.showAnnotations()
 	}
 	
 	func errorLoad() {

@@ -48,8 +48,6 @@ class TopRestaurantsScreen: UIView {
 	}()
 	
 	private weak var delegate: TopRestaurantsScreenDelegate?
-	
-	private var listAnnotations = [MKPointAnnotation]()
 		
 	// MARK: - Initialize
 	init(delegate: TopRestaurantsScreenDelegate?) {
@@ -116,15 +114,7 @@ class TopRestaurantsScreen: UIView {
 		annotation.subtitle = restaurant.description
 		
 		mapView.addAnnotation(annotation)
-		listAnnotations.append(annotation)
 	}
-	
-	func showAnnotations() {
-		DispatchQueue.main.async {
-			self.mapView.showAnnotations(self.listAnnotations, animated: true)
-		}
-	}
-	
 	
 	@objc
 	func didTappedLocation(_ sender: UITapGestureRecognizer) {
