@@ -51,7 +51,7 @@ extension RestaurantDetailViewController: RestaurantDetailScreenDelegate {
     }
     
     func didTappedBackButton() {
-        navigationController?.popToRootViewController(animated: true)
+		 dismiss(animated: true)
     }
 }
 

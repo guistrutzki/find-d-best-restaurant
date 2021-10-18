@@ -17,9 +17,13 @@ class RestaurantListController {
     // MARK: - Variable
     
     private var restaurants: [RestaurantListResponse] = []
+	 private var filterdRestaurants: [RestaurantListResponse] = []
     
     var count: Int {
-        return restaurants.count 
+		 if filterdRestaurants.isEmpty {
+			 return restaurants.count
+		 }
+        return filterdRestaurants.count
     }
     
     weak var delegate: RestaurantListControllerDelegate?
@@ -47,12 +51,21 @@ class RestaurantListController {
     }
     
     func getRestaurants(indexPath: IndexPath) -> RestaurantListResponse? {
-        return restaurants[indexPath.row]
+		 
+		 if filterdRestaurants.isEmpty {
+			 return restaurants[indexPath.row]
+		 }
+		 return filterdRestaurants[indexPath.row]
     }
-    
-//    func getRestaurants1(indexPath: Int) -> RestaurantListResponse {
-//        return restaurants[indexPath]
-//    }
+	
+	func filterRestaurant(_ searchText: String) {
+		
+		if searchText.isEmpty {
+			filterdRestaurants.removeAll()
+			return
+		}
+		filterdRestaurants = restaurants.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+	}
     
     // MARK: - Private Functions
     

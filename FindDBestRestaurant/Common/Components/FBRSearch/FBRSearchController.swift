@@ -8,11 +8,6 @@
 import UIKit
 
 class FBRSearchController: UISearchController {
-
-    
-    // MARK: - Private Properties
-    
-    private var searchTask: DispatchWorkItem?
     
     // MARK: - Public Properties
     
@@ -43,22 +38,7 @@ class FBRSearchController: UISearchController {
 extension FBRSearchController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        guard !searchText.isEmpty else { return }
-        
-        searchTask?.cancel()
-        
-        let newSearchTask = DispatchWorkItem { [weak self] in
-            DispatchQueue.main.async {
-                self?.searchDelegate?
-                    .didFinishSearch(searchText)
-            }
-        }
-        
-        searchTask = newSearchTask
-        
-        DispatchQueue.main.asyncAfter(
-            deadline: DispatchTime.now() + 0.5,
-            execute: newSearchTask)
+		 self.searchDelegate?.didFinishSearch(searchText)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

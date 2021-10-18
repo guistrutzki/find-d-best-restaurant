@@ -11,16 +11,6 @@ class RestaurantListScreen: UIView {
     
     // MARK: - UI Elements
     
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 36, weight: .heavy)
-        label.numberOfLines = 0
-        label.textColor = .white
-        label.text = K.restaurants
-        return label
-    }()
-    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = Colors.gray800
@@ -94,19 +84,12 @@ extension RestaurantListScreen: UITableViewDelegate, UITableViewDataSource {
 extension RestaurantListScreen: CodeView {
     
     func buildViewHierarchy() {
-        addSubview(titleLabel)
         addSubview(tableView)
     }
     
     func setupConstraints() {
-        titleLabel.snp.makeConstraints { make in
-            make.top.right.left.equalTo(safeAreaLayoutGuide).offset(20)
-        }
-        
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(8)
-            make.left.right.bottom.equalTo(safeAreaLayoutGuide)
-          //  make.top.left.right.bottom.equalTo(safeAreaLayoutGuide)
+            make.top.left.right.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
     
