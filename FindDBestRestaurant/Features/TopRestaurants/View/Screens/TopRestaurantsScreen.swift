@@ -77,7 +77,9 @@ class TopRestaurantsScreen: UIView {
 	}
 	
 	func reloadData() {
-		self.collectionView.reloadData()
+		DispatchQueue.main.async {
+			self.collectionView.reloadData()
+		}
 	}
 	
 	func showsUserLocation() {
@@ -146,7 +148,7 @@ extension TopRestaurantsScreen: CodeView {
 		
 		locationView.snp.makeConstraints { make in
 			make.top.equalTo(mapView.snp.top).offset(20)
-			make.right.equalTo(mapView.snp.right)
+			make.right.equalTo(mapView.snp.right).inset(10)
 			make.height.equalTo(60)
 			make.width.equalTo(50)
 		}

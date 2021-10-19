@@ -14,7 +14,11 @@ class SignInVC: UIViewController {
     private lazy var signInScreen: SignInScreen = {
         return SignInScreen(self)
     }()
-    
+	private lazy var controller: SignInController = {
+		let controller = SignInController(delegate: self)
+		return controller
+	}()
+	    
     // MARK: - Life cycle
     
     override func loadView() {
@@ -46,10 +50,31 @@ extension SignInVC: SignInViewDelegate {
     }
     
     func didTappedSignInSubmit(email: String?, password: String?) {
-        print("\(email ?? "") - \(password ?? "")")
+		 guard let _email = email, let _password = password else { return }
+		 let sessionRequest = SessionRequest(email: _email, password: _password)
+		 controller.createSession(sessionRequest: sessionRequest)
     }
     
     func didTappedForgetPassword() {
         print("forget password")
     }
+}
+
+// MARK: - Extension SignInControllerDelegate
+extension SignInVC: SignInControllerDelegate {
+	
+	func successSession() {
+		print("Session criada com Sucesso")
+		
+		let token = TokenUserDefaults.getToken()
+		let tabBarController: MainTabBarController = MainTabBarController(token: token)
+		DispatchQueue.main.async {
+			self.navigationController?.pushViewController(tabBarController, animated: true)
+		}
+	}
+	
+	func errorSession() {
+		print("Erro na criacao da Session")
+	}
+	
 }

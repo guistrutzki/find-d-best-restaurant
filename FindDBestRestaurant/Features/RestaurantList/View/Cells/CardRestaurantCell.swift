@@ -25,8 +25,14 @@ class CardRestaurantCell: UITableViewCell {
 	private var restaurantImageView: UIImageView = {
 		let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        imageView.image = UIImage(named: "rest-1")
 		return imageView
+	}()
+	
+	private var restaurantBackgroundView: UIView = {
+		let view = UIView(frame: .zero)
+		view.backgroundColor = .black
+		view.alpha = 0.5
+		return view
 	}()
 	
 	private var nameLabel: UILabel = {
@@ -62,9 +68,10 @@ class CardRestaurantCell: UITableViewCell {
 extension CardRestaurantCell: CodeView {
 	
 	func buildViewHierarchy() {
-		addSubview(mainView)
 		mainView.addSubview(restaurantImageView)
-        restaurantImageView.addSubview(nameLabel)
+		mainView.addSubview(restaurantBackgroundView)
+		mainView.addSubview(nameLabel)
+		addSubview(mainView)
 	}
 	
 	func setupConstraints() {
@@ -82,6 +89,13 @@ extension CardRestaurantCell: CodeView {
 			make.bottom.equalToSuperview()
 		}
 		
+		restaurantBackgroundView.snp.makeConstraints { make in
+			make.top.equalToSuperview()
+			make.left.equalToSuperview()
+			make.right.equalToSuperview()
+			make.bottom.equalToSuperview()
+		}
+		
 		nameLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(15)
             make.right.equalToSuperview().inset(15)
@@ -90,6 +104,6 @@ extension CardRestaurantCell: CodeView {
 	}
 	
 	func setupAdditionalConfiguration() {
-		backgroundColor = Colors.gray800
+		backgroundColor = Colors.gray500
 	}
 }

@@ -13,7 +13,7 @@ class RestaurantListScreen: UIView {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = Colors.gray800
+        tableView.backgroundColor = Colors.gray500
         return tableView
     }()
 
@@ -36,7 +36,9 @@ class RestaurantListScreen: UIView {
     // MARK: - Public Functions
     
     func updateView() {
-        tableView.reloadData()
+		 DispatchQueue.main.async {
+			 self.tableView.reloadData()
+		 }
     }
     
     // MARK: - Private Functions

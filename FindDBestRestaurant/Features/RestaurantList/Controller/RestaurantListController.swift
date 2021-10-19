@@ -20,9 +20,10 @@ class RestaurantListController {
 	 private var filterdRestaurants: [RestaurantListResponse] = []
     
     var count: Int {
-		 if filterdRestaurants.isEmpty {
-			 return restaurants.count
-		 }
+      if filterdRestaurants.isEmpty {
+         return restaurants.count
+      }
+      
         return filterdRestaurants.count
     }
     
@@ -49,6 +50,25 @@ class RestaurantListController {
             }
         }
     }
+	
+	func loadRestaurantList(token: String?) {
+		guard let token = token else { return }
+		
+		let urlString = "\(API_BASE_URL)/restaurants"
+		guard let url = URL(string: urlString) else { return }
+		
+		APIManager.loadRestaurantList(url: url, token: token) { success, error in
+			if let result = success {
+				print(result)
+				self.didFetchSuccess(result)
+			} else {
+				if let error = error {
+					self.didFetchFailed(error: error)
+				}
+			}
+		}
+		
+	}
     
     func getRestaurants(indexPath: IndexPath) -> RestaurantListResponse? {
 		 

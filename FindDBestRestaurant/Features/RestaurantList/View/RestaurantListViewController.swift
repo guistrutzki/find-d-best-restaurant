@@ -21,6 +21,8 @@ class RestaurantListViewController: UIViewController {
         controller.delegate = self
         return controller
     }()
+	
+	var token: String? = nil
     
     
     // MARK: - Life cycle
@@ -31,8 +33,8 @@ class RestaurantListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        controller.fetchRestaurantList()
-        setupSearchBar()
+        controller.loadRestaurantList(token: token)
+        setupSearchBar()  
     }
     
     
