@@ -26,25 +26,10 @@ class MainTabBarController: UITabBarController {
         setNavigationTitleStyle()
         
         viewControllers = [
-            createNavigationController(
-					for: setRestaurantListViewController(),
-						title: K.home,
-						image: SFSymbols.home ?? UIImage()),
-				
-            createNavigationController(
-					for: TopRestaurantsViewController(token: token),
-						title: K.top,
-						image: SFSymbols.location ?? UIImage()),
-				
-            createNavigationController(
-					for: FavoritesViewController(),
-						title: K.favorites,
-						image: SFSymbols.favorite ?? UIImage()),
-				
-            createNavigationController(
-					for: SettingsVC(),
-						title: K.settings,
-						image: SFSymbols.person ?? UIImage())
+            createNavigationController(for: RestaurantListViewController(),title: K.restaurants, image: SFSymbols.home ?? UIImage()),
+            createNavigationController(for: TopRestaurantsViewController(), title: K.top, image: SFSymbols.location ?? UIImage()),
+            createNavigationController(for: FavoritesViewController(), title: K.favorites, image: SFSymbols.favorite ?? UIImage()),
+            createNavigationController(for: SettingsVC(), title: K.settings, image: SFSymbols.person ?? UIImage())
         ]
     }
     

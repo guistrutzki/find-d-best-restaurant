@@ -33,26 +33,19 @@ class RestaurantListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        controller.fetchRestaurantList()
-		 controller.loadRestaurantList(token: token)
-      //  setupSearchBar()
+        controller.loadRestaurantList(token: token)
+        setupSearchBar()  
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setNavigationStyle()
-       // setupNavigation()
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
+		  setupNavigation()
     }
     
     // MARK: - Private Functions
     
     private func setupNavigation() {
-        navigationItem.title = "Restaurantes"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
@@ -60,20 +53,17 @@ class RestaurantListViewController: UIViewController {
     private func setupSearchBar() {
         let search = FBRSearchController()
         search.searchDelegate = self
-        
+
         navigationItem.searchController = search
         navigationItem.hidesSearchBarWhenScrolling = false
-    }
-    
-    private func setNavigationStyle() {
-        setNeedsStatusBarAppearanceUpdate()
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     private func proceedToDetails(restaurant: RestaurantListResponse) {
         let viewController = RestaurantDetailViewController()
         viewController.restaurantDetail = restaurant
-        navigationController?.pushViewController(viewController, animated: true)
+		 viewController.modalTransitionStyle = .flipHorizontal
+		 viewController.modalPresentationStyle = .fullScreen
+		 present(viewController, animated: true, completion: nil)
     }
 }
 
@@ -101,10 +91,12 @@ extension RestaurantListViewController: RestaurantListControllerDelegate {
 extension RestaurantListViewController: FBRSearchControllerDelegate {
     
     func didFinishSearch(_ searchText: String) {
-        print("===FINISH")
+		 controller.filterRestaurant(searchText)
+		 restaurantListScreen.updateView()
     }
     
     func didCancelSearch() {
-        print("==== CANCEL")
+		 controller.filterRestaurant("")
+		 restaurantListScreen.updateView()
     }
 }
