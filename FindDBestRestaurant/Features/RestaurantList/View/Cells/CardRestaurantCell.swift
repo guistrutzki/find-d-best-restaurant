@@ -104,6 +104,6 @@ extension CardRestaurantCell: CodeView {
 	}
 	
 	func setupAdditionalConfiguration() {
-		backgroundColor = Colors.gray800
+		backgroundColor = Colors.gray500
 	}
 }

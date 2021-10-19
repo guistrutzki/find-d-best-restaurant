@@ -23,7 +23,7 @@ class RestaurantListScreen: UIView {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = Colors.gray800
+        tableView.backgroundColor = Colors.gray500
         return tableView
     }()
 
