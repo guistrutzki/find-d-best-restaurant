@@ -91,7 +91,8 @@ extension RestaurantListScreen: CodeView {
     
     func setupConstraints() {
         tableView.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalTo(safeAreaLayoutGuide)
+            make.left.right.bottom.equalTo(safeAreaLayoutGuide)
+            make.top.equalTo(safeAreaLayoutGuide).offset(20)
         }
     }
     

@@ -29,8 +29,11 @@ class FBRSearchController: UISearchController {
     
     func setupUI() {
         searchBar.delegate = self
-        searchBar.tintColor = .label
+        searchBar.tintColor = .white
         searchBar.placeholder = "Buscar"
+        searchBar.barTintColor = .white
+        searchBar.barStyle = .black
+        
         obscuresBackgroundDuringPresentation = false
     }
 }

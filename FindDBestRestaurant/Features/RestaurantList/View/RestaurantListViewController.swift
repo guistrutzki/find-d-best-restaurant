@@ -21,11 +21,19 @@ class RestaurantListViewController: UIViewController {
         controller.delegate = self
         return controller
     }()
-	
-	var token: String? = nil
-    
     
     // MARK: - Life cycle
+    
+    private var token: String?
+    
+    init(token: String?) {
+        self.token = token
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         view = restaurantListScreen
