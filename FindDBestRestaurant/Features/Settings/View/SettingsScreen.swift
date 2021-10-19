@@ -135,6 +135,7 @@ class SettingsScreen: UIView {
         button.setTitle("Sair", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.poppinsRegular, size: 18)
+		 button.addTarget(self, action: #selector(handleLogoutTapped(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -158,6 +159,11 @@ class SettingsScreen: UIView {
     @objc private func handleUpdateNameTapped() {
         self.delegate.didTappedUpdateName()
     }
+	
+	@objc private func handleLogoutTapped(_ sender: UIButton) {
+		 self.delegate.didTappedLogout(sender)
+	}
+	
 }
 
 // MARK: - Extension CodeView
