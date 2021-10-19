@@ -23,22 +23,41 @@ class TopRestaurantsController {
 	}
 	
 	// MARK: - Functions
-	func loadRestaurantList() {
-		let baseUrl = "https://restaurant-api.guistrutzki.dev/restaurants"
+	//	func loadRestaurantList() {
+	//		let baseUrl = "https://restaurant-api.guistrutzki.dev/restaurants"
+	//
+	//		guard let url = URL(string: baseUrl) else {
+	//			print("url error")
+	//			return
+	//		}
+	//
+	//		NetworkManager.request(url: url) { [weak self] result in
+	//			switch result {
+	//				case .success(let restaurantResponse):
+	//					self?.didFetchSuccess(restaurantResponse)
+	//				case .failure(let error):
+	//					self?.didFetchFailed(error: error)
+	//			}
+	//		}
+	//	}
+	
+	func loadRestaurantList(token: String?) {
+		guard let token = token else { return }
 		
-		guard let url = URL(string: baseUrl) else {
-			print("url error")
-			return
-		}
+		let urlString = "\(API_BASE_URL)/restaurants"
+		guard let url = URL(string: urlString) else { return }
 		
-		NetworkManager.request(url: url) { [weak self] result in
-			switch result {
-				case .success(let restaurantResponse):
-					self?.didFetchSuccess(restaurantResponse)
-				case .failure(let error):
-					self?.didFetchFailed(error: error)
+		APIManager.loadRestaurantList(url: url, token: token) { success, error in
+			if let result = success {
+				print(result)
+				self.didFetchSuccess(result)
+			} else {
+				if let error = error {
+					self.didFetchFailed(error: error)
+				}
 			}
 		}
+		
 	}
 	
 	func getRestaurants(indexPath: IndexPath) -> RestaurantListResponse {
@@ -46,18 +65,7 @@ class TopRestaurantsController {
 	}
 	
 	private func didFetchSuccess(_ response: [RestaurantListResponse]) {
-		var latitude = ""
-		
-		response.forEach { restaurant in
-			
-			// Retirar
-			if latitude != restaurant.lat {
-				self.restaurants.append(restaurant)
-			}
-			
-			latitude = restaurant.lat
-			
-		}
+		self.restaurants.append(contentsOf: response)
 		self.delegate?.successLoad(self.restaurants)
 	}
 	

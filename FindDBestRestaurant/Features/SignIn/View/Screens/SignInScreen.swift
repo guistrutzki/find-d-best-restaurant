@@ -134,11 +134,11 @@ extension SignInScreen: CodeView {
         self.backgroundColor = Colors.gray500
         
         let backButtonAction = #selector(didTappedBackButton(_:))
-        let submitButtonACtion = #selector(didTappedSubmit(_:))
+        let submitButtonAction = #selector(didTappedSubmit(_:))
         let forgetPasswordAction = #selector(didTappedForgetPassword(_:))
         
         forgetPasswordButton.addTarget(self, action:forgetPasswordAction , for: .touchUpInside)
-        submitButton.addTarget(self, action: submitButtonACtion, for: .touchUpInside)
+        submitButton.addTarget(self, action: submitButtonAction, for: .touchUpInside)
         backButton.addTarget(self, action: backButtonAction, for: .touchUpInside)
         
         emailTextField.configureTextFieldType(.email)

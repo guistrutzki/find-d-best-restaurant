@@ -22,7 +22,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		window?.rootViewController = LaunchScreenVC()
 
 		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
-			self.window?.rootViewController = navController
+			let token = TokenUserDefaults.getToken()
+			
+			if token == nil {
+				self.window?.rootViewController = navController
+			} else {
+				let tabBarController = MainTabBarController(token: token)
+				self.window?.rootViewController = tabBarController
+			}
 		}
 		
 		window?.makeKeyAndVisible()

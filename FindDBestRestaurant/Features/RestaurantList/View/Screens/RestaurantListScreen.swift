@@ -46,7 +46,9 @@ class RestaurantListScreen: UIView {
     // MARK: - Public Functions
     
     func updateView() {
-        tableView.reloadData()
+		 DispatchQueue.main.async {
+			 self.tableView.reloadData()
+		 }
     }
     
     // MARK: - Private Functions
