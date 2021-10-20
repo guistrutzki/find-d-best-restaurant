@@ -24,19 +24,11 @@ class ResetPasswordVC: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		configureView()
 	}
 	
 	
 	// MARK: - Function
-    
-	private func configureView() {
-		view.backgroundColor = Colors.gray800
-		title = K.resetPassword
-		navigationItem.largeTitleDisplayMode = .never
-	}
-	
+    	
 	private func didSendResetPassword() {
 		showMessage(title: K.sendEmail,
 						message: K.sendEmailSuccessMessage)
@@ -48,6 +40,10 @@ class ResetPasswordVC: UIViewController {
 // MARK: - Extension ResetPassword
 
 extension ResetPasswordVC: ResetPasswordScreenDelegate {
+	
+	func didTappedBackButton() {
+		self.navigationController?.popViewController(animated: true)
+	}
 	
 	func didTappedSendButton() {
 		self.didSendResetPassword()
