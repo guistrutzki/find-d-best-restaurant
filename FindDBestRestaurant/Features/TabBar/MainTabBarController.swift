@@ -22,6 +22,8 @@ class MainTabBarController: UITabBarController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		 
+		  view.backgroundColor = Colors.gray800
         setTabBarStyle()
         setNavigationTitleStyle()
         
