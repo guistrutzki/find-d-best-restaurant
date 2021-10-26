@@ -28,4 +28,12 @@ extension SettingsVC: SettingsScreenDelegate {
         let modalVC = UpdateNameVC()
         self.present(modalVC, animated: true, completion: nil)
     }
+	
+	func didTappedLogout(_ sender: UIButton) {
+		TokenUserDefaults.deleteToken()
+		let initialVC = InitialVC()
+		let navController = UINavigationController(rootViewController: initialVC)
+		UIApplication.shared.windows.first?.rootViewController = navController
+		UIApplication.shared.windows.first?.makeKeyAndVisible()
+	}
 }
