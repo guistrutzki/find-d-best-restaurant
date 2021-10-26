@@ -40,8 +40,23 @@ final class ResetPasswordScreen: UIView {
 	}()
 	
 	private var sendButton: FBRButton = {
-        let button = FBRButton(backgroundColor: .systemRed, title: K.send, titleColor: .white)
+		let button = FBRButton(backgroundColor: .systemRed, title: K.send, titleColor: .white)
 		return button
+	}()
+	
+	private var backButton: UIButton = {
+		 let button = UIButton()
+		 button.setImage(UIImage(named: "arrow-left"), for: .normal)
+		 button.tintColor = .white
+		 return button
+	}()
+	
+	private var titleLabel: UILabel = {
+		 let label = UILabel()
+		 label.textColor = .white
+		 label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+		 label.text = K.resetPassword
+		 return label
 	}()
 	
 	
@@ -68,6 +83,11 @@ final class ResetPasswordScreen: UIView {
 		self.delegate?.didTappedSendButton()
 	}
 	
+	@objc
+	private func didTappedBackButton(_ button: UIButton) {
+		self.delegate?.didTappedBackButton()
+	}
+	
 	func getEmail() -> String {
 		return emailTextField.text ?? ""
 	}
@@ -92,6 +112,8 @@ extension ResetPasswordScreen: UITextFieldDelegate {
 extension ResetPasswordScreen: CodeView {
 	
 	func buildViewHierarchy() {
+		addSubview(backButton)
+		addSubview(titleLabel)
 		addSubview(mainStackView)
 		mainStackView.addArrangedSubview(messageLabel)
 		mainStackView.addArrangedSubview(emailTextField)
@@ -100,8 +122,20 @@ extension ResetPasswordScreen: CodeView {
 	
 	func setupConstraints() {
 		
+		backButton.snp.makeConstraints { make in
+			 make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
+			 make.leading.equalToSuperview().offset(26)
+			 make.height.equalTo(24)
+		}
+		
+		titleLabel.snp.makeConstraints { make in
+			 make.centerY.equalTo(backButton.snp.centerY)
+			 make.centerX.equalToSuperview()
+			 make.height.equalTo(24)
+		}
+		
 		mainStackView.snp.makeConstraints { make in
-			make.top.equalTo(safeAreaLayoutGuide).offset(20)
+			make.top.equalTo(titleLabel.snp.bottom).offset(40)
 			make.left.equalToSuperview().offset(20)
 			make.right.equalToSuperview().inset(20)
 		}
@@ -125,8 +159,13 @@ extension ResetPasswordScreen: CodeView {
 	}
 	
 	func setupAdditionalConfiguration() {
-		backgroundColor = .clear
-		sendButton.addTarget(self, action: #selector(didTappedSendButton(_:)), for: .touchUpInside)
+		self.backgroundColor = Colors.gray500
+		
+		let sendButtonAction = #selector(didTappedSendButton(_:))
+		let backButtonAction = #selector(didTappedBackButton(_:))
+		
+		sendButton.addTarget(self, action: sendButtonAction, for: .touchUpInside)
+		backButton.addTarget(self, action: backButtonAction, for: .touchUpInside)
 	}
 	
 }
