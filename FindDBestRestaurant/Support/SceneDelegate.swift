@@ -14,17 +14,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-		let navController = UINavigationController(rootViewController: InitialVC())
+	
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 		
 		window = UIWindow(windowScene: windowScene)
-    
 		window?.rootViewController = LaunchScreenVC()
 
 		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
 			let token = TokenUserDefaults.getToken()
 			
 			if token == nil {
+				let navController = UINavigationController(rootViewController: InitialVC())
+				navController.setNavigationBarStyleDefault()
 				self.window?.rootViewController = navController
 			} else {
 				let tabBarController = MainTabBarController(token: token)

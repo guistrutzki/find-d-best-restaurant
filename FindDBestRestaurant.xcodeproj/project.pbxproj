@@ -78,6 +78,7 @@
 		BC0E63F826E6DA2B00A68212 /* TopRestaurantsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E63F726E6DA2B00A68212 /* TopRestaurantsScreen.swift */; };
 		BC0E63FB26E6E73100A68212 /* TopRestaurantsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E63FA26E6E73100A68212 /* TopRestaurantsCollectionCell.swift */; };
 		BC1C9AA926D2FC6D00893506 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C9AA826D2FC6D00893506 /* CustomTextFieldView.swift */; };
+		BC3744D5271FA28500654DA0 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3744D4271FA28500654DA0 /* UINavigationController+Ext.swift */; };
 		BC5C500926DBF43300CDF9C4 /* ResetPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5C500826DBF43300CDF9C4 /* ResetPasswordScreen.swift */; };
 		BC5C500B26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5C500A26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift */; };
 		BC5C500D26DBFA3000CDF9C4 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5C500C26DBFA3000CDF9C4 /* ResetPasswordVC.swift */; };
@@ -169,6 +170,7 @@
 		BC0E63F726E6DA2B00A68212 /* TopRestaurantsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRestaurantsScreen.swift; sourceTree = "<group>"; };
 		BC0E63FA26E6E73100A68212 /* TopRestaurantsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRestaurantsCollectionCell.swift; sourceTree = "<group>"; };
 		BC1C9AA826D2FC6D00893506 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
+		BC3744D4271FA28500654DA0 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		BC5C500826DBF43300CDF9C4 /* ResetPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordScreen.swift; sourceTree = "<group>"; };
 		BC5C500A26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordDelegate.swift; sourceTree = "<group>"; };
 		BC5C500C26DBFA3000CDF9C4 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
@@ -608,6 +610,7 @@
 				70E1D69326DC442300E1A31D /* UIImageView+Ext.swift */,
 				70751EB926E1352200F6D85F /* UICollectionView+Ext.swift */,
 				5BD562FE26DEE56700699FCF /* UIView+ext.swift */,
+				BC3744D4271FA28500654DA0 /* UINavigationController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -999,6 +1002,7 @@
 				70E1D69226DC43EA00E1A31D /* UITableViewCell+Ext.swift in Sources */,
 				70311A5326D1A294005B0C0E /* Constants.swift in Sources */,
 				BC84A60B26D59AAB001B63C7 /* SignUpScreen.swift in Sources */,
+				BC3744D5271FA28500654DA0 /* UINavigationController+Ext.swift in Sources */,
 				5B8EEBC926FA9D1F005F83CB /* SettingsScreen.swift in Sources */,
 				BC5C501326DC3E7E00CDF9C4 /* CardRestaurantCell.swift in Sources */,
 				BC61D75F26D48D0E00019CC0 /* LaunchScreenVC.swift in Sources */,

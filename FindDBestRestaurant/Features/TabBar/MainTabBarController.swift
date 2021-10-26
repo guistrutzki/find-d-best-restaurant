@@ -44,25 +44,8 @@ class MainTabBarController: UITabBarController {
         rootViewController.navigationItem.title = title
         navController.tabBarItem.title = title
         navController.tabBarItem.image = image
-        
-        
-        let navigationBarAppearanceTransition = UINavigationBarAppearance()
-            navigationBarAppearanceTransition.backgroundColor = Colors.gray800
-            navigationBarAppearanceTransition.titleTextAttributes = [.foregroundColor: Colors.white]
-            navigationBarAppearanceTransition.largeTitleTextAttributes = [.foregroundColor: Colors.white]
-            navigationBarAppearanceTransition.backgroundEffect = nil
-        
-        
-        let navigationBarAppearance = UINavigationBarAppearance()
-            navigationBarAppearance.backgroundColor = Colors.gray500
-            navigationBarAppearance.titleTextAttributes = [.foregroundColor: Colors.white]
-            navigationBarAppearance.largeTitleTextAttributes = [.foregroundColor: Colors.white]
-            navigationBarAppearance.backgroundEffect = nil
-
-            navController.navigationBar.scrollEdgeAppearance = navigationBarAppearance
-            navController.navigationBar.compactAppearance = navigationBarAppearanceTransition
-            navController.navigationBar.standardAppearance = navigationBarAppearanceTransition
-        
+		  navController.setNavigationBarStyleDefault()
+		 
         return navController
     }
     
@@ -80,8 +63,4 @@ class MainTabBarController: UITabBarController {
         UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().barTintColor = Colors.gray800
     }
-	
-	private func setRestaurantListViewController() -> UIViewController {
-        RestaurantListViewController(token: token)
-	}
 }
