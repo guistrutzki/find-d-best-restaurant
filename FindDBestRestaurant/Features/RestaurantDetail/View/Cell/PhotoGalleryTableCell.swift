@@ -7,6 +7,13 @@
 
 import UIKit
 
+protocol PhotoGalleryTableCellDelegate: AnyObject {
+    
+    func getGalleryNumberOfItems() -> Int?
+    
+    func getRestaurants(index: IndexPath) -> RestaurantListResponse?
+}
+
 class PhotoGalleryTableCell: UITableViewCell {
     
     // MARK: - Identifier
@@ -42,7 +49,9 @@ class PhotoGalleryTableCell: UITableViewCell {
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
-
+    
+    weak var delegate: PhotoGalleryTableCellDelegate?
+    
     // MARK: - Inits
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -53,7 +62,7 @@ class PhotoGalleryTableCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
 }
 
 // MARK: - CodeView Extension
@@ -87,14 +96,18 @@ extension PhotoGalleryTableCell: CodeView {
 extension PhotoGalleryTableCell: UICollectionViewDataSource , UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return delegate?.getGalleryNumberOfItems() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = PhotoGalleryCollectionCell.identifier
         
         guard let cell = collection.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? PhotoGalleryCollectionCell else { return UICollectionViewCell()}
-        
+
+        if let restaurant = delegate?.getRestaurants(index: indexPath) {
+            cell.configureCell(restaurant: restaurant)
+        }
+           
         return cell
     }
 }
@@ -108,4 +121,3 @@ extension PhotoGalleryTableCell: UICollectionViewDelegateFlowLayout {
         return CGSize(width: 145, height: 270)
     }
 }
-

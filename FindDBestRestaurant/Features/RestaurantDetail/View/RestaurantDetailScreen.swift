@@ -95,6 +95,8 @@ class RestaurantDetailScreen: UIView {
     
     var restaurantDetail: RestaurantListResponse?
     
+    var galleryDetails: RestaurantListResponse?
+    
     // MARK: - Inits
     
     init(_ delegate: RestaurantDetailScreenDelegate) {
@@ -113,6 +115,7 @@ class RestaurantDetailScreen: UIView {
         restaurantImageView.load(url: restaurant.coverImage)
         nameLabel.text = restaurant.name
         infoLabel.text = restaurant.description
+        galleryDetails = restaurant
     }
     
     // MARK: - Private Functions
@@ -150,8 +153,20 @@ class RestaurantDetailScreen: UIView {
         else { return UITableViewCell()}
         
         cell.selectionStyle = .none
+        cell.delegate = self
         
         return cell
+    }
+}
+
+extension RestaurantDetailScreen: PhotoGalleryTableCellDelegate {
+    
+    func getRestaurants(index: IndexPath) -> RestaurantListResponse? {
+        return galleryDetails
+    }
+    
+    func getGalleryNumberOfItems() -> Int? {
+        return galleryDetails?.gallery.count ?? 0
     }
 }
 
