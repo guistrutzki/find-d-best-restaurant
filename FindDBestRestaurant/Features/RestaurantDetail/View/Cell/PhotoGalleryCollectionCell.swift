@@ -47,12 +47,6 @@ class PhotoGalleryCollectionCell: UICollectionViewCell {
         let image = restaurant.gallery.first ?? ""
         galleryImageView.load(url: image)
     }
-    
-//    func configureGallery(imagesUrl:[String]) -> [String]? {
-//        guard let galleryImages = imagesUrl[IndexPath.] else { return []}
-//        galleryImageView.load(url: galleryImages)
-//    }
-
 }
 
 // MARK: - CodeView Extension

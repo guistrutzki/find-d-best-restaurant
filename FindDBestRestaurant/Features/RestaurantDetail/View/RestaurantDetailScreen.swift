@@ -95,8 +95,6 @@ class RestaurantDetailScreen: UIView {
     
     var restaurantDetail: RestaurantListResponse?
     
-    var galleryItems: Int = 0
-    
     var galleryDetails: RestaurantListResponse?
     
     // MARK: - Inits
@@ -117,7 +115,6 @@ class RestaurantDetailScreen: UIView {
         restaurantImageView.load(url: restaurant.coverImage)
         nameLabel.text = restaurant.name
         infoLabel.text = restaurant.description
-        galleryItems = restaurant.gallery.count
         galleryDetails = restaurant
     }
     
@@ -169,7 +166,7 @@ extension RestaurantDetailScreen: PhotoGalleryTableCellDelegate {
     }
     
     func getGalleryNumberOfItems() -> Int? {
-        return galleryItems
+        return galleryDetails?.gallery.count ?? 0
     }
 }
 
