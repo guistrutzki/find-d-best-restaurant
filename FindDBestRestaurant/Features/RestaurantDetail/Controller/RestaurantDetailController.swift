@@ -42,5 +42,4 @@ class RestaurantDetailController {
             self.delegate?.didSaveFavoriteFailed()
         }
     }
-    
 }
