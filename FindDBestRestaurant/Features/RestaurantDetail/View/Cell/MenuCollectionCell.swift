@@ -85,6 +85,11 @@ extension MenuCollectionCell: CodeView {
     }
     
     func setupAdditionalConfiguration() {
-
+        // Not implemented
+    }
+    
+    func configureCell(restaurant: RestaurantListResponse) {
+        let image = restaurant.menu.first ?? ""
+        menuImageView.load(url: image)
     }
 }

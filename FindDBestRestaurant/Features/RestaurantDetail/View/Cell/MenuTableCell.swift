@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol MenuTableCellDelegate: AnyObject {
+    
+    func getMenuNumberOfItems() -> Int?
+    func getRestaurantsDetails(index: IndexPath) -> RestaurantListResponse?
+}
+
 class MenuTableCell: UITableViewCell {
+    
+    weak var delegate: MenuTableCellDelegate?
     
     // MARK: - Identifier
     
@@ -86,13 +94,17 @@ extension MenuTableCell: CodeView {
 extension MenuTableCell: UICollectionViewDataSource , UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return delegate?.getMenuNumberOfItems() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = MenuCollectionCell.identifier
         
         guard let cell = collection.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? MenuCollectionCell else { return UICollectionViewCell()}
+        
+        if let restaurant = delegate?.getRestaurantsDetails(index: indexPath) {
+            cell.configureCell(restaurant: restaurant)
+        }
         
         return cell
     }
