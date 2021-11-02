@@ -12,4 +12,6 @@ target 'FindDBestRestaurant' do
    pod 'Alamofire', '5.4.3'
    pod 'Firebase/Analytics'
    pod 'Firebase/Crashlytics'
+   pod 'RealmSwift', '~>10'
+
 end
