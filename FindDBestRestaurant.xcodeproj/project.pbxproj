@@ -90,9 +90,10 @@
 		BC6633DB27162ABD007BEBBF /* TokenUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6633DA27162ABD007BEBBF /* TokenUserDefaults.swift */; };
 		BC84A60B26D59AAB001B63C7 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84A60A26D59AAB001B63C7 /* SignUpScreen.swift */; };
 		BC84A61026D59FFD001B63C7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84A60F26D59FFD001B63C7 /* SignUpVC.swift */; };
-		BCC955392734567700C7E667 /* FindDBestRestaurantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC955382734567700C7E667 /* FindDBestRestaurantTests.swift */; };
+		BCC955392734567700C7E667 /* CustomTextFieldViewSnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC955382734567700C7E667 /* CustomTextFieldViewSnapshotTest.swift */; };
+		BCC95541273458EE00C7E667 /* FBREmptyStateScreenSnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC95540273458EE00C7E667 /* FBREmptyStateScreenSnapshotTest.swift */; };
+		BCC9554327346B6400C7E667 /* FBRButtonSnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC9554227346B6400C7E667 /* FBRButtonSnapshotTest.swift */; };
 		BCDC02DA26E978A800B05931 /* TopRestaurantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDC02D926E978A800B05931 /* TopRestaurantsController.swift */; };
-		BCE50B6326D28F6B009388AA /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE50B6226D28F6B009388AA /* CustomButtonView.swift */; };
 		BCE50B6826D29D83009388AA /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE50B6726D29D83009388AA /* CodeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -195,9 +196,10 @@
 		BC84A60A26D59AAB001B63C7 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
 		BC84A60F26D59FFD001B63C7 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		BCC955362734567700C7E667 /* FindDBestRestaurantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindDBestRestaurantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCC955382734567700C7E667 /* FindDBestRestaurantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDBestRestaurantTests.swift; sourceTree = "<group>"; };
+		BCC955382734567700C7E667 /* CustomTextFieldViewSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldViewSnapshotTest.swift; sourceTree = "<group>"; };
+		BCC95540273458EE00C7E667 /* FBREmptyStateScreenSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBREmptyStateScreenSnapshotTest.swift; sourceTree = "<group>"; };
+		BCC9554227346B6400C7E667 /* FBRButtonSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRButtonSnapshotTest.swift; sourceTree = "<group>"; };
 		BCDC02D926E978A800B05931 /* TopRestaurantsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TopRestaurantsController.swift; path = FindDBestRestaurant/Features/TopRestaurants/Controller/TopRestaurantsController.swift; sourceTree = SOURCE_ROOT; };
-		BCE50B6226D28F6B009388AA /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		BCE50B6726D29D83009388AA /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		DDE3F4ED146074DAD760200E /* Pods-FindDBestRestaurantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindDBestRestaurantTests.release.xcconfig"; path = "Target Support Files/Pods-FindDBestRestaurantTests/Pods-FindDBestRestaurantTests.release.xcconfig"; sourceTree = "<group>"; };
 		E49B9C030C9BE379DF387A87 /* libPods-FindDBestRestaurantTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FindDBestRestaurantTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -778,9 +780,19 @@
 		BCC955372734567700C7E667 /* FindDBestRestaurantTests */ = {
 			isa = PBXGroup;
 			children = (
-				BCC955382734567700C7E667 /* FindDBestRestaurantTests.swift */,
+				BCC9553F2734587200C7E667 /* SnapshotTesting */,
 			);
 			path = FindDBestRestaurantTests;
+			sourceTree = "<group>";
+		};
+		BCC9553F2734587200C7E667 /* SnapshotTesting */ = {
+			isa = PBXGroup;
+			children = (
+				BCC955382734567700C7E667 /* CustomTextFieldViewSnapshotTest.swift */,
+				BCC95540273458EE00C7E667 /* FBREmptyStateScreenSnapshotTest.swift */,
+				BCC9554227346B6400C7E667 /* FBRButtonSnapshotTest.swift */,
+			);
+			path = SnapshotTesting;
 			sourceTree = "<group>";
 		};
 		BCE50B6026D28EC8009388AA /* Components */ = {
@@ -801,7 +813,6 @@
 			isa = PBXGroup;
 			children = (
 				5BC25F8026D456D20053BDF5 /* FBRButton.swift */,
-				BCE50B6226D28F6B009388AA /* CustomButtonView.swift */,
 			);
 			path = CustomButton;
 			sourceTree = "<group>";
@@ -1031,7 +1042,6 @@
 				BC6633DB27162ABD007BEBBF /* TokenUserDefaults.swift in Sources */,
 				7004775F26E429EB006C32F4 /* RestaurantDetailScreenDelegate.swift in Sources */,
 				70751EB826E1342400F6D85F /* MenuCollectionCell.swift in Sources */,
-				BCE50B6326D28F6B009388AA /* CustomButtonView.swift in Sources */,
 				7067ABF026EAC9DC00CACBFD /* FBRCardView.swift in Sources */,
 				707C4FC426E0320B00C01926 /* RestaurantDetailController.swift in Sources */,
 				707C4FC226E031FB00C01926 /* RestaurantDetailViewController.swift in Sources */,
@@ -1110,7 +1120,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCC955392734567700C7E667 /* FindDBestRestaurantTests.swift in Sources */,
+				BCC9554327346B6400C7E667 /* FBRButtonSnapshotTest.swift in Sources */,
+				BCC95541273458EE00C7E667 /* FBREmptyStateScreenSnapshotTest.swift in Sources */,
+				BCC955392734567700C7E667 /* CustomTextFieldViewSnapshotTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
