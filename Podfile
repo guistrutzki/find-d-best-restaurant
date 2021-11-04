@@ -13,3 +13,8 @@ target 'FindDBestRestaurant' do
    pod 'Firebase/Analytics'
    pod 'Firebase/Crashlytics'
 end
+
+target 'FindDBestRestaurantTests' do
+	# Pods for testing
+	pod 'SnapshotTesting', '~> 1.9'
+end
