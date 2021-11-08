@@ -23,6 +23,9 @@ class RestaurantDetailViewController: UIViewController {
     }()
     
     var restaurantDetail : RestaurantListResponse?
+	 var isFavoriteRestaurant: Bool = false
+	
+	 weak var delegate: RestaurantDetailViewControllerDelegate?
     
     // MARK: - Life cycle
 
@@ -37,7 +40,7 @@ class RestaurantDetailViewController: UIViewController {
     
     private func getRestaurantDetails() {
         if let details = restaurantDetail {
-            restaurantDetailScreen.configureView(restaurant: details)
+			   restaurantDetailScreen.configureView(restaurant: details, isFavorite: isFavoriteRestaurant)
         }
     }
 }
@@ -45,7 +48,7 @@ class RestaurantDetailViewController: UIViewController {
 // MARK: - RestaurantDetailScreenDelegate extension
 
 extension RestaurantDetailViewController: RestaurantDetailScreenDelegate {
-
+	
     func didTappedHeartButton(restaurant: RestaurantListResponse) {
         controller.addRestaurantToFavorites(restaurant: restaurant)
     }
@@ -53,6 +56,15 @@ extension RestaurantDetailViewController: RestaurantDetailScreenDelegate {
     func didTappedBackButton() {
 		 dismiss(animated: true)
     }
+	
+	func didTappedHeartButton(restaurant: RestaurantListResponse, _ isFavorite: Bool) {
+		if isFavorite {
+			delegate?.addRestaurantToFavorite(restaurant)
+		} else {
+			delegate?.removeRestaurantToFavorite(restaurant)
+		}
+	}
+	
 }
 
 extension RestaurantDetailViewController: RestaurantDetailControllerDelegate {
