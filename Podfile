@@ -15,3 +15,9 @@ target 'FindDBestRestaurant' do
    pod 'RealmSwift', '~>10'
 
 end
+
+target 'FindDBestRestaurantTests' do
+	# Pods for testing
+	pod 'SnapshotTesting', '~> 1.9'
+	pod 'Firebase/Auth'
+end

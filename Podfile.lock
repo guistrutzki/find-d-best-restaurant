@@ -2,6 +2,9 @@ PODS:
   - Alamofire (5.4.3)
   - Firebase/Analytics (8.5.0):
     - Firebase/Core
+  - Firebase/Auth (8.5.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (~> 8.5.0)
   - Firebase/Core (8.5.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (~> 8.5.0)
@@ -28,6 +31,11 @@ PODS:
     - GoogleUtilities/Network (~> 7.4)
     - "GoogleUtilities/NSData+zlib (~> 7.4)"
     - nanopb (~> 2.30908.0)
+  - FirebaseAuth (8.5.0):
+    - FirebaseCore (~> 8.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GTMSessionFetcher/Core (~> 1.5)
   - FirebaseCore (8.5.0):
     - FirebaseCoreDiagnostics (~> 8.0)
     - GoogleUtilities/Environment (~> 7.4)
@@ -85,6 +93,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (7.5.0):
     - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.7.0)
   - Kingfisher (6.3.1)
   - lottie-ios (3.2.3)
   - nanopb (2.30908.0):
@@ -99,21 +108,25 @@ PODS:
   - RealmSwift (10.18.0):
     - Realm (= 10.18.0)
   - SnapKit (5.0.1)
+  - SnapshotTesting (1.9.0)
 
 DEPENDENCIES:
   - Alamofire (= 5.4.3)
   - Firebase/Analytics
+  - Firebase/Auth
   - Firebase/Crashlytics
   - Kingfisher (~> 6.0)
   - lottie-ios
   - RealmSwift (~> 10)
   - SnapKit (~> 5.0.0)
+  - SnapshotTesting (~> 1.9)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Firebase
     - FirebaseAnalytics
+    - FirebaseAuth
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseCrashlytics
@@ -121,6 +134,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
+    - GTMSessionFetcher
     - Kingfisher
     - lottie-ios
     - nanopb
@@ -128,11 +142,13 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SnapKit
+    - SnapshotTesting
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   Firebase: ff8c73105b90e33e1dc6c8e5445d7adc2ccdc7c1
   FirebaseAnalytics: 96325c1e0acbd2bb805c6a613028b1fe599d6a37
+  FirebaseAuth: b152ea261b60eeb9419ae7e5bf34761382b33277
   FirebaseCore: 1c1ca72483b59b17050f5b4cec4fb748425a3901
   FirebaseCoreDiagnostics: 7bf55d386f9fc690d971b70a582142321a390eb8
   FirebaseCrashlytics: 8e7cf678cb149d421198388c6fc3d3acfd266539
@@ -140,6 +156,7 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 8d10c1c470fcb0e5143ed74fddd164f0a0384800
   GoogleDataTransport: 85fd18ff3019bb85d3f2c551d04c481dedf71fc9
   GoogleUtilities: eea970f4a389963963bffe8d8fabe43540678b9c
+  GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
   Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
@@ -147,7 +164,8 @@ SPEC CHECKSUMS:
   Realm: b8b0a36bf48c39c50fd8cee7ac34005e6d887ddd
   RealmSwift: fe2f33d731f47aaf4c3618930f9f7cf7b935c33f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SnapshotTesting: 6141c48b6aa76ead61431ca665c14ab9a066c53b
 
-PODFILE CHECKSUM: 637323390f4832f6502d130c669468155e615195
+PODFILE CHECKSUM: 36f655b1513d56a1f99b5680c87b0b3384719745
 
 COCOAPODS: 1.10.1
