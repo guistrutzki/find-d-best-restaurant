@@ -111,11 +111,16 @@ class RestaurantDetailScreen: UIView {
     
     // MARK: - Public Functions
     
-    func configureView(restaurant: RestaurantListResponse) {
+    func configureView(restaurant: RestaurantListResponse, isFavorite: Bool) {
+		  self.restaurantDetail = restaurant
         restaurantImageView.load(url: restaurant.coverImage)
         nameLabel.text = restaurant.name
         infoLabel.text = restaurant.description
         galleryDetails = restaurant
+		 
+		 if isFavorite {
+			 loveItButton.toggleIt()
+		 }
     }
     
     // MARK: - Private Functions
@@ -125,14 +130,11 @@ class RestaurantDetailScreen: UIView {
     }
     
     @objc private func didTappedHeartButton(_ button: UIButton) {
-        loveItButton.toggleIt()
-        let value = loveItButton.isFilled
-        
-        guard let favorite = restaurantDetail else { return }
-        
-        if value {
-            delegate?.didTappedHeartButton(restaurant: favorite)
-        }
+		 if let restaurantDetail = restaurantDetail {
+			 loveItButton.toggleIt()
+			 let isFilled = loveItButton.isFilled
+			 delegate?.didTappedHeartButton(restaurant: restaurantDetail, isFilled)
+		 }
     }
     
     private func getMenuCell(index: IndexPath) -> UITableViewCell {
