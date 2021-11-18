@@ -42,6 +42,7 @@ class RestaurantListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         controller.loadRestaurantList(token: token)
+		  controller.loadFavorites()
         setupSearchBar()  
     }
     
@@ -69,9 +70,11 @@ class RestaurantListViewController: UIViewController {
     private func proceedToDetails(restaurant: RestaurantListResponse) {
         let viewController = RestaurantDetailViewController()
         viewController.restaurantDetail = restaurant
-		 viewController.modalTransitionStyle = .flipHorizontal
-		 viewController.modalPresentationStyle = .fullScreen
-		 present(viewController, animated: true, completion: nil)
+		  viewController.isFavoriteRestaurant = controller.isFavoriteRestaurant(restaurant)
+		  viewController.delegate = self
+		  viewController.modalTransitionStyle = .flipHorizontal
+		  viewController.modalPresentationStyle = .fullScreen
+		  present(viewController, animated: true, completion: nil)
     }
 }
 
@@ -107,4 +110,16 @@ extension RestaurantListViewController: FBRSearchControllerDelegate {
 		 controller.filterRestaurant("")
 		 restaurantListScreen.updateView()
     }
+}
+
+extension RestaurantListViewController: RestaurantDetailViewControllerDelegate {
+	
+	func addRestaurantToFavorite(_ restaurant: RestaurantListResponse) {
+		controller.addRestaurantToFavorite(restaurant)
+	}
+	
+	func removeRestaurantToFavorite(_ restaurant: RestaurantListResponse) {
+		controller.removeRestaurantToFavorite(restaurant)
+	}
+	
 }
