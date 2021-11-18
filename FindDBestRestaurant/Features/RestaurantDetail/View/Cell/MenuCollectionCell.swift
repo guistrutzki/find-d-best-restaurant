@@ -89,7 +89,9 @@ extension MenuCollectionCell: CodeView {
     }
     
     func configureCell(restaurant: RestaurantListResponse) {
-        let image = restaurant.menu.first ?? ""
+        let image = restaurant.menu.first?.image ?? ""
+        let title = restaurant.menu.first?.title
         menuImageView.load(url: image)
+        itemNameLabel.text = title
     }
 }
