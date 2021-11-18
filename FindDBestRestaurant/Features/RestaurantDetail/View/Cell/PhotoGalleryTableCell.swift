@@ -105,7 +105,7 @@ extension PhotoGalleryTableCell: UICollectionViewDataSource , UICollectionViewDe
         guard let cell = collection.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? PhotoGalleryCollectionCell else { return UICollectionViewCell()}
 
         if let restaurant = delegate?.getRestaurants(index: indexPath) {
-            cell.configureCell(restaurant: restaurant)
+            cell.configureCell(restaurant: restaurant, index: indexPath)
         }
            
         return cell

@@ -43,8 +43,8 @@ class PhotoGalleryCollectionCell: UICollectionViewCell {
         
     }
     
-    func configureCell(restaurant: RestaurantListResponse) {
-        let image = restaurant.gallery.first ?? ""
+    func configureCell(restaurant: RestaurantListResponse, index: IndexPath) {
+        let image = restaurant.gallery[index.row]
         galleryImageView.load(url: image)
     }
 }
