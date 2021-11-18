@@ -50,7 +50,7 @@ class MenuTableCell: UITableViewCell {
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
-
+    
     // MARK: - Inits
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -103,7 +103,7 @@ extension MenuTableCell: UICollectionViewDataSource , UICollectionViewDelegate {
         guard let cell = collection.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? MenuCollectionCell else { return UICollectionViewCell()}
         
         if let restaurant = delegate?.getRestaurantsDetails(index: indexPath) {
-            cell.configureCell(restaurant: restaurant)
+            cell.configureCell(restaurant: restaurant, index: indexPath)
         }
         
         return cell
