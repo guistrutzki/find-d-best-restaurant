@@ -10,4 +10,5 @@ import UIKit
 protocol SettingsScreenDelegate: AnyObject {
     func didTappedUpdateName()
 	func didTappedLogout(_ sender: UIButton)
+    func chooseImage(_ sender: UIButton) 
 }

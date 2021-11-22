@@ -27,7 +27,7 @@ class SettingsScreen: UIView {
         return view
     }()
     
-    private lazy var avatarImageView: UIImageView = {
+    public lazy var avatarImageView: UIImageView = {
         let image = UIImageView()
         image.layer.cornerRadius = 40
         image.layer.borderWidth = 2
@@ -36,6 +36,12 @@ class SettingsScreen: UIView {
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         return image
+    }()
+    
+    private lazy var labelTest: UIButton = {
+        let label = UIButton()
+        label.addTarget(self, action: #selector(self.handleImageTapped(_:)), for: .touchUpInside)
+        return label
     }()
     
     private lazy var headerContentView: UIView = {
@@ -163,7 +169,10 @@ class SettingsScreen: UIView {
 	@objc private func handleLogoutTapped(_ sender: UIButton) {
 		 self.delegate.didTappedLogout(sender)
 	}
-	
+    
+    @objc private func handleImageTapped(_ sender: UIButton) {
+        self.delegate.chooseImage(sender)
+    }
 }
 
 // MARK: - Extension CodeView
@@ -180,6 +189,7 @@ extension SettingsScreen: CodeView {
         headerContentView.addSubview(headerEmailLabel)
         
         headerContainerView.bringSubviewToFront(editAvatarView)
+        editAvatarView.addSubview(labelTest)
         editAvatarView.addSubview(editIconImage)
         
         addSubview(menuStackView)
@@ -242,6 +252,12 @@ extension SettingsScreen: CodeView {
             make.centerY.equalToSuperview()
         }
         
+        labelTest.snp.makeConstraints { make in
+            make.width.height.equalTo(10)
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+        
         menuStackView.snp.makeConstraints { make in
             make.top.equalTo(headerContainerView.snp.bottom).offset(60)
             make.leading.trailing.equalToSuperview()
@@ -291,6 +307,4 @@ extension SettingsScreen: CodeView {
     func setupAdditionalConfiguration() {
         
     }
-    
-    
 }
