@@ -31,6 +31,9 @@
 		5BC25F7F26D35ACB0053BDF5 /* UIColor+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F7E26D35ACB0053BDF5 /* UIColor+ext.swift */; };
 		5BC25F8126D456D20053BDF5 /* FBRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F8026D456D20053BDF5 /* FBRButton.swift */; };
 		5BC25F8326D459EF0053BDF5 /* SignInViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F8226D459EF0053BDF5 /* SignInViewDelegate.swift */; };
+		5BD3BC652753BD9300429366 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD3BC642753BD9200429366 /* NetworkClient.swift */; };
+		5BD3BC682753EB5700429366 /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD3BC672753EB5700429366 /* RestaurantService.swift */; };
+		5BD3BC6A2753F14200429366 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD3BC692753F14200429366 /* HTTPMethod.swift */; };
 		5BD562FF26DEE56700699FCF /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD562FE26DEE56700699FCF /* UIView+ext.swift */; };
 		5BF91D1F26EDB06D005E440B /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF91D1E26EDB06D005E440B /* SignUpModel.swift */; };
 		5BF91D2126EDB207005E440B /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF91D2026EDB207005E440B /* SignUpController.swift */; };
@@ -125,6 +128,9 @@
 		5BC25F7E26D35ACB0053BDF5 /* UIColor+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ext.swift"; sourceTree = "<group>"; };
 		5BC25F8026D456D20053BDF5 /* FBRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRButton.swift; sourceTree = "<group>"; };
 		5BC25F8226D459EF0053BDF5 /* SignInViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewDelegate.swift; sourceTree = "<group>"; };
+		5BD3BC642753BD9200429366 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		5BD3BC672753EB5700429366 /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
+		5BD3BC692753F14200429366 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		5BD562FE26DEE56700699FCF /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
 		5BF91D1E26EDB06D005E440B /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		5BF91D2026EDB207005E440B /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
@@ -289,6 +295,7 @@
 		5B94D67026C5F68C00346B9B /* FindDBestRestaurant */ = {
 			isa = PBXGroup;
 			children = (
+				5BD3BC662753EB3B00429366 /* Service */,
 				705A141526F7E52900DB51F9 /* PersistenceManager */,
 				5B3C0FD426F416A9004C9371 /* GoogleService-Info.plist */,
 				70E1D69726DC4B6700E1A31D /* NetworkManager */,
@@ -318,6 +325,16 @@
 				5BC25F7A26D357940053BDF5 /* SignInVC.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5BD3BC662753EB3B00429366 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5BD3BC642753BD9200429366 /* NetworkClient.swift */,
+				5BD3BC672753EB5700429366 /* RestaurantService.swift */,
+				5BD3BC692753F14200429366 /* HTTPMethod.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		5BF91D1D26EDAFB4005E440B /* Controller */ = {
@@ -656,8 +673,8 @@
 			isa = PBXGroup;
 			children = (
 				70E1D69A26DC4C3500E1A31D /* Model */,
-				70E1D69826DC4C2F00E1A31D /* NetworkManager.swift */,
 				5BF91D2226EDB6A5005E440B /* APIManager.swift */,
+				70E1D69826DC4C2F00E1A31D /* NetworkManager.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -957,6 +974,7 @@
 				BC6633DB27162ABD007BEBBF /* TokenUserDefaults.swift in Sources */,
 				7004775F26E429EB006C32F4 /* RestaurantDetailScreenDelegate.swift in Sources */,
 				70751EB826E1342400F6D85F /* MenuCollectionCell.swift in Sources */,
+				5BD3BC6A2753F14200429366 /* HTTPMethod.swift in Sources */,
 				BCE50B6326D28F6B009388AA /* CustomButtonView.swift in Sources */,
 				7067ABF026EAC9DC00CACBFD /* FBRCardView.swift in Sources */,
 				707C4FC426E0320B00C01926 /* RestaurantDetailController.swift in Sources */,
@@ -975,6 +993,7 @@
 				7067ABF226EACCFB00CACBFD /* FavoritesCellDelegate.swift in Sources */,
 				70311A3526D1982D005B0C0E /* RestaurantListViewController.swift in Sources */,
 				BCE50B6826D29D83009388AA /* CodeView.swift in Sources */,
+				5BD3BC682753EB5700429366 /* RestaurantService.swift in Sources */,
 				BC6504EF2731AAA90064C7FF /* FavoriteRealm.swift in Sources */,
 				5B8EEBDB26FC1C2F005F83CB /* UpdateNameVC.swift in Sources */,
 				70E1D69E26DC520800E1A31D /* RestaurantListController.swift in Sources */,
@@ -1024,6 +1043,7 @@
 				BC84A60B26D59AAB001B63C7 /* SignUpScreen.swift in Sources */,
 				BC3744D5271FA28500654DA0 /* UINavigationController+Ext.swift in Sources */,
 				5B8EEBC926FA9D1F005F83CB /* SettingsScreen.swift in Sources */,
+				5BD3BC652753BD9300429366 /* NetworkClient.swift in Sources */,
 				BC5C501326DC3E7E00CDF9C4 /* CardRestaurantCell.swift in Sources */,
 				BC61D75F26D48D0E00019CC0 /* LaunchScreenVC.swift in Sources */,
 				70751EB626E1324700F6D85F /* MenuTableCell.swift in Sources */,

@@ -14,7 +14,7 @@ class NetworkManager {
     private init() {}
     
     static func request(url: URL, method: HTTPMethod = .get, completion: @escaping NetworkResult) {
-        let request = AF.request(url, method: method)
+        let request = AF.request(url, method: .get)
         
         request.validate().responseJSON { response in
             switch response.result {
