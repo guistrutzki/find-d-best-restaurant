@@ -12,7 +12,7 @@ struct NetworkClient {
                                       url: URL,
                                       urlParameters: [String: String],
                                       headers: [String: String],
-                                      completion: @escaping(T?) -> Void) {
+                                      completion: @escaping(Result<T?, NetworkError>) -> Void) {
         
         // Set Parameters
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
@@ -32,21 +32,21 @@ struct NetworkClient {
         
         let dataTask = URLSession.shared.dataTask(with: request) {data, response, error in
             // Handle error
-            if let _ = error {
-                completion(nil)
-                return
+            guard let data = data, error == nil else {
+                return completion(.failure(.badRequest))
+            }
+            
+            if let statusCode = (response as? HTTPURLResponse)?.statusCode, !(200...299 ~= statusCode) {
+                return completion(.failure(.invalidStatusCode(code: statusCode)))
             }
             
             // Handle Success
-            if let data = data {
+            do {
                 let jsonDecodable = JSONDecoder()
-                do {
-                    let repositories = try jsonDecodable.decode(T.self, from: data)
-                    completion(repositories)
-                } catch {
-                    print(error)
-                    completion(nil)
-                }
+                let response = try jsonDecodable.decode(T.self, from: data)
+                completion(.success(response))
+            } catch {
+                return completion(.failure(.custom(error: error)))
             }
         }
         

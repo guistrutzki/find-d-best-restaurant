@@ -50,7 +50,7 @@ class TopRestaurantsViewController: UIViewController {
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-		controller.loadRestaurantList(token: token)
+		controller.loadRestaurantList()
 		self.topRestaurantScreen.centerViewOnUserLocation(locationManager)
 	}
 	

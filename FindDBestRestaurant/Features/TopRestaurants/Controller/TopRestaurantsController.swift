@@ -13,6 +13,7 @@ protocol TopRestaurantsControllerDelegate: AnyObject {
 }
 
 class TopRestaurantsController {
+    private let restaurantService = RestaurantService()
 	
 	// MARK: - Variable
 	private var restaurants: [RestaurantListResponse] = []
@@ -21,44 +22,20 @@ class TopRestaurantsController {
 	var count: Int {
 		return restaurants.count
 	}
-	
-	// MARK: - Functions
-	//	func loadRestaurantList() {
-	//		let baseUrl = "https://restaurant-api.guistrutzki.dev/restaurants"
-	//
-	//		guard let url = URL(string: baseUrl) else {
-	//			print("url error")
-	//			return
-	//		}
-	//
-	//		NetworkManager.request(url: url) { [weak self] result in
-	//			switch result {
-	//				case .success(let restaurantResponse):
-	//					self?.didFetchSuccess(restaurantResponse)
-	//				case .failure(let error):
-	//					self?.didFetchFailed(error: error)
-	//			}
-	//		}
-	//	}
-	
-	func loadRestaurantList(token: String?) {
-		guard let token = token else { return }
-		
-		let urlString = "\(API_BASE_URL)/restaurants"
-		guard let url = URL(string: urlString) else { return }
-		
-		APIManager.loadRestaurantList(url: url, token: token) { success, error in
-			if let result = success {
-				print(result)
-				self.didFetchSuccess(result)
-			} else {
-				if let error = error {
-					self.didFetchFailed(error: error)
-				}
-			}
-		}
-		
-	}
+    
+    func loadRestaurantList() {
+        self.restaurantService.fetchRestaurants {[weak self] (result: Result <[RestaurantListResponse]?, NetworkError>) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let restaurants):
+                self.didFetchSuccess(restaurants ?? [])
+                break
+            case .failure(let error):
+                self.didFetchFailed(error: error)
+                break
+            }
+        }
+    }
 	
 	func getRestaurants(indexPath: IndexPath) -> RestaurantListResponse {
 		return restaurants[indexPath.row]
@@ -73,5 +50,8 @@ class TopRestaurantsController {
 		print("deu erro")
 		self.delegate?.errorLoad()
 	}
-	
+}
+
+extension TopRestaurantsController: RestaurantServiceProtocol {
+    func fetchRestaurants(_ completion: @escaping (Result<[RestaurantListResponse]?, NetworkError>) -> Void) {}
 }

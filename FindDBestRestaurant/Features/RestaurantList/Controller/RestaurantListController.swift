@@ -33,11 +33,15 @@ class RestaurantListController {
     // MARK: - Public Functions
     
     func loadRestaurants() {
-        self.restaurantService.fetchRestaurants { response in
-            if (response == nil) {
-                self.didFetchFailed(error: NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Invalid access token"]))
-            } else {
-                self.didFetchSuccess(response ?? [])
+        self.restaurantService.fetchRestaurants {[weak self] (result: Result <[RestaurantListResponse]?, NetworkError>) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let restaurants):
+                self.didFetchSuccess(restaurants ?? [])
+                break
+            case .failure(let error):
+                self.didFetchFailed(error: error)
+                break
             }
         }
     }
@@ -99,5 +103,5 @@ class RestaurantListController {
 }
 
 extension RestaurantListController: RestaurantServiceProtocol {
-    func fetchRestaurants(_ completion: @escaping ([RestaurantListResponse]?) -> Void) {}
+    func fetchRestaurants(_ completion: @escaping (Result<[RestaurantListResponse]?, NetworkError>) -> Void) {}
 }

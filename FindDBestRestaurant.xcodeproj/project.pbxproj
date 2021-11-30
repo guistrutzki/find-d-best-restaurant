@@ -12,6 +12,7 @@
 		5B3BC84526DAB2ED001E694F /* InitialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BC84426DAB2ED001E694F /* InitialScreen.swift */; };
 		5B3BC84826DAB575001E694F /* InitialScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BC84726DAB575001E694F /* InitialScreenDelegate.swift */; };
 		5B3C0FD526F416A9004C9371 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B3C0FD426F416A9004C9371 /* GoogleService-Info.plist */; };
+		5B7B562A2755B97C00A7C211 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7B56292755B97C00A7C211 /* NetworkError.swift */; };
 		5B8EEBC926FA9D1F005F83CB /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EEBC826FA9D1F005F83CB /* SettingsScreen.swift */; };
 		5B8EEBCB26FA9D4E005F83CB /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EEBCA26FA9D4E005F83CB /* SettingsVC.swift */; };
 		5B8EEBCD26FA9E89005F83CB /* SettingsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EEBCC26FA9E89005F83CB /* SettingsScreenDelegate.swift */; };
@@ -107,6 +108,7 @@
 		5B3BC84426DAB2ED001E694F /* InitialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreen.swift; sourceTree = "<group>"; };
 		5B3BC84726DAB575001E694F /* InitialScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreenDelegate.swift; sourceTree = "<group>"; };
 		5B3C0FD426F416A9004C9371 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5B7B56292755B97C00A7C211 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		5B8EEBC826FA9D1F005F83CB /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		5B8EEBCA26FA9D4E005F83CB /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		5B8EEBCC26FA9E89005F83CB /* SettingsScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenDelegate.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				5BD3BC642753BD9200429366 /* NetworkClient.swift */,
 				5BD3BC672753EB5700429366 /* RestaurantService.swift */,
 				5BD3BC692753F14200429366 /* HTTPMethod.swift */,
+				5B7B56292755B97C00A7C211 /* NetworkError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1038,6 +1041,7 @@
 				BC6504F32731AD3A0064C7FF /* RestaurantDetailViewControllerDelegate.swift in Sources */,
 				5B8EEBCB26FA9D4E005F83CB /* SettingsVC.swift in Sources */,
 				BC6633D9271621AE007BEBBF /* SignInController.swift in Sources */,
+				5B7B562A2755B97C00A7C211 /* NetworkError.swift in Sources */,
 				70E1D69226DC43EA00E1A31D /* UITableViewCell+Ext.swift in Sources */,
 				70311A5326D1A294005B0C0E /* Constants.swift in Sources */,
 				BC84A60B26D59AAB001B63C7 /* SignUpScreen.swift in Sources */,
