@@ -52,7 +52,7 @@ extension SignInVC: SignInViewDelegate {
     func didTappedSignInSubmit(email: String?, password: String?) {
 		 guard let _email = email, let _password = password else { return }
 		 let sessionRequest = SessionRequest(email: _email, password: _password)
-		 controller.createSession(sessionRequest: sessionRequest)
+		 controller.authenticateUser(sessionRequest: sessionRequest)
     }
     
     func didTappedForgetPassword() {

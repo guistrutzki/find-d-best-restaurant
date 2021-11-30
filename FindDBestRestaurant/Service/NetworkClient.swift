@@ -12,6 +12,7 @@ struct NetworkClient {
                                       url: URL,
                                       urlParameters: [String: String],
                                       headers: [String: String],
+                                      body: Encodable?,
                                       completion: @escaping(Result<T?, NetworkError>) -> Void) {
         
         // Set Parameters
@@ -29,6 +30,16 @@ struct NetworkClient {
             request.setValue(value, forHTTPHeaderField: headerField)
         }
         
+        // Set request body
+        if let body = body {
+            do {
+                let reqBodyParsed = try JSONEncoder().encode(body)
+                request.httpBody = reqBodyParsed
+            } catch  {
+                print(error.localizedDescription)
+                return completion(.failure(.badRequest))
+            }
+        }
         
         let dataTask = URLSession.shared.dataTask(with: request) {data, response, error in
             // Handle error
