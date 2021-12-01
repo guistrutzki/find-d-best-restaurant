@@ -11,24 +11,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
-
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-	
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 		
 		window = UIWindow(windowScene: windowScene)
 		window?.rootViewController = LaunchScreenVC()
 
 		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
-			let token = TokenUserDefaults.getToken()
+            let token = SessionDataUserDefaults.getData()?.token
 			
 			if token == nil {
 				let navController = UINavigationController(rootViewController: InitialVC())
 				navController.setNavigationBarStyleDefault()
 				self.window?.rootViewController = navController
 			} else {
-				let tabBarController = MainTabBarController(token: token)
+				let tabBarController = MainTabBarController()
 				self.window?.rootViewController = tabBarController
 			}
 		}

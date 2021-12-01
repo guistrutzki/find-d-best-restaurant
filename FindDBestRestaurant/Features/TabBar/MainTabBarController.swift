@@ -8,18 +8,6 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-	
-	private var token: String?
-	
-	init(token: String?) {
-		self.token = token
-		super.init(nibName: nil, bundle: nil)
-	}
-	
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-	
     override func viewDidLoad() {
         super.viewDidLoad()
 		 
@@ -28,10 +16,18 @@ class MainTabBarController: UITabBarController {
         setNavigationTitleStyle()
         
         viewControllers = [
-            createNavigationController(for: RestaurantListViewController(token: token),title: K.restaurants, image: SFSymbols.home ?? UIImage()),
-            createNavigationController(for: TopRestaurantsViewController(token: token), title: K.top, image: SFSymbols.location ?? UIImage()),
-            createNavigationController(for: FavoritesViewController(), title: K.favorites, image: SFSymbols.favorite ?? UIImage()),
-            createNavigationController(for: SettingsVC(), title: K.settings, image: SFSymbols.person ?? UIImage())
+            createNavigationController(for: RestaurantListViewController(),
+                                          title: K.restaurants,
+                                          image: SFSymbols.home ?? UIImage()),
+            createNavigationController(for: TopRestaurantsViewController(),
+                                          title: K.top,
+                                          image: SFSymbols.location ?? UIImage()),
+            createNavigationController(for: FavoritesViewController(),
+                                          title: K.favorites,
+                                          image: SFSymbols.favorite ?? UIImage()),
+            createNavigationController(for: SettingsVC(),
+                                          title: K.settings,
+                                          image: SFSymbols.person ?? UIImage())
         ]
     }
     

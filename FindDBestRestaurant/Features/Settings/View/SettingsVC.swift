@@ -19,6 +19,9 @@ class SettingsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let sessionData = SessionDataUserDefaults.getData() {
+            settingsScreen.updateView(with: sessionData.user)
+        }
     }
     
 }
@@ -30,7 +33,7 @@ extension SettingsVC: SettingsScreenDelegate {
     }
 	
 	func didTappedLogout(_ sender: UIButton) {
-		TokenUserDefaults.deleteToken()
+        SessionDataUserDefaults.clearData()
 		let initialVC = InitialVC()
 		let navController = UINavigationController(rootViewController: initialVC)
 		UIApplication.shared.windows.first?.rootViewController = navController

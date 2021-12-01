@@ -16,7 +16,7 @@ struct RestaurantService: RestaurantServiceProtocol {
     
     func fetchRestaurants(_ completion: @escaping (Result<[RestaurantListResponse]?, NetworkError>) -> Void) {
         let url = URL(string: "\(API_BASE_URL)/restaurants")!
-        let token = TokenUserDefaults.getToken() ?? ""
+        let token = SessionDataUserDefaults.getData()?.token ?? ""
         let headers: [String: String] = ["Authorization": Bool(token) ?? false ? "Bearer \(token)" : "Guest"]
         
         networkClient.performRequest(method: .get,
@@ -35,7 +35,7 @@ struct RestaurantService: RestaurantServiceProtocol {
                                      url: url,
                                      urlParameters: [:],
                                      headers: [:],
-                                     body: userData,
+                                     body: userData.toData(),
                                      completion: completion)
     }
 }

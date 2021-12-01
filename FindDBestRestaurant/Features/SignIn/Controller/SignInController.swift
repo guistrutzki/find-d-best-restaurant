@@ -28,14 +28,16 @@ class SignInController {
                 
             switch result {
             case .success(let data):
-                guard let token = data?.token else {
+                guard let sessionData = data else {
                     self.delegate?.errorSession()
                     return
                 }
-                TokenUserDefaults.addToken(token)
+            
+                SessionDataUserDefaults.setData(sessionData)
                 self.delegate?.successSession()
                 break
-            case .failure(_):
+            case .failure(let error):
+                print(error)
                 self.delegate?.errorSession()
                 break
             }

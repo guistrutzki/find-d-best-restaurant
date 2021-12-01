@@ -55,7 +55,7 @@ extension InitialVC: InitialScreenDelegate {
     
     func didTappedSignInAsGuest() {
         print("Navigate to RestaurantList")
-		 let restaurantVC = RestaurantListViewController(token: "guest")
+		 let restaurantVC = RestaurantListViewController()
 		 restaurantVC.title = K.restaurants
 		 restaurantVC.navigationItem.setHidesBackButton(true, animated: true)
 		 

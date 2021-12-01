@@ -24,10 +24,7 @@ class RestaurantListViewController: UIViewController {
     
     // MARK: - Life cycle
     
-    private var token: String?
-    
-    init(token: String?) {
-        self.token = token
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     
