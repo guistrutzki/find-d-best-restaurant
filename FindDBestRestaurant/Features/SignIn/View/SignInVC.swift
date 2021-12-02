@@ -67,9 +67,11 @@ extension SignInVC: SignInControllerDelegate {
 		print("Session criada com Sucesso")
 		
 		let token = TokenUserDefaults.getToken()
-		let tabBarController: MainTabBarController = MainTabBarController(token: token)
+		
 		DispatchQueue.main.async {
-			self.navigationController?.pushViewController(tabBarController, animated: true)
+			let tabBarController = MainTabBarController(token: token)
+			UIApplication.shared.windows.first?.rootViewController = tabBarController
+			UIApplication.shared.windows.first?.makeKeyAndVisible()
 		}
 	}
 	
