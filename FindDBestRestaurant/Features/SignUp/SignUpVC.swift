@@ -55,7 +55,7 @@ class SignUpVC: UIViewController {
     }
 	
 	private func handlerSuccess(action: UIAlertAction) {
-		let viewController = SignInVC()
+		let viewController = InitialVC()
 		navigationController?.pushViewController(viewController, animated: true)
 	}
 	
