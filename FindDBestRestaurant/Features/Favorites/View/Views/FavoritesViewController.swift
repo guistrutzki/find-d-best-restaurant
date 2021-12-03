@@ -72,7 +72,19 @@ extension FavoritesViewController: FavoritesScreenDelegate {
 
     func fetchCharacterNextPage() { }
     
-    func selectCharacter(at index: Int) { }
+    func selectCharacter(at index: Int) {
+		 
+		 guard let restaurant = controllerResturant.getFavorite(index: index)
+		 else { return }
+		 
+		 let viewController = RestaurantDetailViewController()
+		 viewController.restaurantDetail = restaurant
+		 viewController.isFavoriteRestaurant = true
+		 viewController.delegate = self
+		 viewController.modalTransitionStyle = .flipHorizontal
+		 viewController.modalPresentationStyle = .fullScreen
+		 present(viewController, animated: true, completion: nil)
+	 }
     
     func setFavorite(at index: Int, isFavorite: Bool) { }
 	
@@ -89,4 +101,16 @@ extension FavoritesViewController: FavoritesControllerDelegate {
     func updateUI() {
         favoritesView.updateData()
     }
+}
+
+extension FavoritesViewController: RestaurantDetailViewControllerDelegate {
+	
+	func addRestaurantToFavorite(_ restaurant: RestaurantListResponse) {
+		controllerResturant.addRestaurantToFavorite(restaurant)
+	}
+	
+	func removeRestaurantToFavorite(_ restaurant: RestaurantListResponse) {
+		controllerResturant.removeRestaurantToFavorite(restaurant)
+	}
+	
 }
