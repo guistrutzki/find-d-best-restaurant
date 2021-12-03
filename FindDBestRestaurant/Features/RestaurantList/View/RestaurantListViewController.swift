@@ -17,7 +17,7 @@ class RestaurantListViewController: UIViewController {
     }()
     
     private lazy var controller: RestaurantListController = {
-        let controller = RestaurantListController()
+		 let controller = RestaurantListController.shared
         controller.delegate = self
         return controller
     }()

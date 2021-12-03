@@ -12,6 +12,11 @@ class FavoritesViewController: UIViewController {
     // MARK: - Variable
 
     let controller = FavoritesController()
+	
+	private lazy var controllerResturant: RestaurantListController = {
+		let controller = RestaurantListController.shared
+		return controller
+	}()
     
     lazy var favoritesView: FavoritesScreen = {
         return FavoritesScreen(self)
@@ -29,7 +34,9 @@ class FavoritesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        controller.getFavoritesList()
+		 //        controller.getFavoritesList()
+		 controllerResturant.loadFavorites()
+		 updateUI()
     }
     
     // MARK: - Private Functions
@@ -38,30 +45,37 @@ class FavoritesViewController: UIViewController {
 // MARK: - FavoritesScreenDelegate extension
 
 extension FavoritesViewController: FavoritesScreenDelegate {
-    
+	
+	func setFavorite(_ restaurant: RestaurantListResponse, isFavorite: Bool) {
+		if isFavorite {
+			controllerResturant.addRestaurantToFavorite(restaurant)
+		} else {
+			controllerResturant.removeRestaurantToFavorite(restaurant)
+		}
+		
+		updateUI()
+	}
+	    
     func isEmpty() -> Bool {
         return controller.isEmpty()
     }
     
     func getFavorites(index: Int) -> RestaurantListResponse? {
-        return controller.getFavorite(index: index)
+		 //        return controller.getFavorite(index: index)
+		 controllerResturant.getFavorite(index: index)
     }
 
     func setListCount() -> Int {
-       return controller.count
+		 //       return controller.count
+		 controllerResturant.numberOFavoriteRestaurants()
     }
 
-    func fetchCharacterNextPage() {
-        
-    }
+    func fetchCharacterNextPage() { }
     
-    func selectCharacter(at index: Int) {
-        
-    }
+    func selectCharacter(at index: Int) { }
     
-    func setFavorite(at index: Int, value: Bool) {
-        
-    }
+    func setFavorite(at index: Int, isFavorite: Bool) { }
+	
 }
 
 // MARK: - FavoritesControllerDelegate extension

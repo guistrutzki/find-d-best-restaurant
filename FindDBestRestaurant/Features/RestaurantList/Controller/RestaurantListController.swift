@@ -13,6 +13,10 @@ protocol RestaurantListControllerDelegate: AnyObject {
 }
 
 class RestaurantListController {
+	
+	// MARK: - Singleton
+	
+	static let shared = RestaurantListController()
     
     // MARK: - Variable
     
@@ -85,7 +89,8 @@ class RestaurantListController {
 			filterdRestaurants.removeAll()
 			return
 		}
-		filterdRestaurants = restaurants.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+		filterdRestaurants = restaurants.filter { $0.name.lowercased().contains(searchText.lowercased())
+		}
 	}
 	
 	func loadFavorites() {
@@ -113,6 +118,21 @@ class RestaurantListController {
 		let favorite = FavoriteRealm()
 		favorite.idRestaurant = restaurant.id
 		favoriteRealmManager.delete(favorite)
+	}
+	
+	func numberOFavoriteRestaurants() -> Int {
+		favoriteRealmManager.countFavorites()
+	}
+	
+	func getFavorite(index: Int) -> RestaurantListResponse? {
+		guard let favorite = favoriteRealmManager.getFavorite(index: index)
+		else { return nil }
+		
+		let restaurant = restaurants.filter {
+			$0.id.lowercased().contains(favorite.idRestaurant.lowercased())
+		}
+		
+		return restaurant.first
 	}
     
     // MARK: - Private Functions

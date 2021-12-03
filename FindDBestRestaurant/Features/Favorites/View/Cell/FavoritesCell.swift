@@ -51,6 +51,8 @@ class FavoritesCell: UICollectionViewCell {
     }()
     
     weak var delegate: FavoritesCellDelegate?
+	
+	private var restaurant: RestaurantListResponse?
     
     // MARK: - Inits
     
@@ -67,6 +69,7 @@ class FavoritesCell: UICollectionViewCell {
     // MARK: - Public Functions
     
     func setup(_ restaurant: RestaurantListResponse) {
+		  self.restaurant = restaurant
         favoriteName.text = restaurant.name
         favoriteImage.load(url: restaurant.coverImage)
         loveItButton.isFilled = true
@@ -78,7 +81,8 @@ class FavoritesCell: UICollectionViewCell {
     private func loveIt() {
         loveItButton.toggleIt()
         let value = loveItButton.isFilled
-        delegate?.setFavorite(self, value: value)
+		 guard let restaurant = restaurant else { return }
+		 delegate?.setFavorite(restaurant, isFavorite: value)
     }
 }
 

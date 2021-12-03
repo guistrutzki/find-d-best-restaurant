@@ -55,4 +55,12 @@ class FavoriteRealmManager {
 		return result
 	}
 	
+	func getFavorite(index: Int) -> FavoriteRealm? {
+		return favorites?[index]
+	}
+	
+	func countFavorites() -> Int {
+		return favorites?.count ?? 0
+	}
+	
 }
