@@ -37,6 +37,9 @@
 		5BC25F7F26D35ACB0053BDF5 /* UIColor+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F7E26D35ACB0053BDF5 /* UIColor+ext.swift */; };
 		5BC25F8126D456D20053BDF5 /* FBRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F8026D456D20053BDF5 /* FBRButton.swift */; };
 		5BC25F8326D459EF0053BDF5 /* SignInViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC25F8226D459EF0053BDF5 /* SignInViewDelegate.swift */; };
+		5BCAA51227587E3100D755B1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCAA51127587E3100D755B1 /* UserModel.swift */; };
+		5BCAA51427587E5300D755B1 /* Encodable+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCAA51327587E5300D755B1 /* Encodable+ext.swift */; };
+		5BCAA5172758813500D755B1 /* UpdateNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCAA5162758813500D755B1 /* UpdateNameController.swift */; };
 		5BD3BC652753BD9300429366 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD3BC642753BD9200429366 /* NetworkClient.swift */; };
 		5BD3BC682753EB5700429366 /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD3BC672753EB5700429366 /* RestaurantService.swift */; };
 		5BD3BC6A2753F14200429366 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD3BC692753F14200429366 /* HTTPMethod.swift */; };
@@ -139,6 +142,9 @@
 		5BC25F7E26D35ACB0053BDF5 /* UIColor+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ext.swift"; sourceTree = "<group>"; };
 		5BC25F8026D456D20053BDF5 /* FBRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRButton.swift; sourceTree = "<group>"; };
 		5BC25F8226D459EF0053BDF5 /* SignInViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewDelegate.swift; sourceTree = "<group>"; };
+		5BCAA51127587E3100D755B1 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		5BCAA51327587E5300D755B1 /* Encodable+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+ext.swift"; sourceTree = "<group>"; };
+		5BCAA5162758813500D755B1 /* UpdateNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNameController.swift; sourceTree = "<group>"; };
 		5BD3BC642753BD9200429366 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		5BD3BC672753EB5700429366 /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
 		5BD3BC692753F14200429366 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -242,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				5B7B562C27568D3400A7C211 /* SessionModel.swift */,
+				5BCAA51127587E3100D755B1 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +285,8 @@
 			isa = PBXGroup;
 			children = (
 				5B8EEBDC26FC2009005F83CB /* View */,
+				5BCAA5152758811F00D755B1 /* Controller */,
+				5B8EEBDA26FC1C2F005F83CB /* UpdateNameVC.swift */,
 			);
 			path = UpdateName;
 			sourceTree = "<group>";
@@ -285,9 +294,8 @@
 		5B8EEBDC26FC2009005F83CB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5B8EEBDA26FC1C2F005F83CB /* UpdateNameVC.swift */,
-				5B8EEBDD26FC2037005F83CB /* UpdateNameScreen.swift */,
 				5B8EEBDF26FC22F6005F83CB /* UpdateNameScreenDelegate.swift */,
+				5B8EEBDD26FC2037005F83CB /* UpdateNameScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -344,6 +352,14 @@
 				5BC25F7A26D357940053BDF5 /* SignInVC.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5BCAA5152758811F00D755B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5BCAA5162758813500D755B1 /* UpdateNameController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		5BD3BC662753EB3B00429366 /* Service */ = {
@@ -659,6 +675,7 @@
 				BC3744D4271FA28500654DA0 /* UINavigationController+Ext.swift */,
 				5B7B56322757468D00A7C211 /* URLRequest+ext.swift */,
 				5B7B563627574B2D00A7C211 /* UserDefaults+ext.swift */,
+				5BCAA51327587E5300D755B1 /* Encodable+ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1003,6 +1020,7 @@
 				707C4FC226E031FB00C01926 /* RestaurantDetailViewController.swift in Sources */,
 				BC5C500D26DBFA3000CDF9C4 /* ResetPasswordVC.swift in Sources */,
 				BC0E63F826E6DA2B00A68212 /* TopRestaurantsScreen.swift in Sources */,
+				5BCAA51227587E3100D755B1 /* UserModel.swift in Sources */,
 				5BC25F8326D459EF0053BDF5 /* SignInViewDelegate.swift in Sources */,
 				705A141726F7E54000DB51F9 /* PersistenceManager.swift in Sources */,
 				707C4FC726E0435100C01926 /* FBRHeartButton.swift in Sources */,
@@ -1074,6 +1092,8 @@
 				5BD3BC652753BD9300429366 /* NetworkClient.swift in Sources */,
 				BC5C501326DC3E7E00CDF9C4 /* CardRestaurantCell.swift in Sources */,
 				BC61D75F26D48D0E00019CC0 /* LaunchScreenVC.swift in Sources */,
+				5BCAA51427587E5300D755B1 /* Encodable+ext.swift in Sources */,
+				5BCAA5172758813500D755B1 /* UpdateNameController.swift in Sources */,
 				70751EB626E1324700F6D85F /* MenuTableCell.swift in Sources */,
 				5B8EEBDE26FC2037005F83CB /* UpdateNameScreen.swift in Sources */,
 				5BC25F7F26D35ACB0053BDF5 /* UIColor+ext.swift in Sources */,

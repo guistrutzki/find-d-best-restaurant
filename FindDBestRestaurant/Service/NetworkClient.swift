@@ -51,7 +51,10 @@ struct NetworkClient {
             // Handle Success
             do {
                 let jsonDecodable = JSONDecoder()
-                let response = try jsonDecodable.decode(T.self, from: data)
+                let emptyJson = "{}".data(using: .utf8)!
+                
+                let response = try jsonDecodable.decode(T.self,
+                                                        from: T.self == NoReply.self ? emptyJson : data)
                 completion(.success(response))
             } catch {
                 return completion(.failure(.custom(error: error)))

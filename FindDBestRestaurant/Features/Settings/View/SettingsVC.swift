@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol UpdateNameDelegate: AnyObject {
+    func updateHeaderContent(data: SessionResponse?)
+}
+
 class SettingsVC: UIViewController {
     
     private lazy var settingsScreen: SettingsScreen = {
@@ -19,16 +23,19 @@ class SettingsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let sessionData = SessionDataUserDefaults.getData() {
-            settingsScreen.updateView(with: sessionData.user)
-        }
+        updateHeaderContent(data: nil)
     }
     
+    func updateHeaderContent(data: SessionResponse?) {
+        guard let data = data ?? SessionDataUserDefaults.getData() else { return }
+        self.settingsScreen.updateView(with: data.user)
+    }
 }
 
 extension SettingsVC: SettingsScreenDelegate {
     func didTappedUpdateName() {
         let modalVC = UpdateNameVC()
+        modalVC.delegate = self
         self.present(modalVC, animated: true, completion: nil)
     }
 	
@@ -40,3 +47,5 @@ extension SettingsVC: SettingsScreenDelegate {
 		UIApplication.shared.windows.first?.makeKeyAndVisible()
 	}
 }
+
+extension SettingsVC: UpdateNameDelegate {}

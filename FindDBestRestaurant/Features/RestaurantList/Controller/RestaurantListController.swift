@@ -101,7 +101,3 @@ class RestaurantListController {
         print("deu erro")
     }
 }
-
-extension RestaurantListController: RestaurantServiceProtocol {
-    func fetchRestaurants(_ completion: @escaping (Result<[RestaurantListResponse]?, NetworkError>) -> Void) {}
-}

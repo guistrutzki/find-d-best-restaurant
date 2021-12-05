@@ -47,8 +47,6 @@ class UpdateNameScreen: UIView {
     @objc private func didTappedSubmit(_ button: UIButton) {
         let nameText = nameTextField.customTextField.text
         
-
-        
         delegate.didTappedSaveButton(name: nameText)
     }
 }
