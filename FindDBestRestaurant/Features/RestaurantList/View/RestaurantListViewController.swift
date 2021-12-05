@@ -24,10 +24,7 @@ class RestaurantListViewController: UIViewController {
     
     // MARK: - Life cycle
     
-    private var token: String?
-    
-    init(token: String?) {
-        self.token = token
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -41,8 +38,8 @@ class RestaurantListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        controller.loadRestaurantList(token: token)
-		  controller.loadFavorites()
+        controller.loadRestaurants()
+        controller.loadFavorites()
         setupSearchBar()  
     }
     

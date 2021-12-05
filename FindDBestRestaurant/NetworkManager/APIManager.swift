@@ -77,39 +77,4 @@ class APIManager {
 		task.resume()
 		
 	}
-	
-	static func loadRestaurantList(url: URL, token: String,
-											 completion: @escaping([RestaurantListResponse]?, Error?) -> Void) {
-		
-		var request = URLRequest(url: url)
-		request.httpMethod = "GET"
-		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-		request.addValue("application/json", forHTTPHeaderField: "Accept")
-		request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-		
-		let task = URLSession.shared.dataTask(with: request) { data, response, error in
-			
-			if let error = error {
-				completion(nil, error)
-			}
-			
-			if let status = response as? HTTPURLResponse, !(200...299).contains(status.statusCode) {
-				completion(nil, error)
-			}
-			
-			if let data = data {
-				do {
-					let result = try JSONDecoder().decode([RestaurantListResponse].self, from: data)
-					completion(result, nil)
-					
-				} catch let error {
-					print("Erro Session \(error.localizedDescription)")
-					completion(nil, error)
-				}
-			}
-			
-		}
-		task.resume()
-		
-	}
 }

@@ -15,9 +15,9 @@ protocol RestaurantListControllerDelegate: AnyObject {
 class RestaurantListController {
     
     // MARK: - Variable
-    
+    private let restaurantService = RestaurantService()
     private var restaurants: [RestaurantListResponse] = []
-	 private var filterdRestaurants: [RestaurantListResponse] = []
+    private var filterdRestaurants: [RestaurantListResponse] = []
     
     var count: Int {
       if filterdRestaurants.isEmpty {
@@ -32,44 +32,19 @@ class RestaurantListController {
     
     // MARK: - Public Functions
     
-    func fetchRestaurantList() {
-        let baseUrl = "https://restaurant-api.guistrutzki.dev/restaurants"
-        
-        guard let url = URL(string: baseUrl) else {
-            print("url error")
-            return
-        }
-        
-        NetworkManager.request(url: url) { [weak self] result in
+    func loadRestaurants() {
+        self.restaurantService.fetchRestaurants {[weak self] (result: Result <[RestaurantListResponse]?, NetworkError>) in
+            guard let self = self else { return }
             switch result {
-            case .success(let restaurantResponse):
-                print(restaurantResponse)
-                self?.didFetchSuccess(restaurantResponse)
+            case .success(let restaurants):
+                self.didFetchSuccess(restaurants ?? [])
+                break
             case .failure(let error):
-                print(error)
-                self?.didFetchFailed(error: error)
+                self.didFetchFailed(error: error)
+                break
             }
         }
     }
-	
-	func loadRestaurantList(token: String?) {
-		guard let token = token else { return }
-		
-		let urlString = "\(API_BASE_URL)/restaurants"
-		guard let url = URL(string: urlString) else { return }
-		
-		APIManager.loadRestaurantList(url: url, token: token) { success, error in
-			if let result = success {
-				print(result)
-				self.didFetchSuccess(result)
-			} else {
-				if let error = error {
-					self.didFetchFailed(error: error)
-				}
-			}
-		}
-		
-	}
     
     func getRestaurants(indexPath: IndexPath) -> RestaurantListResponse? {
 		 
@@ -125,4 +100,8 @@ class RestaurantListController {
     private func didFetchFailed(error: Error) {
         print("deu erro")
     }
+}
+
+extension RestaurantListController: RestaurantServiceProtocol {
+    func fetchRestaurants(_ completion: @escaping (Result<[RestaurantListResponse]?, NetworkError>) -> Void) {}
 }

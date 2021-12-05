@@ -34,7 +34,7 @@ class RestaurantDetailController {
         PersistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
             guard let self = self else { return }
             
-            guard let error = error else {
+            guard let _ = error else {
                 self.delegate?.didSaveFavoriteWithSuccess()
                 return
             }

@@ -26,10 +26,7 @@ class TopRestaurantsViewController: UIViewController {
 	
 	private let locationManager = CLLocationManager()
 	
-	private var token: String?
-	
-	init(token: String?) {
-		self.token = token
+	init() {
 		super.init(nibName: nil, bundle: nil)
 	}
 	
@@ -50,7 +47,7 @@ class TopRestaurantsViewController: UIViewController {
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-		controller.loadRestaurantList(token: token)
+		controller.loadRestaurantList()
 		self.topRestaurantScreen.centerViewOnUserLocation(locationManager)
 	}
 	

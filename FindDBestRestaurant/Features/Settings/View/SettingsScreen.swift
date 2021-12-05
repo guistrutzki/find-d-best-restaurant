@@ -45,7 +45,6 @@ class SettingsScreen: UIView {
     
     private lazy var headerTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Fulano Silva"
         label.font = UIFont(name: Fonts.poppinsBold, size: 24)
         label.textColor = Colors.white
         return label
@@ -53,7 +52,6 @@ class SettingsScreen: UIView {
     
     private lazy var headerEmailLabel: UILabel = {
         let label = UILabel()
-        label.text = "fulano@hotmail.com"
         label.font = UIFont(name: Fonts.poppinsRegular, size: 14)
         label.textColor = Colors.gray200
         return label
@@ -163,6 +161,11 @@ class SettingsScreen: UIView {
 	@objc private func handleLogoutTapped(_ sender: UIButton) {
 		 self.delegate.didTappedLogout(sender)
 	}
+    
+    func updateView(with configuration: SessionUser) {
+        headerTitleLabel.text = configuration.name
+        headerEmailLabel.text = configuration.email
+    }
 	
 }
 
