@@ -22,11 +22,11 @@ class FavoritesScreen: UIView {
         layout.scrollDirection = .vertical
         
         let collectionView = UICollectionView(
-            frame: .zero, collectionViewLayout: layout)
-        
+            frame: .zero, collectionViewLayout: layout
+		  )
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = .systemBackground
+		  collectionView.backgroundColor = Colors.gray500
         return collectionView
     }()
     
@@ -103,17 +103,18 @@ extension FavoritesScreen: UICollectionViewDelegate {
 
 extension FavoritesScreen: UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let count = delegate?.setListCount()
-        let isEmpty = (delegate?.isEmpty())!
-        if count == 0 {
-            setUIState(isEmpty)
-            return 0
-        } else {
-            setUIState(isEmpty)
-            return delegate?.setListCount() ?? 0
-        }
-    }
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		
+		guard let count = delegate?.setListCount() else { return 0 }
+		
+		if count == 0 {
+			setUIState(true)
+		} else {
+			setUIState(false)
+		}
+		
+		return count
+	}
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = FavoritesCell.identifier
@@ -155,11 +156,16 @@ extension FavoritesScreen: UICollectionViewDelegateFlowLayout {
 // MARK: - CharacterCellDelegate Extension
 
 extension FavoritesScreen: FavoritesCellDelegate {
-    
-    func setFavorite(_ cell: UICollectionViewCell, value: Bool) {
-        guard let indexPath = collectionView.indexPath(for: cell) else { return }
-        delegate?.setFavorite(at: indexPath.item, value: value)
-    }
+	
+	func setFavorite(_ restaurant: RestaurantListResponse, isFavorite: Bool) {
+		delegate?.setFavorite(restaurant, isFavorite: isFavorite)
+	}
+	
+	func setFavorite(_ cell: UICollectionViewCell, value: Bool) {
+		guard let indexPath = collectionView.indexPath(for: cell) else { return }
+		delegate?.setFavorite(at: indexPath.item, isFavorite: value)
+	}
+	
 }
 
 // MARK: - CodeView Extension
@@ -178,15 +184,16 @@ extension FavoritesScreen : CodeView {
         }
         
         collectionView.snp.makeConstraints { make in
+			  make.top.equalTo(safeAreaLayoutGuide).offset(10)
             make.left.equalToSuperview().offset(16)
             make.right.equalToSuperview().inset(16)
-            make.top.bottom.equalTo(safeAreaLayoutGuide)
+            make.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
     
     func setupAdditionalConfiguration() {
         emptyFavoritesScreen.isHidden = true
-        backgroundColor = .systemBackground
+ 		  backgroundColor = Colors.gray500
         FavoritesCell.registerOn(collectionView)
     }
 }

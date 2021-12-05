@@ -10,4 +10,5 @@ import UIKit
 protocol FavoritesCellDelegate: AnyObject {
     
     func setFavorite(_ cell: UICollectionViewCell, value: Bool)
+	 func setFavorite(_ restaurant: RestaurantListResponse, isFavorite: Bool)
 }
