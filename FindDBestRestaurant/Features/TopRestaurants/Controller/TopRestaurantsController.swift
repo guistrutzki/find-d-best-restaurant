@@ -13,7 +13,11 @@ protocol TopRestaurantsControllerDelegate: AnyObject {
 }
 
 class TopRestaurantsController {
-    private let restaurantService = RestaurantService()
+    private let restaurantService: RestaurantServiceProtocol
+    
+    init(restaurantService: RestaurantServiceProtocol) {
+        self.restaurantService = restaurantService
+    }
 	
 	// MARK: - Variable
 	private var restaurants: [RestaurantListResponse] = []
@@ -50,8 +54,4 @@ class TopRestaurantsController {
 		print("deu erro")
 		self.delegate?.errorLoad()
 	}
-}
-
-extension TopRestaurantsController: RestaurantServiceProtocol {
-    func fetchRestaurants(_ completion: @escaping (Result<[RestaurantListResponse]?, NetworkError>) -> Void) {}
 }

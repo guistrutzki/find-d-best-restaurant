@@ -19,7 +19,8 @@ class TopRestaurantsViewController: UIViewController {
 		return screen
 	}()
 	private lazy var controller: TopRestaurantsController = {
-		let controller = TopRestaurantsController()
+		let restaurantService = RestaurantService()
+		let controller = TopRestaurantsController(restaurantService: restaurantService)
 		controller.delegate = self
 		return controller
 	}()

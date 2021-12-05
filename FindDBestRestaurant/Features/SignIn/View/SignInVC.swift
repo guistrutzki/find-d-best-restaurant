@@ -65,8 +65,8 @@ extension SignInVC: SignInControllerDelegate {
 	func successSession() {
 		print("Session criada com Sucesso")
 		
-		let tabBarController: MainTabBarController = MainTabBarController()
 		DispatchQueue.main.async {
+            let tabBarController: MainTabBarController = MainTabBarController()
 			self.navigationController?.pushViewController(tabBarController, animated: true)
 		}
 	}
