@@ -46,11 +46,19 @@ class SignUpVC: UIViewController {
     }
     
     private func didCreateAccountWithSuccess() {
-        showMessage(
-            title: K.accountCreated,
-            message: K.accountSuccessMessage)
+		 showMessageWithAction(
+			title: K.accountCreated,
+			message: K.accountSuccessMessage,
+			actionTitle: K.ok,
+			action: handlerSuccess(action:)
+		 )
     }
-    
+	
+	private func handlerSuccess(action: UIAlertAction) {
+		let viewController = InitialVC()
+		navigationController?.pushViewController(viewController, animated: true)
+	}
+	
     private func didCreateAccountFailed() {
         showMessage(
             title: "Algo deu errado",
