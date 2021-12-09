@@ -9,5 +9,7 @@ import UIKit
 
 protocol SettingsScreenDelegate: AnyObject {
     func didTappedUpdateName()
+    func didTappedUpdateEmail()
+    func didTappedUpdatePassword()
 	func didTappedLogout(_ sender: UIButton)
 }

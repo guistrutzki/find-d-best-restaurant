@@ -117,6 +117,7 @@ class SettingsScreen: UIView {
         button.setTitle("Alterar e-mail", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.poppinsRegular, size: 18)
+        button.addTarget(self, action: #selector(self.handleUpdateEmailTapped), for: .touchUpInside)
         return button
     }()
     
@@ -125,6 +126,7 @@ class SettingsScreen: UIView {
         button.setTitle("Alterar senha", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.poppinsRegular, size: 18)
+        button.addTarget(self, action: #selector(self.handleUpdatePasswordTapped), for: .touchUpInside)
         return button
     }()
     
@@ -156,6 +158,14 @@ class SettingsScreen: UIView {
     // MARK - Obj Functions
     @objc private func handleUpdateNameTapped() {
         self.delegate.didTappedUpdateName()
+    }
+    
+    @objc private func handleUpdateEmailTapped() {
+        self.delegate.didTappedUpdateEmail()
+    }
+    
+    @objc private func handleUpdatePasswordTapped() {
+        self.delegate.didTappedUpdatePassword()
     }
 	
 	@objc private func handleLogoutTapped(_ sender: UIButton) {

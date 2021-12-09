@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		36FC09FABFEEF220EDCEDCCB /* Pods_FindDBestRestaurant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CB12D0950B0BA3055A0234 /* Pods_FindDBestRestaurant.framework */; };
+		5B0500C4275D367B009C1EA4 /* UpdateEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0500C3275D367B009C1EA4 /* UpdateEmailVC.swift */; };
+		5B0500C7275D36AD009C1EA4 /* UpdateEmailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0500C6275D36AD009C1EA4 /* UpdateEmailScreen.swift */; };
+		5B0500C9275D36BB009C1EA4 /* UpdateEmailScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0500C8275D36BB009C1EA4 /* UpdateEmailScreenDelegate.swift */; };
 		5B3BC84226DAB2B8001E694F /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BC84126DAB2B8001E694F /* InitialVC.swift */; };
 		5B3BC84526DAB2ED001E694F /* InitialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BC84426DAB2ED001E694F /* InitialScreen.swift */; };
 		5B3BC84826DAB575001E694F /* InitialScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BC84726DAB575001E694F /* InitialScreenDelegate.swift */; };
@@ -18,6 +21,11 @@
 		5B7B563527574AA600A7C211 /* SessionDataUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7B563427574AA600A7C211 /* SessionDataUserDefaults.swift */; };
 		5B7B563727574B2D00A7C211 /* UserDefaults+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7B563627574B2D00A7C211 /* UserDefaults+ext.swift */; };
 		5B7B563927574B5900A7C211 /* ObjectSavable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7B563827574B5900A7C211 /* ObjectSavable.swift */; };
+		5B7D2F7227624C02007725B2 /* UpdateEmailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D2F7127624C02007725B2 /* UpdateEmailController.swift */; };
+		5B7D2F752762A020007725B2 /* UpdatePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D2F742762A01F007725B2 /* UpdatePasswordVC.swift */; };
+		5B7D2F782762A0CF007725B2 /* UpdatePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D2F772762A0CF007725B2 /* UpdatePasswordController.swift */; };
+		5B7D2F7B2762A2B3007725B2 /* UpdatePasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D2F7A2762A2B3007725B2 /* UpdatePasswordScreen.swift */; };
+		5B7D2F7D2762A36B007725B2 /* UpdatePasswordScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D2F7C2762A36B007725B2 /* UpdatePasswordScreenDelegate.swift */; };
 		5B8EEBC926FA9D1F005F83CB /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EEBC826FA9D1F005F83CB /* SettingsScreen.swift */; };
 		5B8EEBCB26FA9D4E005F83CB /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EEBCA26FA9D4E005F83CB /* SettingsVC.swift */; };
 		5B8EEBCD26FA9E89005F83CB /* SettingsScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EEBCC26FA9E89005F83CB /* SettingsScreenDelegate.swift */; };
@@ -111,6 +119,9 @@
 /* Begin PBXFileReference section */
 		1A8FEB21296511D70068C5F9 /* Pods-FindDBestRestaurant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindDBestRestaurant.release.xcconfig"; path = "Target Support Files/Pods-FindDBestRestaurant/Pods-FindDBestRestaurant.release.xcconfig"; sourceTree = "<group>"; };
 		1ADB7BAD9BA154638C9B5F1A /* Pods-FindDBestRestaurant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindDBestRestaurant.debug.xcconfig"; path = "Target Support Files/Pods-FindDBestRestaurant/Pods-FindDBestRestaurant.debug.xcconfig"; sourceTree = "<group>"; };
+		5B0500C3275D367B009C1EA4 /* UpdateEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEmailVC.swift; sourceTree = "<group>"; };
+		5B0500C6275D36AD009C1EA4 /* UpdateEmailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEmailScreen.swift; sourceTree = "<group>"; };
+		5B0500C8275D36BB009C1EA4 /* UpdateEmailScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEmailScreenDelegate.swift; sourceTree = "<group>"; };
 		5B3BC84126DAB2B8001E694F /* InitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
 		5B3BC84426DAB2ED001E694F /* InitialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreen.swift; sourceTree = "<group>"; };
 		5B3BC84726DAB575001E694F /* InitialScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreenDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +132,11 @@
 		5B7B563427574AA600A7C211 /* SessionDataUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDataUserDefaults.swift; sourceTree = "<group>"; };
 		5B7B563627574B2D00A7C211 /* UserDefaults+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+ext.swift"; sourceTree = "<group>"; };
 		5B7B563827574B5900A7C211 /* ObjectSavable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSavable.swift; sourceTree = "<group>"; };
+		5B7D2F7127624C02007725B2 /* UpdateEmailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEmailController.swift; sourceTree = "<group>"; };
+		5B7D2F742762A01F007725B2 /* UpdatePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordVC.swift; sourceTree = "<group>"; };
+		5B7D2F772762A0CF007725B2 /* UpdatePasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordController.swift; sourceTree = "<group>"; };
+		5B7D2F7A2762A2B3007725B2 /* UpdatePasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordScreen.swift; sourceTree = "<group>"; };
+		5B7D2F7C2762A36B007725B2 /* UpdatePasswordScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordScreenDelegate.swift; sourceTree = "<group>"; };
 		5B8EEBC826FA9D1F005F83CB /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		5B8EEBCA26FA9D4E005F83CB /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		5B8EEBCC26FA9E89005F83CB /* SettingsScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +242,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B0500C2275D3652009C1EA4 /* UpdateEmail */ = {
+			isa = PBXGroup;
+			children = (
+				5B7D2F7027624BE2007725B2 /* Controller */,
+				5B0500C5275D3691009C1EA4 /* View */,
+				5B0500C3275D367B009C1EA4 /* UpdateEmailVC.swift */,
+			);
+			path = UpdateEmail;
+			sourceTree = "<group>";
+		};
+		5B0500C5275D3691009C1EA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B0500C6275D36AD009C1EA4 /* UpdateEmailScreen.swift */,
+				5B0500C8275D36BB009C1EA4 /* UpdateEmailScreenDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5B3BC84026DAB280001E694F /* Initial */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +286,41 @@
 				5BCAA51127587E3100D755B1 /* UserModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5B7D2F7027624BE2007725B2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5B7D2F7127624C02007725B2 /* UpdateEmailController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B7D2F7327629FFD007725B2 /* UpdatePassword */ = {
+			isa = PBXGroup;
+			children = (
+				5B7D2F792762A1C6007725B2 /* View */,
+				5B7D2F762762A0BE007725B2 /* Controller */,
+				5B7D2F742762A01F007725B2 /* UpdatePasswordVC.swift */,
+			);
+			path = UpdatePassword;
+			sourceTree = "<group>";
+		};
+		5B7D2F762762A0BE007725B2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5B7D2F772762A0CF007725B2 /* UpdatePasswordController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B7D2F792762A1C6007725B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B7D2F7A2762A2B3007725B2 /* UpdatePasswordScreen.swift */,
+				5B7D2F7C2762A36B007725B2 /* UpdatePasswordScreenDelegate.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5B8EEBC626FA9BB0005F83CB /* Settings */ = {
@@ -405,6 +475,8 @@
 		70311A3026D196EE005B0C0E /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				5B7D2F7327629FFD007725B2 /* UpdatePassword */,
+				5B0500C2275D3652009C1EA4 /* UpdateEmail */,
 				5B8EEBD926FC1BCF005F83CB /* UpdateName */,
 				5B8EEBC626FA9BB0005F83CB /* Settings */,
 				5B3BC84026DAB280001E694F /* Initial */,
@@ -1014,6 +1086,7 @@
 				7004775F26E429EB006C32F4 /* RestaurantDetailScreenDelegate.swift in Sources */,
 				70751EB826E1342400F6D85F /* MenuCollectionCell.swift in Sources */,
 				5BD3BC6A2753F14200429366 /* HTTPMethod.swift in Sources */,
+				5B7D2F752762A020007725B2 /* UpdatePasswordVC.swift in Sources */,
 				BCE50B6326D28F6B009388AA /* CustomButtonView.swift in Sources */,
 				7067ABF026EAC9DC00CACBFD /* FBRCardView.swift in Sources */,
 				707C4FC426E0320B00C01926 /* RestaurantDetailController.swift in Sources */,
@@ -1039,6 +1112,7 @@
 				5B7B562D27568D3400A7C211 /* SessionModel.swift in Sources */,
 				70E1D69E26DC520800E1A31D /* RestaurantListController.swift in Sources */,
 				70E1D6A026DC6D8600E1A31D /* RestaurantListScreenDelegate.swift in Sources */,
+				5B0500C7275D36AD009C1EA4 /* UpdateEmailScreen.swift in Sources */,
 				BC5C500B26DBF9FD00CDF9C4 /* ResetPasswordDelegate.swift in Sources */,
 				5B3BC84826DAB575001E694F /* InitialScreenDelegate.swift in Sources */,
 				70311A3726D1983E005B0C0E /* TopRestaurantsViewController.swift in Sources */,
@@ -1062,12 +1136,14 @@
 				707C4FC026E031DC00C01926 /* RestaurantDetailScreen.swift in Sources */,
 				70751EBE26E198D000F6D85F /* PhotoGalleryCollectionCell.swift in Sources */,
 				7004776226E436C9006C32F4 /* FBRSearchController.swift in Sources */,
+				5B7D2F7D2762A36B007725B2 /* UpdatePasswordScreenDelegate.swift in Sources */,
 				70751EBC26E197EF00F6D85F /* PhotoGalleryTableCell.swift in Sources */,
 				5B7B563527574AA600A7C211 /* SessionDataUserDefaults.swift in Sources */,
 				7067ABE626EAC3EA00CACBFD /* FavoritesScreenDelegate.swift in Sources */,
 				7004776426E4374F006C32F4 /* FBRSearchControllerDelegate.swift in Sources */,
 				70E1D69426DC442300E1A31D /* UIImageView+Ext.swift in Sources */,
 				5B7B563727574B2D00A7C211 /* UserDefaults+ext.swift in Sources */,
+				5B0500C4275D367B009C1EA4 /* UpdateEmailVC.swift in Sources */,
 				5BC25F7D26D359460053BDF5 /* SignInScreen.swift in Sources */,
 				BC5C500926DBF43300CDF9C4 /* ResetPasswordScreen.swift in Sources */,
 				BCDC02DA26E978A800B05931 /* TopRestaurantsController.swift in Sources */,
@@ -1077,7 +1153,9 @@
 				70E1D68E26DC40D200E1A31D /* RestaurantListScreen.swift in Sources */,
 				5B94D67426C5F68C00346B9B /* SceneDelegate.swift in Sources */,
 				70E1D69626DC494400E1A31D /* Restaurant.swift in Sources */,
+				5B7D2F7227624C02007725B2 /* UpdateEmailController.swift in Sources */,
 				5B7B563927574B5900A7C211 /* ObjectSavable.swift in Sources */,
+				5B7D2F7B2762A2B3007725B2 /* UpdatePasswordScreen.swift in Sources */,
 				BC84A61026D59FFD001B63C7 /* SignUpVC.swift in Sources */,
 				70AB791126D6FB6900BE67BE /* FBRTextField.swift in Sources */,
 				BC6504F32731AD3A0064C7FF /* RestaurantDetailViewControllerDelegate.swift in Sources */,
@@ -1089,6 +1167,7 @@
 				BC84A60B26D59AAB001B63C7 /* SignUpScreen.swift in Sources */,
 				BC3744D5271FA28500654DA0 /* UINavigationController+Ext.swift in Sources */,
 				5B8EEBC926FA9D1F005F83CB /* SettingsScreen.swift in Sources */,
+				5B7D2F782762A0CF007725B2 /* UpdatePasswordController.swift in Sources */,
 				5BD3BC652753BD9300429366 /* NetworkClient.swift in Sources */,
 				BC5C501326DC3E7E00CDF9C4 /* CardRestaurantCell.swift in Sources */,
 				BC61D75F26D48D0E00019CC0 /* LaunchScreenVC.swift in Sources */,
@@ -1096,6 +1175,7 @@
 				5BCAA5172758813500D755B1 /* UpdateNameController.swift in Sources */,
 				70751EB626E1324700F6D85F /* MenuTableCell.swift in Sources */,
 				5B8EEBDE26FC2037005F83CB /* UpdateNameScreen.swift in Sources */,
+				5B0500C9275D36BB009C1EA4 /* UpdateEmailScreenDelegate.swift in Sources */,
 				5BC25F7F26D35ACB0053BDF5 /* UIColor+ext.swift in Sources */,
 				7067ABEA26EAC47B00CACBFD /* FavoritesViewController.swift in Sources */,
 				5BC25F8126D456D20053BDF5 /* FBRButton.swift in Sources */,

@@ -23,7 +23,7 @@ class FBREmptyStateScreen: UIView {
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.text = K.youDontHaveAFavorite
-        label.textColor = .secondaryLabel
+        label.textColor = .white
         return label
     }()
     
@@ -33,7 +33,7 @@ class FBREmptyStateScreen: UIView {
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 16)
         label.text = K.whatAboutStartNow
-        label.textColor = .secondaryLabel
+        label.textColor = .white
         return label
     }()
     
@@ -62,9 +62,9 @@ extension FBREmptyStateScreen: CodeView {
     
     func setupConstraints() {
         emptyFavoriteImage.snp.makeConstraints { make in
-            make.left.top.equalToSuperview().offset(16)
-            make.right.equalToSuperview().inset(16)
-            make.height.equalTo(400)
+            make.left.top.equalToSuperview().offset(24)
+            make.right.equalToSuperview().inset(24)
+            make.height.equalTo(350)
         }
         
         title.snp.makeConstraints { make in
@@ -81,6 +81,6 @@ extension FBREmptyStateScreen: CodeView {
     }
     
     func setupAdditionalConfiguration() {
-        backgroundColor = .systemBackground
+        backgroundColor = Colors.gray500
     }
 }

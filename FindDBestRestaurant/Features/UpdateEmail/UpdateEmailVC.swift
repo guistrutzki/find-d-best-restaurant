@@ -1,47 +1,47 @@
 //
-//  UpdateNameVC.swift
+//  UpdateEmailVC.swift
 //  FindDBestRestaurant
 //
-//  Created by Guilherme Strutzki on 22/09/21.
+//  Created by Guilherme Strutzki on 05/12/21.
 //
 
 import UIKit
 
-protocol UpdateNameDelegate: AnyObject {
+protocol UpdateEmailDelegate: AnyObject {
     func updateHeaderContent(data: SessionResponse?)
 }
 
-class UpdateNameVC: UIViewController {
-    weak var delegate: UpdateNameDelegate?
-    private lazy var updateNameScreen: UpdateNameScreen = {
-        return UpdateNameScreen(self)
+class UpdateEmailVC: UIViewController {
+    weak var delegate: UpdateEmailDelegate?
+    
+    private lazy var updateEmailScreen: UpdateEmailScreen = {
+        return UpdateEmailScreen(self)
     }()
     
-    private lazy var controller: UpdateNameController = {
+    private lazy var controller: UpdateEmailController = {
         let restaurantService = RestaurantService()
-        let controller = UpdateNameController(restaurantService: restaurantService)
+        let controller = UpdateEmailController(restaurantService: restaurantService)
         controller.delegate = self
         return controller
     }()
     
     override func loadView() {
-        self.view = updateNameScreen
+        self.view = updateEmailScreen
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 }
 
-extension UpdateNameVC: UpdateNameScreenDelegate {
-    func didTappedSaveButton(name: String?) {
-        guard let name = name else { return }
-        controller.updateUserName(name)
+extension UpdateEmailVC: UpdateEmailScreenDelegate {
+    func didTappedSaveButton(email: String?) {
+        guard let email = email else { return }
+        controller.updateUserEmail(email)
     }
 }
 
-extension UpdateNameVC: UpdateNameControllerDelegate {
+extension UpdateEmailVC: UpdateEmailControllerDelegate {
     func successUpdate() {
         DispatchQueue.main.async {
             guard let sessionData = SessionDataUserDefaults.getData() else { return }
@@ -54,5 +54,6 @@ extension UpdateNameVC: UpdateNameControllerDelegate {
     func errorUpdate() {
         print("ERROR")
     }
-
+    
+    
 }

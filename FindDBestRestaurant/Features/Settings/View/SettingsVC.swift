@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol UpdateNameDelegate: AnyObject {
-    func updateHeaderContent(data: SessionResponse?)
-}
-
 class SettingsVC: UIViewController {
     
     private lazy var settingsScreen: SettingsScreen = {
@@ -38,6 +34,17 @@ extension SettingsVC: SettingsScreenDelegate {
         modalVC.delegate = self
         self.present(modalVC, animated: true, completion: nil)
     }
+    
+    func didTappedUpdateEmail() {
+        let modalVC = UpdateEmailVC()
+        modalVC.delegate = self
+        self.present(modalVC, animated: true, completion: nil)
+    }
+    
+    func didTappedUpdatePassword() {
+        let modalVC = UpdatePasswordVC()
+        self.present(modalVC, animated: true, completion: nil)
+    }
 	
 	func didTappedLogout(_ sender: UIButton) {
         SessionDataUserDefaults.clearData()
@@ -49,3 +56,4 @@ extension SettingsVC: SettingsScreenDelegate {
 }
 
 extension SettingsVC: UpdateNameDelegate {}
+extension SettingsVC: UpdateEmailDelegate {}

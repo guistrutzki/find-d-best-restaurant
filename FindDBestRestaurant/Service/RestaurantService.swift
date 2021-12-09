@@ -10,6 +10,7 @@ import Foundation
 protocol RestaurantServiceProtocol {
     func fetchRestaurants(_ completion: @escaping (Result<[RestaurantListResponse]?, NetworkError>) -> Void)
     func updateUserName(name: String, _ completion: @escaping (Result<NoReply?, NetworkError>) -> Void)
+    func updateEmail(email: String, _ completion: @escaping (Result<NoReply?, NetworkError>) -> Void)
 }
 
 struct RestaurantService: RestaurantServiceProtocol {
@@ -50,6 +51,18 @@ struct RestaurantService: RestaurantServiceProtocol {
                                      urlParameters: [:],
                                      headers: headers,
                                      body: UpdateUserNameRequest(name: name).toData(),
+                                     completion: completion)
+    }
+    
+    func updateEmail(email: String, _ completion: @escaping (Result<NoReply?, NetworkError>) -> Void) {
+        let url = URL(string: "\(API_BASE_URL)/users")!
+        guard let token = SessionDataUserDefaults.getData()?.token else { return }
+        let headers: [String: String] = ["Authorization": "Bearer \(token)"]
+        networkClient.performRequest(method: .put,
+                                     url: url,
+                                     urlParameters: [:],
+                                     headers: headers,
+                                     body: UpdateEmailRequest(email: email).toData(),
                                      completion: completion)
     }
 }
